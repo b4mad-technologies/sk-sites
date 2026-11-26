@@ -32,3 +32,6 @@ recorded, its generator. Every sidecar carries `"license": "CC-BY-4.0"`.
 | `apps/website/public/assets/worlds/` | 10 | none |
 | `apps/website/public/assets/impeccable/` | 3 textures | none |
 | `apps/ui-lab/demos/living-grammar-reference/` | 2 screenshots | no sidecar; UI screenshots |
+
+For the 22 images marked "none" the origin is not recorded: the sidecar
+holds the prompt and the date, but not the tool that made the image.

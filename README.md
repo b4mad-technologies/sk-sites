@@ -9,12 +9,15 @@ behind them.
 | `apps/website` | spellkave.com, static Svelte site | no |
 | `apps/account` | account.spellkave.com, signed-in person's page | no |
 | `apps/ui-lab` | design system catalogue and demos | no |
-| `packages/spellkave-ui` | `@spellkave/ui`, Svelte primitives, tokens, themes | yes |
-| `packages/spellkave-ui-widgets` | `@spellkave/ui-widgets`, display-only product widgets | yes |
-| `packages/spellkave-map-canvas` | `@spellkave/map-canvas`, MapLibre world map widget | yes |
-| `packages/spellkave-run-events-view` | `@spellkave/run-events-view`, agent run events list | yes |
-| `packages/spellkave-authkit` | `@spellkave/authkit`, WorkOS AuthKit PKCE client | yes |
+| `packages/spellkave-ui` | `@spellkave/ui`, Svelte primitives, tokens, themes | planned |
+| `packages/spellkave-ui-widgets` | `@spellkave/ui-widgets`, display-only product widgets | planned |
+| `packages/spellkave-map-canvas` | `@spellkave/map-canvas`, MapLibre world map widget | planned |
+| `packages/spellkave-run-events-view` | `@spellkave/run-events-view`, agent run events list | planned |
+| `packages/spellkave-authkit` | `@spellkave/authkit`, WorkOS AuthKit PKCE client | planned |
 | `packages/spellkave-design-gen` | `@spellkave/design-gen`, design-time `skgen` CLI | no |
+
+None of the five packages marked `planned` is on npm yet. The first tagged
+release publishes them.
 
 ## Build and test
 
@@ -32,6 +35,10 @@ The account build reads `VITE_*` settings; CI uses placeholders (see
 [ci.yml](.github/workflows/ci.yml)). The website does not build here yet: it
 needs packages from sk-content and sk-sdk that are not on npm. See
 [PROVENANCE.md](PROVENANCE.md).
+
+The `wrangler.jsonc` files carry no Cloudflare account. A deploy
+(`pnpm --filter <app> run deploy`) reads the account from the
+`CLOUDFLARE_ACCOUNT_ID` environment variable, or from the Wrangler login.
 
 ## npm releases
 

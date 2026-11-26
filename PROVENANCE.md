@@ -30,8 +30,11 @@ Test data for design-gen, copied from the monorepo root into
   `woven-example.blueprint.json`, `entity-art-v1.sample.art-manifest.json`
 - `.impeccable/style-packs/entity-art-v1/manifest.json`, `palette.png`,
   `prompt-templates.json`
-- `docs/references/pixellab-api-v2.llms.{txt,json}`,
-  `pixellab-openapi-v2.entity-art.json` and its `.meta.json`
+
+The monorepo also keeps copies of the PixelLab API documents under
+`docs/references/`. They are not copied here. The four files of that name in
+`test/repo-root/docs/references/` are small hand-written stubs with matching
+checksums, enough for the checksum test.
 
 `package.json`, `pnpm-workspace.yaml` and `.gitignore` are new and small.
 The monorepo `mise.toml`, Nx `project.json` files and the authoring corpus

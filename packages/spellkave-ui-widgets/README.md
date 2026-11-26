@@ -9,9 +9,9 @@ or mutate world state.
 
 Two apps mount these widgets with opposite rules. In `apps/play` a map or a
 name only selects and the composer acts
-([Play interaction axioms](../../ledger/designs/play-interaction-axioms.md)).
+(the Play interaction axioms).
 In `apps/classic` a click acts
-([classic interaction rules](../../ledger/designs/classic-interaction-rules.md)).
+(the classic interaction rules).
 A widget therefore decides neither: it reports a gesture through a callback
 (`onSelect`, `onSelectCell`, `onTravel`, `onAct`) and the host app chooses
 what follows. A change made for one app stays additive for the other: a new
