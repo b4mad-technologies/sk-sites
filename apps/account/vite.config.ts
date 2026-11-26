@@ -1,0 +1,21 @@
+import { requireLoginOrigin } from "@spellkave/authkit/vite";
+import { spellkaveThemeBoot } from "@spellkave/ui/vite";
+import { svelte } from "@sveltejs/vite-plugin-svelte";
+import tailwindcss from "@tailwindcss/vite";
+import { svelteTesting } from "@testing-library/svelte/vite";
+import { defineConfig, type ViteUserConfig } from "vitest/config";
+
+export default defineConfig({
+	plugins: [
+		requireLoginOrigin(),
+		spellkaveThemeBoot(),
+		tailwindcss(),
+		svelte(),
+		svelteTesting(),
+	] as ViteUserConfig["plugins"],
+	test: {
+		environment: "jsdom",
+		include: ["src/**/*.test.ts"],
+		setupFiles: ["src/test/setup.ts", "@spellkave/ui/vitest-jsdom-teardown"],
+	},
+});

@@ -1,0 +1,18 @@
+{
+	"schema": "spellkave-external-reference/v1",
+	"source": "https://api.pixellab.ai/v2/openapi.json",
+	"fetched_at": "2026-09-07T12:36:54.460Z",
+	"sha256": "f8f691dd189b3e81a3cd142020983a854778980461b269e56b64c28a09152288",
+	"routes": [
+		"/create-image-pixflux",
+		"/create-image-pixen",
+		"/create-image-bitforge",
+		"/generate-with-style-v2",
+		"/create-character-v3",
+		"/create-character-with-8-directions",
+		"/enhance-pixen-prompt",
+		"/image-to-pixelart",
+		"/reduce-colors",
+		"/remove-background"
+	]
+}

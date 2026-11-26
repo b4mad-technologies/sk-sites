@@ -1,0 +1,2 @@
+Background: <%= it.display_name %>
+Write the website card blurb. Follow the system rules.

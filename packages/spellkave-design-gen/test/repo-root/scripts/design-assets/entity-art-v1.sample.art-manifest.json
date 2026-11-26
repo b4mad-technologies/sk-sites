@@ -1,0 +1,522 @@
+{
+	"schema": "spellkave-art-manifest/v1",
+	"id": "elven-mini-remaining-cast",
+	"style_pack": ".impeccable/style-packs/entity-art-v1/manifest.json",
+	"provider": "pixellab-pixen",
+	"output_root": "pixellab-generations/entity-art-v1-sample",
+	"provenance": {
+		"license": "LicenseRef-Spellkave-Proprietary",
+		"source": "Elven Mini remaining cast and items (part 2; do not generate until entity-art-v1 lands)"
+	},
+	"entries": [
+		{
+			"id": "road-wolf",
+			"kind": "creature",
+			"name": "Road Wolf",
+			"prompt_inputs": {
+				"subject": "A lean wolf packing the bridge midspan."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/road-wolf.webp",
+			"target_attachment_ref": "entity_definition:srd/creature/wolf#elven_mini.art.image"
+		},
+		{
+			"id": "stirge",
+			"kind": "creature",
+			"name": "Stirge",
+			"prompt_inputs": {
+				"subject": "A blood-drinker stirge among the moonpetal."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/stirge.webp",
+			"target_attachment_ref": "entity_definition:srd/creature/stirge#elven_mini.art.image"
+		},
+		{
+			"id": "mill-cultist",
+			"kind": "creature",
+			"name": "Cultist",
+			"prompt_inputs": {
+				"subject": "A windmill cultist holding the tunnel intersection."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/mill-cultist.webp",
+			"target_attachment_ref": "entity_definition:srd/creature/cultist#elven_mini.art.image"
+		},
+		{
+			"id": "sister-maelis",
+			"kind": "creature",
+			"name": "Sister Maelis",
+			"prompt_inputs": {
+				"subject": "Sister Maelis, fanatic leader of the Windmill cult."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/sister-maelis.webp",
+			"target_attachment_ref": "entity:elven_mini/adventure/encounter/sister_maelis_1#elven_mini.art.image"
+		},
+		{
+			"id": "hobgoblin-warrior",
+			"kind": "creature",
+			"name": "Hobgoblin Warrior",
+			"prompt_inputs": {
+				"subject": "A hobgoblin warrior of Ghorza's road raiders."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/hobgoblin-warrior.webp",
+			"target_attachment_ref": "entity_definition:srd/creature/hobgoblin-warrior#elven_mini.art.image"
+		},
+		{
+			"id": "warcaptain-ghorza",
+			"kind": "creature",
+			"name": "Warcaptain Ghorza",
+			"prompt_inputs": {
+				"subject": "Warcaptain Ghorza, leader of the road raids."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/warcaptain-ghorza.webp",
+			"target_attachment_ref": "entity:elven_mini/adventure/encounter/warcaptain_ghorza_1#elven_mini.art.image"
+		},
+		{
+			"id": "worg",
+			"kind": "creature",
+			"name": "Worg",
+			"prompt_inputs": {
+				"subject": "A worg staked at the pens \u2014 second wave of the raid fight."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/worg.webp",
+			"target_attachment_ref": "entity_definition:srd/creature/worg#elven_mini.art.image"
+		},
+		{
+			"id": "giant-spider",
+			"kind": "creature",
+			"name": "Giant Spider",
+			"prompt_inputs": {
+				"subject": "A giant spider dropping from the tree line."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/giant-spider.webp",
+			"target_attachment_ref": "entity_definition:srd/creature/giant-spider#elven_mini.art.image"
+		},
+		{
+			"id": "owlbear",
+			"kind": "creature",
+			"name": "Owlbear",
+			"prompt_inputs": {
+				"subject": "An owlbear crashing into the lodge clearing (wave two)."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/owlbear.webp",
+			"target_attachment_ref": "entity_definition:srd/creature/owlbear#elven_mini.art.image"
+		},
+		{
+			"id": "goblin-minion",
+			"kind": "creature",
+			"name": "Goblin Minion",
+			"prompt_inputs": {
+				"subject": "A goblin minion of Grubnash's warren."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/goblin-minion.webp",
+			"target_attachment_ref": "entity_definition:srd/creature/goblin-minion#elven_mini.art.image"
+		},
+		{
+			"id": "goblin-warrior",
+			"kind": "creature",
+			"name": "Goblin Warrior",
+			"prompt_inputs": {
+				"subject": "A goblin warrior at the warren guard post."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/goblin-warrior.webp",
+			"target_attachment_ref": "entity_definition:srd/creature/goblin-warrior#elven_mini.art.image"
+		},
+		{
+			"id": "grubnash",
+			"kind": "creature",
+			"name": "Grubnash",
+			"prompt_inputs": {
+				"subject": "Grubnash, goblin boss of the warren."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/grubnash.webp",
+			"target_attachment_ref": "entity:elven_mini/adventure/encounter/grubnash_1#elven_mini.art.image"
+		},
+		{
+			"id": "mother-ulda",
+			"kind": "creature",
+			"name": "Mother Ulda",
+			"prompt_inputs": {
+				"subject": "Mother Ulda, green hag of the swamp."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/mother-ulda.webp",
+			"target_attachment_ref": "entity:elven_mini/adventure/encounter/mother_ulda_1#elven_mini.art.image"
+		},
+		{
+			"id": "giant-frog",
+			"kind": "creature",
+			"name": "Giant Frog",
+			"prompt_inputs": {
+				"subject": "A giant frog in the hag's pool."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/giant-frog.webp",
+			"target_attachment_ref": "entity_definition:srd/creature/giant-frog#elven_mini.art.image"
+		},
+		{
+			"id": "will-o-wisp",
+			"kind": "creature",
+			"name": "Will-o'-Wisp",
+			"prompt_inputs": {
+				"subject": "A will-o'-wisp drifting the glade."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/will-o-wisp.webp",
+			"target_attachment_ref": "entity_definition:srd/creature/will-o-wisp#elven_mini.art.image"
+		},
+		{
+			"id": "skeleton",
+			"kind": "creature",
+			"name": "Skeleton",
+			"prompt_inputs": {
+				"subject": "A skeleton pacing the mine gallery."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/skeleton.webp",
+			"target_attachment_ref": "entity_definition:srd/creature/skeleton#elven_mini.art.image"
+		},
+		{
+			"id": "ghoul",
+			"kind": "creature",
+			"name": "Ghoul",
+			"prompt_inputs": {
+				"subject": "A ghoul in the side den."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/ghoul.webp",
+			"target_attachment_ref": "entity_definition:srd/creature/ghoul#elven_mini.art.image"
+		},
+		{
+			"id": "ghast",
+			"kind": "creature",
+			"name": "Ghast",
+			"prompt_inputs": {
+				"subject": "A ghast haunting the lower hall."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/ghast.webp",
+			"target_attachment_ref": "entity_definition:srd/creature/ghast#elven_mini.art.image"
+		},
+		{
+			"id": "durgan-ironfold",
+			"kind": "creature",
+			"name": "Durgan Ironfold",
+			"prompt_inputs": {
+				"subject": "Durgan Ironfold, last dwarf of the mine, wight-cursed."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/durgan-ironfold.webp",
+			"target_attachment_ref": "entity:elven_mini/adventure/encounter/durgan_ironfold_1#elven_mini.art.image"
+		},
+		{
+			"id": "bound-wight",
+			"kind": "creature",
+			"name": "Bound Wight",
+			"prompt_inputs": {
+				"subject": "A wight bound to the Steward's niche."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/bound-wight.webp",
+			"target_attachment_ref": "entity_definition:srd/creature/wight#elven_mini.art.image"
+		},
+		{
+			"id": "shadow",
+			"kind": "creature",
+			"name": "Shadow",
+			"prompt_inputs": {
+				"subject": "A shadow clinging to the shrine crypt."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/shadow.webp",
+			"target_attachment_ref": "entity_definition:srd/creature/shadow#elven_mini.art.image"
+		},
+		{
+			"id": "shrine-specter",
+			"kind": "creature",
+			"name": "Shrine Specter",
+			"prompt_inputs": {
+				"subject": "A specter haunting the shrine nave."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/shrine-specter.webp",
+			"target_attachment_ref": "entity_definition:srd/creature/specter#elven_mini.art.image"
+		},
+		{
+			"id": "pale-steward",
+			"kind": "creature",
+			"name": "The Pale Steward",
+			"prompt_inputs": {
+				"subject": "The Pale Steward, specter bound under the tomb."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/pale-steward.webp",
+			"target_attachment_ref": "entity:elven_mini/adventure/encounter/pale_steward_1#elven_mini.art.image"
+		},
+		{
+			"id": "wererat",
+			"kind": "creature",
+			"name": "Wererat",
+			"prompt_inputs": {
+				"subject": "A wererat of the nest under the well."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/wererat.webp",
+			"target_attachment_ref": "entity_definition:srd/creature/wererat#elven_mini.art.image"
+		},
+		{
+			"id": "gray-ooze",
+			"kind": "creature",
+			"name": "Gray Ooze",
+			"prompt_inputs": {
+				"subject": "A gray ooze in the lowest pool under the well."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/gray-ooze.webp",
+			"target_attachment_ref": "entity_definition:srd/creature/gray-ooze#elven_mini.art.image"
+		},
+		{
+			"id": "zombie",
+			"kind": "creature",
+			"name": "Zombie",
+			"prompt_inputs": {
+				"subject": "A zombie packing the deep-tomb hall."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/zombie.webp",
+			"target_attachment_ref": "entity_definition:srd/creature/zombie#elven_mini.art.image"
+		},
+		{
+			"id": "ogre-zombie",
+			"kind": "creature",
+			"name": "Ogre Zombie",
+			"prompt_inputs": {
+				"subject": "An ogre zombie waiting in the alcove."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/creature/ogre-zombie.webp",
+			"target_attachment_ref": "entity_definition:srd/creature/ogre-zombie#elven_mini.art.image"
+		},
+		{
+			"id": "captain-ysolde-farwind",
+			"kind": "person",
+			"name": "Captain Ysolde Farwind",
+			"prompt_inputs": {
+				"subject": "Elven watch captain at the hamlet gate."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/person/captain-ysolde-farwind.webp",
+			"target_attachment_ref": "entity:elven_mini/adventure/npc/ysolde_1#elven_mini.art.image"
+		},
+		{
+			"id": "old-tamsin",
+			"kind": "person",
+			"name": "Old Tamsin",
+			"prompt_inputs": {
+				"subject": "Herbalist who knows the swamp and the green's moonpetal."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/person/old-tamsin.webp",
+			"target_attachment_ref": "entity:elven_mini/adventure/npc/tamsin_1#elven_mini.art.image"
+		},
+		{
+			"id": "jory-millwright",
+			"kind": "person",
+			"name": "Jory Millwright",
+			"prompt_inputs": {
+				"subject": "Miller's son who escaped the silent mill."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/person/jory-millwright.webp",
+			"target_attachment_ref": "entity:elven_mini/adventure/npc/jory_1#elven_mini.art.image"
+		},
+		{
+			"id": "hesper-of-the-lodge",
+			"kind": "person",
+			"name": "Hesper of the Lodge",
+			"prompt_inputs": {
+				"subject": "Gamekeeper of the forest lodge \u2014 companion candidate."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/person/hesper-of-the-lodge.webp",
+			"target_attachment_ref": "entity:elven_mini/adventure/npc/hesper_1#elven_mini.art.image"
+		},
+		{
+			"id": "vessk",
+			"kind": "person",
+			"name": "Vessk",
+			"prompt_inputs": {
+				"subject": "Kobold scout who wants Grubnash's warren gone."
+			},
+			"size": {
+				"width": 96,
+				"height": 96
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/person/vessk.webp",
+			"target_attachment_ref": "entity:elven_mini/adventure/npc/vessk_1#elven_mini.art.image"
+		},
+		{
+			"id": "moonpetal",
+			"kind": "item",
+			"name": "Moonpetal",
+			"prompt_inputs": {
+				"subject": "A pale night-bloom Tamsin needs for her basket."
+			},
+			"size": {
+				"width": 64,
+				"height": 64
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/item/moonpetal.webp",
+			"target_attachment_ref": "entity_definition:elven_mini/adventure/item/moonpetal#elven_mini.art.image"
+		},
+		{
+			"id": "cult-relic",
+			"kind": "item",
+			"name": "Cult Relic",
+			"prompt_inputs": {
+				"subject": "A windmill-cult relic Mother Ulda bargains over."
+			},
+			"size": {
+				"width": 64,
+				"height": 64
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/item/cult-relic.webp",
+			"target_attachment_ref": "entity_definition:elven_mini/adventure/item/cult_relic#elven_mini.art.image"
+		},
+		{
+			"id": "ironfold-tomb-key",
+			"kind": "item",
+			"name": "Ironfold Tomb Key",
+			"prompt_inputs": {
+				"subject": "The key Durgan kept \u2014 opens the deep tomb."
+			},
+			"size": {
+				"width": 64,
+				"height": 64
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/item/ironfold-tomb-key.webp",
+			"target_attachment_ref": "entity_definition:elven_mini/adventure/item/tomb_key#elven_mini.art.image"
+		},
+		{
+			"id": "longsword-plus-1",
+			"kind": "item",
+			"name": "Longsword (+1)",
+			"prompt_inputs": {
+				"subject": "Sister Maelis's prize \u2014 Q4 boss table representative drop (srd/loot/boss/q4-fanatic)."
+			},
+			"size": {
+				"width": 64,
+				"height": 64
+			},
+			"output_path": "packages/spellkave-adventure-elven-mini/assets/elven-mini-art/item/longsword-plus-1.webp",
+			"target_attachment_ref": "entity_definition:srd/magic_item/longsword-plus-1#elven_mini.art.image"
+		}
+	],
+	"post_pass": {
+		"route": "reduce-colors",
+		"palette_path": ".impeccable/style-packs/entity-art-v1/palette.png"
+	},
+	"note": "Reconstructed from origin/art/elven-mini-art (origin/art/elven-mini-art-2 lacked this file). Provider set to pixellab-pixen to match entity-art-v1 templates."
+}

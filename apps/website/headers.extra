@@ -1,0 +1,8 @@
+# Public, generated documentation only; never credentials/world data.
+/compendium/docs/references.json
+  Access-Control-Allow-Origin: *
+  X-Content-Type-Options: nosniff
+
+/compendium/docs/catalogue/*
+  Access-Control-Allow-Origin: *
+  X-Content-Type-Options: nosniff

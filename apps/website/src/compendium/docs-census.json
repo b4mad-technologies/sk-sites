@@ -1,0 +1,126 @@
+{
+	"total_entry_count": 8158,
+	"digest": "516497db18b607c95b78c8eefa8762282f3672339570877b35b90f13ea3d62c3",
+	"pages": [
+		{
+			"page_id": "elven-mini",
+			"sections": [
+				{
+					"id": "adventure-subjects",
+					"entry_count": 2,
+					"digest": "ec39fdc7dc18ff488d5730da25b5a5c2d67eb2f2fd2dafc8cf6a0ef7622bab4b"
+				},
+				{
+					"id": "cast",
+					"entry_count": 72,
+					"digest": "0b767c4ce1ddfa572178e7d46b9ca33988fb2a9f242afe59813c7ebae225366c"
+				},
+				{
+					"id": "encounters",
+					"entry_count": 1,
+					"digest": "7473f13263857f1b09f8287343e70fd35bb12a03d1e45307c27152e3e1df18ea"
+				},
+				{
+					"id": "items",
+					"entry_count": 15,
+					"digest": "e9deaa367738621bc147eb7e9c8a90f2899715d183ba7d99d8db488d9e1f44c1"
+				},
+				{
+					"id": "mechanics",
+					"entry_count": 364,
+					"digest": "1b4d36c444d88ad9a6f3ffebcd2b9d054b085ad71270966e48069fe7e245f66a"
+				},
+				{
+					"id": "places",
+					"entry_count": 19,
+					"digest": "c59c5b72fe3cc4c4b8c6d1bb6592fe84a0ab591a219af5de8fbc496497b84440"
+				},
+				{
+					"id": "quest-lines",
+					"entry_count": 12,
+					"digest": "6d5938f946fb7d5373349a8fdfbdcc4db0c1bcbe378bc20dedfba87c07eff452"
+				}
+			]
+		},
+		{
+			"page_id": "runtime",
+			"sections": [
+				{
+					"id": "mechanics",
+					"entry_count": 731,
+					"digest": "f1c56e66055b12fe319cd2e4f778a566a102ead3794089a04c6accbd72fcadac"
+				}
+			]
+		},
+		{
+			"page_id": "srd",
+			"sections": [
+				{
+					"id": "character-creation",
+					"entry_count": 7,
+					"digest": "bd718f56a02efc299c8ddd8292ecd8bd5fec14d98be44c5c601f1fe50c47ab72"
+				},
+				{
+					"id": "character-origins",
+					"entry_count": 50,
+					"digest": "1203ccca4565d338de636da3fce3e2840fa8bca58fcae72c0397405863dbe6a9"
+				},
+				{
+					"id": "classes",
+					"entry_count": 445,
+					"digest": "59d33ee51b30c2872abba51bc5b658bb509a012356775a9fa32800765c3b3ea4"
+				},
+				{
+					"id": "equipment",
+					"entry_count": 424,
+					"digest": "dcecddf98527c5f29caf0cd44e8bbbf937db8f4fd5b6d0451120712ae8415a76"
+				},
+				{
+					"id": "feats",
+					"entry_count": 18,
+					"digest": "9d52dc2001ba334cd850182045ed480990e334cfa3f530ae31712c2962f1bce6"
+				},
+				{
+					"id": "gameplay-toolbox",
+					"entry_count": 9,
+					"digest": "932a92e14d719e701c79db0edc8ac222af320220a7bc25ce68f1cc11bf57eabd"
+				},
+				{
+					"id": "magic-items",
+					"entry_count": 1072,
+					"digest": "1bc86ffabad6de7be51127172aa39642bf36f016705d1a2359468a1400f9d82c"
+				},
+				{
+					"id": "mechanics",
+					"entry_count": 2528,
+					"digest": "51d1a5a2ff8dc5ab43efd3d66dcb1be345db40058056391d8ed57f916d3e3af4"
+				},
+				{
+					"id": "monsters",
+					"entry_count": 605,
+					"digest": "5309b116fcd1409949660d32b356558e71d1d628423c4c33e6c8ceca0533ddf6"
+				},
+				{
+					"id": "playing-the-game",
+					"entry_count": 64,
+					"digest": "5afb063aa94352c7ef4496fc17897404defb8777434bccf0fe4f821702b68621"
+				},
+				{
+					"id": "rules-glossary",
+					"entry_count": 156,
+					"digest": "3d1f2f5ebc10e3c9943e4ee8dd591343aa592a253da89dbc48e68158009a3d99"
+				},
+				{
+					"id": "spells",
+					"entry_count": 689,
+					"digest": "1488d47974580daaf5c28342a941edf236edc648d3fef751467ff65f3217bb70"
+				},
+				{
+					"id": "tags",
+					"entry_count": 875,
+					"digest": "e13d2690db11e9bec9491edd75117aed14b0f6e5858e620bc2a664ef738f7aab"
+				}
+			]
+		}
+	]
+}

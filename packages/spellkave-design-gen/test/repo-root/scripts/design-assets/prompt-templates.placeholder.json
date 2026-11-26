@@ -1,0 +1,57 @@
+{
+	"schema": "spellkave-art-prompt-templates/v1",
+	"id": "placeholder",
+	"note": "Style packs own the real templates. This placeholder is the fallback shipped with the design-assets runner so expansion works before a pack file exists.",
+	"kinds": {
+		"sprite": {
+			"provider": "pixellab-pixflux",
+			"blueprint_schema": "spellkave-pixellab-blueprint/v1",
+			"description": "{{name}}: {{subject}}. Pixel-art sprite, native size, transparent background, no letters, words, numerals, logo, or watermark.",
+			"defaults": {
+				"no_background": true,
+				"outline": "selective outline",
+				"shading": "basic shading",
+				"detail": "medium detail"
+			}
+		},
+		"icon": {
+			"provider": "pixellab-pixflux",
+			"blueprint_schema": "spellkave-pixellab-blueprint/v1",
+			"description": "{{name}}: {{subject}}. Centered pixel-art icon, symmetrical, no letters, words, numerals, logo, or watermark.",
+			"defaults": {
+				"no_background": true,
+				"outline": "selective outline",
+				"shading": "basic shading",
+				"detail": "medium detail"
+			}
+		},
+		"ui": {
+			"provider": "pixellab-v2",
+			"blueprint_schema": "spellkave-pixellab-ui-v2-blueprint/v1",
+			"description": "{{name}}: {{subject}}. Pixel UI asset, square corners, no letters, words, numerals, logo, or watermark.",
+			"defaults": {
+				"no_background": true
+			}
+		},
+		"hero_scene": {
+			"provider": "openai-image",
+			"blueprint_schema": "spellkave-openai-image-blueprint/v1",
+			"prompt": "{{name}}: {{subject}}. Inhabited scene, no UI chrome, no text, logo, or watermark.",
+			"defaults": {
+				"job": "hero_scene",
+				"quality": "high",
+				"require_tileability": false
+			}
+		},
+		"seamless_material": {
+			"provider": "openai-image",
+			"blueprint_schema": "spellkave-openai-image-blueprint/v1",
+			"prompt": "{{name}}: {{subject}}. Flat repeating swatch, no border, no text, logo, or watermark.",
+			"defaults": {
+				"job": "seamless_material",
+				"quality": "high",
+				"require_tileability": true
+			}
+		}
+	}
+}

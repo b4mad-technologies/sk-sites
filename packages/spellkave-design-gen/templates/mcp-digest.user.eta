@@ -1,0 +1,11 @@
+Write 1–3 sentences for <%= it.display_name %> that a model DM can read aloud at character creation.
+
+Rules:
+- Include the mechanical facts a player needs to choose the class (hit die, primary ability, armor/weapons).
+- Never use developer vocabulary (Caster Type, entity_def, seeded, Source: cache, pk=, IDENTITY).
+- No markdown.
+
+Facts:
+<% for (const [label, value] of Object.entries(it.core_traits)) { -%>
+<%= label %>: <%= value %>
+<% } -%>

@@ -1,0 +1,12 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://spellkave.com/schemas/metadata-docs-entry-v1.schema.json",
+	"title": "Spellkave website documentation entry attachment",
+	"type": "object",
+	"additionalProperties": false,
+	"required": ["page_id", "section_id"],
+	"properties": {
+		"page_id": { "type": "string", "minLength": 1 },
+		"section_id": { "type": "string", "minLength": 1 }
+	}
+}

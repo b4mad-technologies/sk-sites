@@ -1,0 +1,11 @@
+Write the opening 2–3 sentences a player would read at the start of the <%= it.display_name %> class chapter.
+
+Rules:
+- Use only the facts below. Do not invent setting lore, history, or gods.
+- Include primary ability and hit die so a reader can choose the class.
+- Never use developer vocabulary (Caster Type, entity_def, seeded, Source: cache, pk=).
+
+Facts:
+<% for (const [label, value] of Object.entries(it.core_traits)) { -%>
+<%= label %>: <%= value %>
+<% } -%>

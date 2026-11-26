@@ -1,0 +1,35 @@
+# Publication inventory; hostnames remain owned by Pulumi.
+schema_version = 1
+id = "website"
+kind = "first-party"
+status = "active"
+worker = "spellkave"
+hosts = ["spellkave.com", "www.spellkave.com"]
+needs = ["api", "mcp", "r2"]
+auth_callback = "/auth/callback"
+
+auth_logout = "/"
+
+[build]
+package = "@spellkave/website"
+runner = "nx"
+tasks = ["ci-app"]
+
+[build.env_vars]
+VITE_SPELLKAVE_PUBLIC_SITE_URL = "SPELLKAVE_PUBLIC_SITE_URL"
+VITE_SPELLKAVE_API_URL = "SPELLKAVE_API_URL"
+VITE_SPELLKAVE_PLAY_URL = "SPELLKAVE_PLAY_URL"
+VITE_WORKOS_CLIENT_ID = "VITE_WORKOS_CLIENT_ID"
+VITE_WORKOS_ISSUER = "VITE_WORKOS_ISSUER"
+VITE_SPELLKAVE_LOGIN_ORIGIN = "VITE_SPELLKAVE_LOGIN_ORIGIN"
+
+[[smoke]]
+path = "/"
+status = 200
+
+# Observe before enforcing: per-app browser qualification is a separate rollout.
+[csp]
+mode = "report-only"
+connect = ["'self'", "https://login.spellkave.com", "https://api.workos.com", "https://faithful-century-17.authkit.app", "https://api.spellkave.com", "https://mcp.spellkave.com", "https://pub-ea8569d32ce14599a073902fa19300fb.r2.dev"]
+images = ["'self'", "data:", "blob:"]
+fonts = ["'self'"]

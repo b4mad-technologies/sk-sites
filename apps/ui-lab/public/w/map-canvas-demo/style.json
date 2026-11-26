@@ -1,0 +1,12 @@
+{
+	"version": 8,
+	"name": "map-canvas ui-lab fixture",
+	"sources": {},
+	"layers": [
+		{
+			"id": "background",
+			"type": "background",
+			"paint": { "background-color": "#dfe6e9" }
+		}
+	]
+}

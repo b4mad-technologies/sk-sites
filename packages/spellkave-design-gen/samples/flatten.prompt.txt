@@ -1,0 +1,19 @@
+System:
+You write player-facing class summaries for a 5e-compatible game. Follow the user rules exactly. Output only the summary text.
+
+User:
+Flatten the Barbarian Core Traits table into ONE paragraph, table order, period-joined sentences.
+
+Rules:
+- Labels and values must match the facts byte-for-byte (spell out Strength, not STR).
+- Do not invent lore, caster type, source pointers, ids, or implementation notes.
+- No markdown, no bullets, no leading class name restatement beyond the first label.
+
+Facts:
+Primary Ability: Strength
+Hit Point Die: D12 per Barbarian level
+Saving Throw Proficiencies: Strength and Constitution
+Skill Proficiencies: Choose 2: Animal Handling, Athletics, Intimidation, Nature, Perception, or Survival
+Weapon Proficiencies: Simple and Martial weapons
+Armor Training: Light and Medium armor and Shields
+Starting Equipment: Choose A or B: (A) Greataxe, 4 Handaxes, Explorer's Pack, and 15 GP; or (B) 75 GP

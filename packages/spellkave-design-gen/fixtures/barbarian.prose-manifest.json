@@ -1,0 +1,23 @@
+{
+	"schema": "spellkave-prose-manifest/v1",
+	"output_dir": "prose-generations/barbarian",
+	"entries": [
+		{
+			"id": "srd/class/barbarian",
+			"display_name": "Barbarian",
+			"prompt_id": "flatten",
+			"model": "openai/gpt-4o-mini",
+			"core_traits": {
+				"Primary Ability": "Strength",
+				"Hit Point Die": "D12 per Barbarian level",
+				"Saving Throw Proficiencies": "Strength and Constitution",
+				"Skill Proficiencies": "Choose 2: Animal Handling, Athletics, Intimidation, Nature, Perception, or Survival",
+				"Weapon Proficiencies": "Simple and Martial weapons",
+				"Armor Training": "Light and Medium armor and Shields",
+				"Starting Equipment": "Choose A or B: (A) Greataxe, 4 Handaxes, Explorer's Pack, and 15 GP; or (B) 75 GP"
+			},
+			"must_include": ["Strength", "D12", "Constitution", "Greataxe"],
+			"must_not": ["Caster Type", "Source:", "pk=", "seeded", "entity_def", "IDENTITY"]
+		}
+	]
+}

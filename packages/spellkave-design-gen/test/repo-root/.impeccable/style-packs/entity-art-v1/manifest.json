@@ -1,0 +1,86 @@
+{
+	"schema": "spellkave-style-pack/v1",
+	"id": "entity-art-v1",
+	"status": "pilot",
+	"description": "Theme-neutral entity art for Spellkave: one sprite set readable on Living Grammar, Loom Paper, and Worlds in Motion. Mid-contrast cream, charcoal, muted gold, forest, and rust. Stills via Pixen then reduce-colors onto this palette; Bitforge only after a per-kind sheet; create-character-v3 reserved for facings.",
+	"theme_id": "neutral",
+	"direction": "theme-neutral",
+	"palette": [
+		"#2a2d28",
+		"#e6dcc0",
+		"#c4a056",
+		"#5f7a58",
+		"#b85a42"
+	],
+	"canvas": {
+		"creature": 96,
+		"person": 96,
+		"item": 64,
+		"spell": 64,
+		"feat": 64,
+		"class_emblem": 96,
+		"species": 96,
+		"background": 64,
+		"skill": 64,
+		"divine_order": 64,
+		"note": "Tiny creatures (cellar rat) use 64 so the subject fills the canvas. Huge (adult red dragon) stays 96 unless review shows it needs 128."
+	},
+	"pixel_scale": "Generate at the final native pixel dimensions; display with nearest-neighbor scaling and never smooth or redraw accepted pixels.",
+	"outline": "selective outline",
+	"shading": "basic shading",
+	"detail": "medium detail",
+	"negative_direction": "No text, letters, words, numerals, logo, watermark, frame, baked background, scenery, photorealism, gloss, bloom, extreme black or white fills, or D&D branding. Transparent PNG only.",
+	"seed": 20260916,
+	"route": {
+		"stills": "create-image-pixen",
+		"palette_pass": "reduce-colors",
+		"kind_sheet": "create-image-bitforge",
+		"facings": "create-character-v3"
+	},
+	"prompt_templates": ".impeccable/style-packs/entity-art-v1/prompt-templates.json",
+	"references": [
+		{
+			"path": ".impeccable/style-packs/entity-art-v1/palette.png",
+			"sha256": "f210f22815b8eef225256d2b6d79613ecf0b4acecd6287f6b9d9cb17b350c35f",
+			"role": "reduce-colors palette",
+			"provenance": "Theme-neutral pack swatches"
+		},
+		{
+			"path": ".impeccable/style-packs/entity-art-v1/sheets/creature.png",
+			"sha256": "369d52dce8afac7f2279500b40f5de253b673699517aa4c34262eaa9c19b4933",
+			"role": "creature Bitforge style-sheet input",
+			"kind": "creature"
+		},
+		{
+			"path": ".impeccable/style-packs/entity-art-v1/sheets/item.png",
+			"sha256": "f60a41d26e04a49fa260a1da212ae398959350f6db43f23e1d0310e4449bf1c0",
+			"role": "item Bitforge style-sheet input",
+			"kind": "item"
+		},
+		{
+			"path": ".impeccable/style-packs/entity-art-v1/sheets/spell.png",
+			"sha256": "2afc064f3be4b1afe3600f616bcce144462e81d63de5a994aa06530112e4175b",
+			"role": "spell Bitforge style-sheet input",
+			"kind": "spell"
+		},
+		{
+			"path": ".impeccable/style-packs/entity-art-v1/sheets/feat.png",
+			"sha256": "5b0250674e645e277a950f7e68cedf6c0beacfc8add9f2ee787b3bd22f51c5d4",
+			"role": "feat Bitforge style-sheet input",
+			"kind": "feat"
+		},
+		{
+			"path": ".impeccable/style-packs/entity-art-v1/sheets/class_emblem.png",
+			"sha256": "af55e20394905e38630707c76867d42d741890aee0408a32acbc2f9e2c25a865",
+			"role": "class_emblem Bitforge style-sheet input",
+			"kind": "class_emblem"
+		},
+		{
+			"path": ".impeccable/style-packs/entity-art-v1/sheets/person.png",
+			"sha256": "67c41713d4ba2317c482d74511306130980c269a914d76886d957c483aa02b13",
+			"role": "person Bitforge style-sheet input",
+			"kind": "person"
+		}
+	],
+	"promotion_gate": "Side-by-side review of the kind sheet plus provenance and output-rights acceptance is required before package ingest. Do not ingest a Pixen still that skipped reduce-colors."
+}

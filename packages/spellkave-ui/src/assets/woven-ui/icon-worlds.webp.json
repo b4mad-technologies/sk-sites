@@ -1,0 +1,20 @@
+{
+	"useCase": "pixel-icon",
+	"source": "pixellab-generations/woven-icons-v2/worlds/worlds.png",
+	"generator": {
+		"provider": "PixelLab",
+		"route": "/generate-image-pixflux",
+		"sdk": {
+			"package": "@pixellab-code/pixellab",
+			"version": "1.0.2",
+			"patch": "patches/@pixellab-code__pixellab@1.0.2.patch"
+		}
+	},
+	"prompt": "A single pixel-art icon of a small round world with hills, a river and a tower, woven-cloth look, midnight blue and aged gold with cream stitch highlights, centered, filling the canvas, no letters, no words, no watermark, no frame.",
+	"size": [64, 64],
+	"no_background": true,
+	"style_pack": ".impeccable/style-packs/woven-v1/manifest.json",
+	"sha256": "687025e270cbeb7b7d674301704fba656e773400da7169f66fa4eb960e8d2481",
+	"createdAt": "2026-09-02",
+	"license": "CC-BY-4.0"
+}

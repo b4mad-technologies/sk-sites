@@ -1,0 +1,74 @@
+{
+	"schema": "spellkave-prose-manifest/v1",
+	"output_dir": "packages/spellkave-design-gen/samples/.runs",
+	"entries": [
+		{
+			"id": "flatten/openai-gpt-4.1",
+			"display_name": "Barbarian",
+			"prompt_id": "flatten",
+			"model": "openai/gpt-4.1",
+			"core_traits": {
+				"Primary Ability": "Strength",
+				"Hit Point Die": "D12 per Barbarian level",
+				"Saving Throw Proficiencies": "Strength and Constitution",
+				"Skill Proficiencies": "Choose 2: Animal Handling, Athletics, Intimidation, Nature, Perception, or Survival",
+				"Weapon Proficiencies": "Simple and Martial weapons",
+				"Armor Training": "Light and Medium armor and Shields",
+				"Starting Equipment": "Choose A or B: (A) Greataxe, 4 Handaxes, Explorer's Pack, and 15 GP; or (B) 75 GP"
+			},
+			"must_include": ["Strength", "D12", "Constitution", "Greataxe"],
+			"must_not": ["Caster Type", "Source:", "pk=", "seeded", "entity_def", "IDENTITY"]
+		},
+		{
+			"id": "flatten/openai-gpt-4o",
+			"display_name": "Barbarian",
+			"prompt_id": "flatten",
+			"model": "openai/gpt-4o",
+			"core_traits": {
+				"Primary Ability": "Strength",
+				"Hit Point Die": "D12 per Barbarian level",
+				"Saving Throw Proficiencies": "Strength and Constitution",
+				"Skill Proficiencies": "Choose 2: Animal Handling, Athletics, Intimidation, Nature, Perception, or Survival",
+				"Weapon Proficiencies": "Simple and Martial weapons",
+				"Armor Training": "Light and Medium armor and Shields",
+				"Starting Equipment": "Choose A or B: (A) Greataxe, 4 Handaxes, Explorer's Pack, and 15 GP; or (B) 75 GP"
+			},
+			"must_include": ["Strength", "D12", "Constitution", "Greataxe"],
+			"must_not": ["Caster Type", "Source:", "pk=", "seeded", "entity_def", "IDENTITY"]
+		},
+		{
+			"id": "flatten/zai-glm-5.2",
+			"display_name": "Barbarian",
+			"prompt_id": "flatten",
+			"model": "zai/glm-5.2",
+			"core_traits": {
+				"Primary Ability": "Strength",
+				"Hit Point Die": "D12 per Barbarian level",
+				"Saving Throw Proficiencies": "Strength and Constitution",
+				"Skill Proficiencies": "Choose 2: Animal Handling, Athletics, Intimidation, Nature, Perception, or Survival",
+				"Weapon Proficiencies": "Simple and Martial weapons",
+				"Armor Training": "Light and Medium armor and Shields",
+				"Starting Equipment": "Choose A or B: (A) Greataxe, 4 Handaxes, Explorer's Pack, and 15 GP; or (B) 75 GP"
+			},
+			"must_include": ["Strength", "D12", "Constitution", "Greataxe"],
+			"must_not": ["Caster Type", "Source:", "pk=", "seeded", "entity_def", "IDENTITY"]
+		},
+		{
+			"id": "flatten/zai-glm-5.3",
+			"display_name": "Barbarian",
+			"prompt_id": "flatten",
+			"model": "zai/glm-5.3",
+			"core_traits": {
+				"Primary Ability": "Strength",
+				"Hit Point Die": "D12 per Barbarian level",
+				"Saving Throw Proficiencies": "Strength and Constitution",
+				"Skill Proficiencies": "Choose 2: Animal Handling, Athletics, Intimidation, Nature, Perception, or Survival",
+				"Weapon Proficiencies": "Simple and Martial weapons",
+				"Armor Training": "Light and Medium armor and Shields",
+				"Starting Equipment": "Choose A or B: (A) Greataxe, 4 Handaxes, Explorer's Pack, and 15 GP; or (B) 75 GP"
+			},
+			"must_include": ["Strength", "D12", "Constitution", "Greataxe"],
+			"must_not": ["Caster Type", "Source:", "pk=", "seeded", "entity_def", "IDENTITY"]
+		}
+	]
+}

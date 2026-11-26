@@ -1,0 +1,27 @@
+# Publication inventory; hostnames remain owned by Pulumi.
+schema_version = 1
+id = "ui-lab"
+kind = "first-party"
+status = "active"
+worker = "spellkave-design"
+hosts = ["design.spellkave.com"]
+needs = []
+auth_callback = ""
+
+auth_logout = ""
+
+[build]
+package = "@spellkave/ui-lab"
+runner = "nx"
+tasks = ["ci-app"]
+
+[[smoke]]
+path = "/"
+status = 200
+
+# Observe before enforcing: per-app browser qualification is a separate rollout.
+[csp]
+mode = "report-only"
+connect = ["'self'"]
+images = ["'self'", "data:", "blob:"]
+fonts = ["'self'"]

@@ -1,0 +1,20 @@
+{
+	"useCase": "pixel-icon",
+	"source": "pixellab-generations/woven-icons-v2/chronicle/chronicle.png",
+	"generator": {
+		"provider": "PixelLab",
+		"route": "/generate-image-pixflux",
+		"sdk": {
+			"package": "@pixellab-code/pixellab",
+			"version": "1.0.2",
+			"patch": "patches/@pixellab-code__pixellab@1.0.2.patch"
+		}
+	},
+	"prompt": "A single pixel-art icon of a quill pen writing in an open ledger, woven-cloth look, midnight blue and aged gold with cream stitch highlights, centered, filling the canvas, no letters, no words, no watermark, no frame.",
+	"size": [64, 64],
+	"no_background": true,
+	"style_pack": ".impeccable/style-packs/woven-v1/manifest.json",
+	"sha256": "b5667ebef53bb3ab7304934aa5b163c184253ca66540664d9c43dc2e1fecd92a",
+	"createdAt": "2026-09-02",
+	"license": "CC-BY-4.0"
+}

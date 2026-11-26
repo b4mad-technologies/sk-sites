@@ -1,0 +1,15 @@
+{
+	"schema": "spellkave-woven-assets/v2",
+	"icons": {
+		"generator": "PixelLab PixFlux, 64x64, no background, style pack .impeccable/style-packs/woven-v1/manifest.json",
+		"blueprints": ".impeccable/mocks/pixellab/icons/",
+		"source_runs": "pixellab-generations/woven-icons-v2/<name>/manifest.json",
+		"rendering": "nearest-neighbour (image-rendering: pixelated), sizes are multiples of the 64px grid where possible"
+	},
+	"textures": {
+		"midnight": "texture-midnight.webp (seamless, shared with apps/website/public/assets/impeccable/midnight-jacquard-texture.webp)",
+		"paper": "texture-paper.webp (seamless, shared with apps/website/public/assets/impeccable/loom-paper-texture.webp)"
+	},
+	"ornaments": "Dividers and corners are drawn as SVG geometry in WovenDivider.svelte and WovenCorner.svelte; the v1 raster crops were retired on 2026-09-02.",
+	"retired_v1": "Contact-sheet crops (icons, dividers, corners, gold texture) from woven-ui-kit-contact-sheet-v1.webp."
+}

@@ -1,0 +1,33 @@
+diff --git a/dist/index.d.ts b/dist/index.d.ts
+index f1c6eee525ec4bd6cad68e313aa759aec04f6071..5e052f707747c92539614965bab11cc26ff17716 100644
+--- a/dist/index.d.ts
++++ b/dist/index.d.ts
+@@ -264,4 +264,7 @@
+-interface PixfluxUsage {
++type PixfluxUsage = {
+     type: "usd";
+     usd: number;
+-}
++} | {
++    type: "generations";
++    generations: number;
++};
+diff --git a/dist/index.js b/dist/index.js
+index 0882bd4ff60f803fd2b79d1c0d78f58573dee332..29963491f10adacb2338b29713e7c784e4df2ed1 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -269,4 +269,10 @@
+-var PixfluxUsageSchema = import_zod6.z.object({
+-  type: import_zod6.z.literal("usd"),
+-  usd: import_zod6.z.number()
+-});
++var PixfluxUsageSchema = import_zod6.z.union([
++  import_zod6.z.object({
++    type: import_zod6.z.literal("usd"),
++    usd: import_zod6.z.number()
++  }),
++  import_zod6.z.object({
++    type: import_zod6.z.literal("generations"),
++    generations: import_zod6.z.number()
++  })
++]);

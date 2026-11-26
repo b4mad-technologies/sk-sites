@@ -1,0 +1,21 @@
+@import "@spellkave/ui/styles.css";
+@source "./**/*.{svelte,ts}";
+@source "../../../packages/spellkave-map-canvas/src/**/*.{svelte,ts}";
+@source "../../../packages/spellkave-ui-widgets/src/**/*.{svelte,ts}";
+
+body {
+	background: var(--background);
+	color: var(--foreground);
+}
+
+.docs-prose :where(code):not(pre code) {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+		monospace;
+	font-size: 0.875em;
+}
+
+.docs-code pre,
+.docs-code code {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+		monospace;
+}

@@ -1,0 +1,38 @@
+{
+	"name": "@spellkave/ui-lab",
+	"version": "0.0.0",
+	"private": true,
+	"description": "design.spellkave.com — component documentation for the shared Spellkave design system.",
+	"type": "module",
+	"scripts": {
+		"dev": "vite --host 127.0.0.1",
+		"build": "vite build",
+		"preview": "vite preview --host 127.0.0.1",
+		"preview:worker": "pnpm run build && wrangler dev",
+		"deploy": "pnpm run typecheck && pnpm run build && wrangler deploy",
+		"test": "vitest run",
+		"typecheck": "svelte-check --tsconfig ./tsconfig.json"
+	},
+	"dependencies": {
+		"@fontsource-variable/newsreader": "^5.3.0",
+		"@spellkave/map-canvas": "workspace:*",
+		"@spellkave/ui-widgets": "workspace:*",
+		"@spellkave/ui": "workspace:*",
+		"maplibre-gl": "6.4.1",
+		"svelte": "^5.46.4"
+	},
+	"devDependencies": {
+		"@sveltejs/vite-plugin-svelte": "^7.1.2",
+		"@tailwindcss/vite": "^4.3.2",
+		"@testing-library/svelte": "^5.4.2",
+		"@types/node": "^24.12.4",
+		"jsdom": "^26.1.0",
+		"shiki": "^3.23.0",
+		"svelte-check": "^4.7.1",
+		"tailwindcss": "^4.3.2",
+		"typescript": "~5.9.3",
+		"vite": "~8.2.4",
+		"vitest": "^3.2.6",
+		"wrangler": "^4.73.0"
+	}
+}

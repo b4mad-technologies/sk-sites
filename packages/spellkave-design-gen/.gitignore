@@ -1,0 +1,8 @@
+prose-generations/
+dist/
+behaviour/**/.results/
+behaviour/**/.report/
+behaviour/.bin/
+
+# design-gen tests write a sample run log under the fixture root.
+test/repo-root/pixellab-generations/

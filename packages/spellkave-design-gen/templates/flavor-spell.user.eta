@@ -1,0 +1,6 @@
+Spell: <%= it.display_name %>
+
+SRD source (rules; do not quote):
+<%= it.core_traits.srd_text %>
+
+Write the website card blurb. Follow the system rules.

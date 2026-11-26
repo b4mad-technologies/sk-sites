@@ -1,0 +1,642 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+/* Theme faces. Each world owns a display face, a body face and a numeral face;
+ * the tokens below pick them per theme. Self-hosted through @fontsource. */
+@import "@fontsource-variable/newsreader";
+@import "@fontsource-variable/alegreya";
+@import "@fontsource/alegreya-sans/400.css";
+@import "@fontsource/alegreya-sans/500.css";
+@import "@fontsource/alegreya-sans/700.css";
+@import "@fontsource-variable/archivo/wdth.css";
+@import "@fontsource-variable/sometype-mono";
+@import "./themes/loom-paper.css";
+@import "./themes/worlds-in-motion.css";
+@source "../**/*.{svelte,ts}";
+
+@theme inline {
+	--font-sans: var(--font-body);
+	--font-mono: var(--font-code);
+	--radius-sm: calc(var(--radius) - 4px);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) + 4px);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-muted: var(--muted-surface);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-destructive: var(--destructive);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+}
+
+:root {
+	--radius: 0.18rem;
+	--ink: #0b1729;
+	--midnight: #091326;
+	--night: #0d1830;
+	--raised: #111d35;
+	--paper: #eee4cd;
+	--paper-ink: #192035;
+	--gold: #d3a342;
+	--gold-bright: #e6bb5a;
+	--line: #8e713d;
+	--muted: #c9c2ad;
+	--danger: #d46b54;
+	--background: var(--night);
+	--foreground: #efe6cf;
+	--card: var(--raised);
+	--card-foreground: var(--foreground);
+	--popover: var(--card);
+	--popover-foreground: var(--card-foreground);
+	--primary: var(--gold);
+	--primary-foreground: var(--night);
+	--secondary: #1a2943;
+	--secondary-foreground: var(--foreground);
+	--muted-surface: #17243c;
+	--muted-foreground: var(--muted);
+	--accent: #6e8b67;
+	--accent-foreground: #f8f1df;
+	--destructive: var(--danger);
+	--status-waiting: #5aa9e6;
+	--status-reconnecting: #e9d44d;
+	--border: var(--line);
+	--input: #6f6146;
+	--ring: var(--gold-bright);
+	--weave-gold:
+		repeating-linear-gradient(
+			45deg,
+			color-mix(in srgb, var(--primary-foreground) 18%, transparent) 0 1px,
+			transparent 1px 4px
+		),
+		repeating-linear-gradient(
+			-45deg,
+			color-mix(in srgb, var(--primary-foreground) 18%, transparent) 0 1px,
+			transparent 1px 4px
+		);
+	--weave-midnight:
+		repeating-linear-gradient(
+			45deg,
+			color-mix(in srgb, var(--primary) 18%, transparent) 0 1px,
+			transparent 1px 4px
+		),
+		repeating-linear-gradient(
+			-45deg,
+			color-mix(in srgb, var(--primary) 18%, transparent) 0 1px,
+			transparent 1px 4px
+		);
+	/* Type voices. The Two-Voice Rule: display carries world meaning, body carries operation. */
+	--font-display: "Newsreader Variable", Newsreader, Georgia, serif;
+	--font-body: Aptos, "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+	--font-code: "Sometype Mono Variable", ui-monospace, "SF Mono", Menlo, monospace;
+	--display-weight: 400;
+	--display-leading: 0.96;
+	--display-tracking: -0.035em;
+	--display-transform: uppercase;
+	--display-caps: normal;
+	--display-stretch: 100%;
+	--title-weight: 500;
+	--title-tracking: -0.025em;
+	--title-transform: none;
+	--label-tracking: 0.08em;
+	--label-transform: uppercase;
+	--label-caps: normal;
+	/* Control material. Living Grammar: loom-cards with a token weave hatch and a double stitch line. */
+	--control-fill-image:
+		linear-gradient(
+			color-mix(in srgb, var(--primary) 93%, transparent),
+			color-mix(in srgb, var(--primary) 93%, transparent)
+		),
+		var(--weave-gold);
+	/* Double stitch on the fill: a dark inner line, a gold gap, a second dark line. */
+	--control-fill-shadow:
+		inset 0 0 0 1px color-mix(in srgb, var(--primary-foreground) 55%, transparent),
+		inset 0 0 0 3px var(--primary),
+		inset 0 0 0 4px color-mix(in srgb, var(--primary-foreground) 45%, transparent);
+	--control-fill-border: color-mix(in srgb, var(--primary) 42%, var(--border));
+	--control-outline-image:
+		linear-gradient(
+			color-mix(in srgb, var(--background) 90%, transparent),
+			color-mix(in srgb, var(--background) 90%, transparent)
+		),
+		var(--weave-midnight);
+	/* Double stitch: a 1px gold border, a 2px ground gap, then a 1px inner gold line. */
+	--control-outline-shadow:
+		inset 0 0 0 2px var(--background),
+		inset 0 0 0 3px var(--primary);
+	--control-outline-border: var(--primary);
+	--control-shadow: 0 0.55rem 1.1rem color-mix(in srgb, var(--background) 72%, transparent);
+	--control-shadow-hover: 0 0.75rem 1.5rem color-mix(in srgb, var(--background) 78%, transparent);
+	--panel-active-image:
+		linear-gradient(
+			color-mix(in srgb, var(--card) 72%, transparent),
+			color-mix(in srgb, var(--card) 72%, transparent)
+		),
+		var(--weave-midnight);
+	/* Page materials. Themes point these at their own textures. */
+	--ground-image: none;
+	--ground-size: 512px;
+	--paper-image: none;
+	--paper-size: 512px;
+	--map-image: url("../assets/woven-ui/texture-midnight.webp");
+	--map-size: 10rem 10rem;
+	--rule-style: solid;
+	font-family: var(--font-body);
+	color: var(--foreground);
+	background: var(--background);
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+}
+
+@layer components {
+	/* Theme-aware type classes. Prefer these over hand-written font stacks so a
+	 * theme can change voice (weight, case, width) without touching markup. */
+	.sk-display {
+		font-family: var(--font-display);
+		font-weight: var(--display-weight);
+		font-stretch: var(--display-stretch);
+		line-height: var(--display-leading);
+		letter-spacing: var(--display-tracking);
+		text-transform: var(--display-transform);
+		font-variant-caps: var(--display-caps);
+		text-wrap: balance;
+	}
+
+	.sk-title {
+		font-family: var(--font-display);
+		font-weight: var(--title-weight);
+		font-stretch: var(--display-stretch);
+		line-height: 1.2;
+		letter-spacing: var(--title-tracking);
+		text-transform: var(--title-transform);
+	}
+
+	.sk-label {
+		font-family: var(--font-body);
+		font-size: 0.75rem;
+		font-weight: 600;
+		line-height: 1.25;
+		letter-spacing: var(--label-tracking);
+		text-transform: var(--label-transform);
+		font-variant-caps: var(--label-caps);
+	}
+
+	.sk-num {
+		font-family: var(--font-code);
+		font-variant-numeric: tabular-nums;
+	}
+
+	/* A scrolling stream (chat, feed, log). macOS overlay scrollbars ignore
+	 * scrollbar-gutter, so the end padding is real; the gutter covers classic
+	 * bars. The end padding keeps the newest row off the bottom edge.
+	 * No top padding (sk-jay0.1.8.110): a scrollport clips at its padding
+	 * box, so scrolled rows stay visible inside a top padding band and read
+	 * as text showing under whatever sits above the stream (the Table filter
+	 * bar). A gap above the stream is a margin on the host, outside the clip. */
+	.sk-stream-scroll {
+		overflow-y: auto;
+		padding-inline-end: 0.75rem;
+		padding-block: 0 0.5rem;
+		scrollbar-gutter: stable;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	min-width: 320px;
+	min-height: 100%;
+	scrollbar-color: var(--primary) var(--background);
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	min-height: 100svh;
+}
+
+button,
+input,
+textarea,
+select {
+	font: inherit;
+}
+
+::selection {
+	color: var(--background);
+	background: var(--ring);
+}
+
+:focus-visible {
+	outline: 2px solid var(--ring);
+	outline-offset: 4px;
+}
+
+.play-shell {
+	min-height: 100svh;
+	background-color: rgb(9 19 38 / 96%);
+	background-image: var(--woven-midnight);
+	background-size: 512px;
+	background-blend-mode: multiply;
+}
+
+.wordmark {
+	color: var(--gold);
+	font-family: var(--font-display);
+	font-size: 1.35rem;
+	letter-spacing: 0.14em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.world-name {
+	margin: 0;
+	color: var(--muted);
+	font-family: var(--font-display);
+}
+
+.chronicle-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+	color: #efe6cf;
+	text-decoration-color: transparent;
+	text-underline-offset: 0.35rem;
+	transition: color 180ms ease-out, text-decoration-color 180ms ease-out;
+}
+
+.chronicle-link:hover,
+.chronicle-link:focus-visible {
+	color: var(--gold-bright);
+	text-decoration-color: currentColor;
+}
+
+.threshold {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	min-height: calc(100svh - 4.5rem);
+	padding: 4rem 1.5rem;
+	text-align: center;
+}
+
+.threshold h1 {
+	max-width: 16ch;
+	margin: 1.5rem 0 0.75rem;
+	font-family: var(--font-display);
+	font-size: clamp(2.4rem, 7vw, 5.5rem);
+	font-weight: 500;
+	line-height: 0.98;
+	letter-spacing: -0.03em;
+}
+
+.threshold p {
+	max-width: 65ch;
+	margin: 0 0 1.5rem;
+	color: var(--muted);
+	line-height: 1.65;
+}
+
+.play-layout {
+	display: grid;
+	grid-template-columns: minmax(0, 1.45fr) minmax(20rem, 0.72fr);
+	width: min(100% - 2rem, 90rem);
+	margin: 0 auto;
+	padding: clamp(2rem, 5vw, 4.5rem) 0;
+}
+
+.map-column {
+	min-width: 0;
+	border: 1px solid var(--line);
+	background: var(--night);
+}
+
+.map-threshold {
+	position: relative;
+	min-height: 48rem;
+	overflow: hidden;
+	background: var(--ink);
+}
+
+.place-map,
+.place-map-canvas {
+	position: absolute;
+	inset: 0;
+}
+
+.place-map-label {
+	position: absolute;
+	top: 1.25rem;
+	left: 1.25rem;
+	max-width: calc(100% - 8rem);
+	padding: 0.7rem 0.9rem;
+	border: 1px solid var(--line);
+	color: #efe6cf;
+	background: rgb(5 13 27 / 94%);
+	box-shadow: 0 0.65rem 1.3rem rgb(0 0 0 / 28%);
+}
+
+.place-map-label strong,
+.place-map-label span {
+	display: block;
+}
+
+.place-map-label strong {
+	font-family: var(--font-display);
+	font-size: 1.05rem;
+}
+
+.place-map-label span {
+	margin-top: 0.15rem;
+	color: var(--muted);
+	font-size: 0.72rem;
+}
+
+.place-map-link {
+	position: absolute;
+	top: 5.7rem;
+	right: 1rem;
+	padding: 0.55rem 0.75rem;
+	border: 1px solid var(--line);
+	color: #efe6cf;
+	background: rgb(5 13 27 / 94%);
+	font-size: 0.75rem;
+	font-weight: 700;
+	text-underline-offset: 0.25rem;
+}
+
+.place-map-pin {
+	width: 1.3rem;
+	height: 1.3rem;
+	border: 0.22rem solid var(--gold-bright);
+	border-radius: 50%;
+	background: var(--midnight);
+	box-shadow: 0 0.35rem 0.8rem rgb(0 0 0 / 62%);
+}
+
+.maplibregl-ctrl-group {
+	border: 1px solid var(--line);
+	border-radius: 0;
+	background: rgb(5 13 27 / 94%);
+	box-shadow: 0 0.65rem 1.3rem rgb(0 0 0 / 28%);
+}
+
+.maplibregl-ctrl-group button + button {
+	border-top-color: var(--line);
+}
+
+.maplibregl-ctrl-group button .maplibregl-ctrl-icon {
+	filter: invert(91%) sepia(15%) saturate(474%);
+}
+
+.maplibregl-ctrl-attrib {
+	color: var(--paper-ink);
+}
+
+.scene-sheet {
+	position: absolute;
+	right: clamp(1rem, 3vw, 2rem);
+	bottom: clamp(1rem, 3vw, 2rem);
+	left: clamp(1rem, 3vw, 2rem);
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	align-items: end;
+	gap: 2rem;
+	padding: clamp(1.5rem, 3vw, 2.5rem);
+	border: 1px solid #b8944d;
+	color: var(--paper-ink);
+	background-color: rgb(238 228 205 / 96%);
+	background-image: var(--woven-paper);
+	background-size: 512px;
+	box-shadow: 0 1.2rem 3rem rgb(0 0 0 / 35%);
+}
+
+.hero-line,
+.rail-heading,
+.suggestion {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.rail-heading h2 {
+	margin: 0;
+	font-family: var(--font-display);
+	font-weight: 550;
+	letter-spacing: -0.025em;
+}
+
+.hero-line strong,
+.hero-line span {
+	display: block;
+}
+
+.hero-line strong {
+	font-family: var(--font-display);
+	font-size: 1rem;
+}
+
+.hero-line span {
+	margin-top: 0.25rem;
+	color: #5e543f;
+	font-size: 0.78rem;
+}
+
+.scene-copy {
+	grid-column: 1;
+	margin-top: 1.25rem;
+}
+
+.scene-copy h1 {
+	margin: 0;
+	font-family: var(--font-display);
+	font-size: clamp(2.65rem, 4.5vw, 5rem);
+	font-weight: 500;
+	line-height: 0.92;
+	letter-spacing: -0.03em;
+}
+
+.scene-copy p {
+	max-width: 58ch;
+	margin: 0.75rem 0 0;
+	color: #4c514b;
+	line-height: 1.55;
+}
+
+.scene-sheet > [data-slot="button"] {
+	grid-row: 1 / 3;
+	grid-column: 2;
+	align-self: end;
+}
+
+.action-sheet {
+	scroll-margin-top: 2rem;
+	padding: clamp(1.5rem, 3vw, 2.5rem);
+	border-top: 1px solid var(--line);
+	background: var(--night);
+}
+
+.action-sheet h2 {
+	margin: 0 0 1.25rem;
+	font-family: var(--font-display);
+	font-size: clamp(1.8rem, 3vw, 2.5rem);
+	font-weight: 550;
+}
+
+.suggestion {
+	margin: 0 0 1.25rem;
+	padding: 0.9rem 0;
+	border-top: 1px solid rgb(142 113 61 / 55%);
+	border-bottom: 1px solid rgb(142 113 61 / 55%);
+	color: var(--muted);
+	font-family: var(--font-display);
+}
+
+.choices {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
+.move-status {
+	margin: 1rem 0 0;
+	color: var(--gold-bright);
+	font-weight: 650;
+}
+
+.chronicle-rail {
+	padding: clamp(2rem, 4vw, 3.5rem);
+	border: 1px solid var(--line);
+	border-left: 0;
+	color: var(--paper-ink);
+	background-color: var(--paper);
+	background-image: var(--woven-paper);
+	background-size: 512px;
+}
+
+.rail-heading {
+	padding-bottom: 1rem;
+	border-bottom: 1px solid var(--line);
+}
+
+.rail-heading h2 {
+	font-size: clamp(2rem, 3vw, 3rem);
+	line-height: 1;
+}
+
+.chronicle-rail ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.chronicle-rail li {
+	padding: 1.1rem 0;
+	border-bottom: 1px solid rgb(112 91 48 / 45%);
+}
+
+.chronicle-rail li p {
+	margin: 0;
+	font-family: var(--font-display);
+	font-size: 1.05rem;
+	line-height: 1.45;
+}
+
+.chronicle-rail li span,
+.quiet {
+	color: #625944;
+	font-size: 0.82rem;
+}
+
+.chronicle-rail [data-slot="woven-divider"] {
+	display: block;
+	width: min(100%, 18rem);
+	margin: 2.5rem auto;
+}
+
+.rail-heading--world {
+	margin-top: 0.5rem;
+}
+
+.chronicle-link {
+	display: inline-flex;
+	margin-top: 1.5rem;
+	color: #634a16;
+	font-weight: 700;
+}
+
+@media (max-width: 840px) {
+	.world-name {
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	.play-layout {
+		grid-template-columns: 1fr;
+	}
+
+	.chronicle-rail {
+		border-top: 0;
+		border-left: 1px solid var(--line);
+	}
+}
+
+@media (max-width: 520px) {
+	.play-layout {
+		width: 100%;
+		padding: 0;
+	}
+
+	.map-column,
+	.chronicle-rail {
+		border-inline: 0;
+	}
+
+	.map-threshold {
+		min-height: 38rem;
+	}
+
+	.place-map-label {
+		top: 1rem;
+		left: 1rem;
+	}
+
+	.place-map-link {
+		display: none;
+	}
+
+	.scene-sheet {
+		grid-template-columns: 1fr;
+		gap: 1.25rem;
+		padding: 1.5rem;
+	}
+
+	.scene-sheet > [data-slot="button"] {
+		grid-row: auto;
+		grid-column: 1;
+		width: 100%;
+	}
+
+	.scene-copy h1 {
+		font-size: 3rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.chronicle-link {
+		transition: none;
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"schema": "spellkave-pixellab-blueprint/v1",
+	"id": "woven-empty-button",
+	"description": "One wide empty rectangular button frame made from pixel-jacquard woven cloth, midnight-blue center, aged-gold interlaced border, cream stitch highlights, symmetrical square corners, no letters, words, numerals, logo, or watermark.",
+	"image_size": { "width": 264, "height": 112 },
+	"output_directory": "pixellab-generations/woven-empty-button-v1",
+	"output_filename": "woven-empty-button.png",
+	"no_background": true,
+	"outline": "selective outline",
+	"shading": "basic shading",
+	"detail": "medium detail",
+	"color_image": "pixellab-pip-generations/woven-pilot-2026-08-24/woven-palette.png",
+	"style_pack": ".impeccable/style-packs/woven-v1/manifest.json",
+	"provenance": {
+		"license": "PixelLab output rights review required before promotion",
+		"source": "Spellkave Woven UI design-time generation"
+	}
+}

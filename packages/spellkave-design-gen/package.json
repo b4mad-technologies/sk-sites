@@ -1,0 +1,43 @@
+{
+	"name": "@spellkave/design-gen",
+	"version": "0.0.0",
+	"private": true,
+	"description": "Spellkave design-time generation CLI (`skgen`) for prose and catalog image generation.",
+	"type": "module",
+	"bin": {
+		"skgen": "./bin/skgen.js"
+	},
+	"main": "./src/index.ts",
+	"types": "./src/index.ts",
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"default": "./src/index.ts"
+		}
+	},
+	"files": [
+		"bin",
+		"src",
+		"templates",
+		"README.md"
+	],
+	"scripts": {
+		"clean": "rm -rf dist",
+		"build": "tsc",
+		"dev": "tsc --watch",
+		"typecheck": "tsc --noEmit",
+		"test": "vitest run"
+	},
+	"dependencies": {
+		"@pixellab-code/pixellab": "1.0.2",
+		"@earendil-works/pi-ai": "1.5.2",
+		"eta": "^4.6.0",
+		"tsx": "^4.19.2"
+	},
+	"devDependencies": {
+		"@types/node": "^24.12.4",
+		"typescript": "~5.9.3",
+		"vitest": "^3.2.6"
+	},
+	"license": "PolyForm-Shield-1.0.0"
+}

@@ -1,0 +1,336 @@
+{
+	"kinds": [
+		{
+			"kind": "spatial_niche_attachments",
+			"authored": 1,
+			"delivered": 0,
+			"undelivered": 1,
+			"witness": null
+		},
+		{
+			"kind": "action_definitions",
+			"authored": 442,
+			"delivered": 442,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "affordance_template_participants",
+			"authored": 4,
+			"delivered": 4,
+			"undelivered": 0,
+			"witness": "shown on the affordance_template page it belongs to"
+		},
+		{
+			"kind": "affordance_templates",
+			"authored": 458,
+			"delivered": 458,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "boundary_definitions",
+			"authored": 4,
+			"delivered": 4,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "bundles",
+			"authored": 1,
+			"delivered": 1,
+			"undelivered": 0,
+			"witness": "shown in the dm bundle's 'About this bundle' block"
+		},
+		{
+			"kind": "capability_definition_tag",
+			"authored": 290,
+			"delivered": 290,
+			"undelivered": 0,
+			"witness": "shown as a tag on the entry, and on the tag's own page where it has one"
+		},
+		{
+			"kind": "capability_definitions",
+			"authored": 266,
+			"delivered": 266,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "combat_grid_blueprints",
+			"authored": 1,
+			"delivered": 1,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "condition_definitions",
+			"authored": 101,
+			"delivered": 101,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "condition_remove_policy_definitions",
+			"authored": 1,
+			"delivered": 1,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "consequence_frame_writes",
+			"authored": 1176,
+			"delivered": 1176,
+			"undelivered": 0,
+			"witness": "shown on the consequence_template page it belongs to"
+		},
+		{
+			"kind": "consequence_templates",
+			"authored": 523,
+			"delivered": 523,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "containment_policy_definition",
+			"authored": 2,
+			"delivered": 2,
+			"undelivered": 0,
+			"witness": "shown in the srd bundle's 'About this bundle' block"
+		},
+		{
+			"kind": "dsl_macro_definitions",
+			"authored": 26,
+			"delivered": 26,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "economy_channel_definitions",
+			"authored": 5,
+			"delivered": 5,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "effect_definitions",
+			"authored": 9,
+			"delivered": 9,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "entity_definition_containment_policy",
+			"authored": 349,
+			"delivered": 349,
+			"undelivered": 0,
+			"witness": "shown on the entity_definition page it belongs to"
+		},
+		{
+			"kind": "entity_definition_equip_modifier",
+			"authored": 13,
+			"delivered": 13,
+			"undelivered": 0,
+			"witness": "shown on the entity_definition page it belongs to"
+		},
+		{
+			"kind": "entity_definition_initial_capability",
+			"authored": 113,
+			"delivered": 113,
+			"undelivered": 0,
+			"witness": "shown on the entity_definition page it belongs to"
+		},
+		{
+			"kind": "entity_definition_initial_equipment",
+			"authored": 308,
+			"delivered": 308,
+			"undelivered": 0,
+			"witness": "shown on the entity_definition page it belongs to"
+		},
+		{
+			"kind": "entity_definition_initial_state",
+			"authored": 4815,
+			"delivered": 4815,
+			"undelivered": 0,
+			"witness": "shown on the entity_definition page it belongs to"
+		},
+		{
+			"kind": "entity_definition_item_dsl_source",
+			"authored": 466,
+			"delivered": 466,
+			"undelivered": 0,
+			"witness": "shown on the entity_definition page it belongs to"
+		},
+		{
+			"kind": "entity_definition_tag",
+			"authored": 14301,
+			"delivered": 14301,
+			"undelivered": 0,
+			"witness": "shown as a tag on the entry, and on the tag's own page where it has one"
+		},
+		{
+			"kind": "entity_definitions",
+			"authored": 2925,
+			"delivered": 2925,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "equipment_slot_definitions",
+			"authored": 3,
+			"delivered": 3,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "metadata_attachments",
+			"authored": 4086,
+			"delivered": 4086,
+			"undelivered": 0,
+			"witness": "shown as the entry's own provenance and attachments"
+		},
+		{
+			"kind": "metadata_namespaces",
+			"authored": 18,
+			"delivered": 18,
+			"undelivered": 0,
+			"witness": "shown in the dm bundle's 'About this bundle' block"
+		},
+		{
+			"kind": "modifier_target_definitions",
+			"authored": 54,
+			"delivered": 54,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "modifier_template_tag",
+			"authored": 87,
+			"delivered": 87,
+			"undelivered": 0,
+			"witness": "shown as a tag on the entry, and on the tag's own page where it has one"
+		},
+		{
+			"kind": "modifier_templates",
+			"authored": 114,
+			"delivered": 114,
+			"undelivered": 0,
+			"witness": "shown on the entity_definition page it belongs to"
+		},
+		{
+			"kind": "movement_defaults",
+			"authored": 1,
+			"delivered": 1,
+			"undelivered": 0,
+			"witness": "shown in the elven_mini bundle's 'About this bundle' block"
+		},
+		{
+			"kind": "niche_definitions",
+			"authored": 51,
+			"delivered": 51,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "object_state_definitions",
+			"authored": 2,
+			"delivered": 2,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "outcome_graph_nodes",
+			"authored": 10,
+			"delivered": 10,
+			"undelivered": 0,
+			"witness": "shown on the outcome_graph page it belongs to"
+		},
+		{
+			"kind": "outcome_graphs",
+			"authored": 10,
+			"delivered": 10,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "outcome_templates",
+			"authored": 465,
+			"delivered": 465,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "resource_definition_tag",
+			"authored": 32,
+			"delivered": 32,
+			"undelivered": 0,
+			"witness": "shown as a tag on the entry, and on the tag's own page where it has one"
+		},
+		{
+			"kind": "resource_definitions",
+			"authored": 81,
+			"delivered": 81,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "roll_table_entries",
+			"authored": 23,
+			"delivered": 23,
+			"undelivered": 0,
+			"witness": "shown on the roll_table page it belongs to"
+		},
+		{
+			"kind": "roll_tables",
+			"authored": 7,
+			"delivered": 7,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "session_definitions",
+			"authored": 2,
+			"delivered": 2,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "spatial_state_definitions",
+			"authored": 13,
+			"delivered": 13,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "stacking_discipline_definitions",
+			"authored": 1,
+			"delivered": 1,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "tag_capability_grant",
+			"authored": 121,
+			"delivered": 121,
+			"undelivered": 0,
+			"witness": "listed on the tag's page and on the capability it grants"
+		},
+		{
+			"kind": "tag_value_definitions",
+			"authored": 875,
+			"delivered": 875,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		},
+		{
+			"kind": "trace_kind_definitions",
+			"authored": 10,
+			"delivered": 10,
+			"undelivered": 0,
+			"witness": "rendered as its own catalogue page"
+		}
+	],
+	"authored": 32666,
+	"delivered": 32665,
+	"undelivered": 1
+}

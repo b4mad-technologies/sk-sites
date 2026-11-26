@@ -1,0 +1,33 @@
+Required Notice: Copyright (c) 2026 B4mad Technologies
+
+Original code in this repository is licensed under the PolyForm Shield
+License 1.0.0 (LICENSE). First-party images are licensed under CC BY 4.0
+(ART.md). Third-party material keeps its own terms:
+
+- apps/ui-lab/src/docs: documentation layout ported from the Bits UI
+  documentation site under the MIT License. See
+  apps/ui-lab/src/docs/LICENSE-bits-ui.md.
+- vendor/impeccable/design-parser.mjs: DESIGN.md parser from the impeccable
+  skill (pbakaus/impeccable) under the Apache License 2.0. See
+  vendor/impeccable/LICENSE.
+- Fonts are installed from npm (@fontsource packages) under their own
+  licences and are not vendored here.
+
+Images
+
+First-party images are licensed under CC BY 4.0. See ART.md for the scope
+and the image list.
+
+Some images were generated with PixelLab. PixelLab's terms restrict using its outputs to train other models; that restriction may apply to you.
+
+Content shown by the website
+
+The website renders game content from sk-content. That content carries its
+own licences and credits in sk-content. The website reproduces the required
+SRD credit on its attribution page:
+
+     This work includes material from the System Reference Document 5.2.1
+     ("SRD 5.2.1") by Wizards of the Coast LLC, available at
+     https://www.dndbeyond.com/srd. The SRD 5.2.1 is licensed under the
+     Creative Commons Attribution 4.0 International License, available at
+     https://creativecommons.org/licenses/by/4.0/legalcode.

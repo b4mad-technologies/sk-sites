@@ -1,0 +1,11 @@
+Flatten the <%= it.display_name %> Core Traits table into ONE paragraph, table order, period-joined sentences.
+
+Rules:
+- Labels and values must match the facts byte-for-byte (spell out Strength, not STR).
+- Do not invent lore, caster type, source pointers, ids, or implementation notes.
+- No markdown, no bullets, no leading class name restatement beyond the first label.
+
+Facts:
+<% for (const [label, value] of Object.entries(it.core_traits)) { -%>
+<%= label %>: <%= value %>
+<% } -%>

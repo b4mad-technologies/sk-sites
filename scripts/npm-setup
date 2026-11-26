@@ -1,0 +1,104 @@
+#!/usr/bin/env node
+// Copied from sk-sdk scripts/npm-setup. First-time npm setup only; see README.
+
+import { spawnSync } from "node:child_process";
+import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { setTimeout } from "node:timers/promises";
+import { fileURLToPath } from "node:url";
+import { npmPackages } from "./lib/npm-packages.mjs";
+
+const root = fileURLToPath(new URL("..", import.meta.url));
+const registry = "https://registry.npmjs.org/";
+const packages = npmPackages.map(({ name }) => `@spellkave/${name}`);
+
+function run(command, args, options = {}) {
+	const result = spawnSync(command, args, { stdio: "inherit", encoding: "utf8", ...options });
+	if (result.error) throw new Error(`Could not run ${command}: ${result.error.message}`);
+	return result;
+}
+
+function bootstrap() {
+	if (!process.env.NPM_TOKEN) throw new Error("Set NPM_TOKEN to run bootstrap");
+	const staging = mkdtempSync(join(tmpdir(), "sk-sites-npm-setup-"));
+	try {
+		const userconfig = join(staging, "npmrc");
+		writeFileSync(userconfig, '//registry.npmjs.org/:_authToken=${NPM_TOKEN}\n', { mode: 0o600 });
+		const npmOptions = ["--registry", registry, "--userconfig", userconfig];
+		const missing = new Set();
+		for (const name of packages) {
+			const view = run("npm", ["view", name, "name", "--json", "--prefer-online", "--tag", "latest", ...npmOptions], {
+				cwd: staging,
+				stdio: ["ignore", "pipe", "ignore"],
+			});
+			if (view.status === 0) {
+				console.log(`Skipping ${name}: already exists`);
+				continue;
+			}
+			const response = view.stdout.trim() ? JSON.parse(view.stdout) : {};
+			if (response.error?.code !== "E404") {
+				throw new Error(`npm view failed for ${name} (${response.error?.code ?? view.signal ?? view.status})`);
+			}
+			missing.add(name);
+		}
+		if (missing.size === 0) return;
+
+		const buildOptions = { cwd: root, env: { ...process.env } };
+		delete buildOptions.env.NPM_TOKEN;
+		const packed = run(process.execPath, ["scripts/pack-npm.mjs", "0.0.0-bootstrap", staging], {
+			...buildOptions,
+			stdio: ["ignore", "pipe", "inherit"],
+		});
+		if (packed.status !== 0) throw new Error("Packing failed");
+		const tarballs = JSON.parse(packed.stdout);
+		for (const [index, name] of packages.entries()) {
+			if (!missing.has(name)) continue;
+			const publish = run("npm", ["publish", join(staging, tarballs[index]), "--ignore-scripts",
+				"--access", "public", "--tag", "bootstrap", ...npmOptions], { cwd: staging });
+			if (publish.status !== 0) throw new Error(`Bootstrap publish failed for ${name}`);
+		}
+	} finally {
+		rmSync(staging, { recursive: true, force: true });
+	}
+}
+
+async function trust() {
+	const options = { cwd: root, env: { ...process.env } };
+	delete options.env.NPM_TOKEN;
+	// npm needs a terminal on both stdin and stdout to complete web 2FA.
+	const first = run("npm", ["trust", "list", packages[0], "--registry", registry], options);
+	if (first.status !== 0) throw new Error(`Interactive npm trust list failed for ${packages[0]}`);
+	for (const name of packages) {
+		await setTimeout(2000);
+		const existing = run("npm", ["trust", "list", name, "--json", "--registry", registry], {
+			...options,
+			stdio: ["inherit", "pipe", "inherit"],
+		});
+		if (existing.status !== 0) throw new Error(`npm trust list failed for ${name}`);
+		// npm emits no JSON when the package has no configured publisher.
+		const output = existing.stdout.trim();
+		if (output && output !== "[]") {
+			console.log(`Skipping ${name}: trusted publisher already configured`);
+			continue;
+		}
+		await setTimeout(2000);
+		const created = run("npm", ["trust", "github", name, "--file", "npm-release.yml", "--repo",
+			"b4mad-technologies/sk-sites", "--allow-publish", "-y", "--registry", registry], options);
+		if (created.status !== 0) throw new Error(`Trust setup failed for ${name}`);
+	}
+}
+
+try {
+	const args = process.argv.slice(2);
+	if (args.length === 1 && args[0] === "bootstrap") {
+		bootstrap();
+	} else if (args.length === 1 && args[0] === "trust") {
+		await trust();
+	} else {
+		throw new Error("Usage: scripts/npm-setup <bootstrap|trust>");
+	}
+} catch (error) {
+	console.error(error.message);
+	process.exitCode = 1;
+}

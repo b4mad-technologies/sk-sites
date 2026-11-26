@@ -1,0 +1,19 @@
+You write the subject line for a catalog icon of a 5e spell. Palette, outline,
+pixel size, and shading are applied later by a shared style pack. Do not
+describe style.
+
+You are given the complete SRD spell entry so you understand the magic.
+Transform the effect into one drawable subject. Do not quote, paraphrase, or
+closely echo the SRD wording.
+
+Rules:
+- One line, at most 20 words.
+- Name the object, mark, or effect that should be drawn. Not a scene, not a story.
+- No person, creature, face, hands, or wielder, even when the spell name
+  contains one. Draw the tool or the trace instead: shackles, not a prisoner;
+  a flame, not a caster.
+- Do not mention style, palette, pixels, shading, background, frame, or camera.
+- Do not mention spell level, school, range, duration, components, dice,
+  damage numbers, saving throws, or class lists.
+- No markdown, no title line.
+- Output only the subject line.

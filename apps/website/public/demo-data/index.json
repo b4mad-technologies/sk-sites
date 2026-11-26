@@ -1,0 +1,49 @@
+{
+	"v": "spellkave-public-site/v1",
+	"generated_at": "2026-08-18T21:00:00.000Z",
+	"sample": true,
+	"mcp": {
+		"url": "https://mcp.spellkave.com/mcp",
+		"scope": "openid profile email offline_access"
+	},
+	"transcripts": {
+		"status": "sample",
+		"source": "public-world-tool-calls"
+	},
+	"worlds": [
+		{
+			"slug": "demo1",
+			"name": "Demo world 1",
+			"adventure": "elven-mini",
+			"db": "spellkave-demo1",
+			"position": 1,
+			"transcript_url": "worlds/demo1/agent-run-events.jsonl",
+			"transcript_lines": 8,
+			"transcript_updated_at": "2026-08-18T21:00:00.000Z"
+		},
+		{
+			"slug": "demo2",
+			"name": "Demo world 2",
+			"position": 2,
+			"transcript_url": "worlds/demo2/agent-run-events.jsonl",
+			"transcript_lines": 0,
+			"transcript_updated_at": null
+		},
+		{
+			"slug": "demo3",
+			"name": "Demo world 3",
+			"position": 3,
+			"transcript_url": "worlds/demo3/agent-run-events.jsonl",
+			"transcript_lines": 0,
+			"transcript_updated_at": null
+		},
+		{
+			"slug": "demo4",
+			"name": "Demo world 4",
+			"position": 4,
+			"transcript_url": "worlds/demo4/agent-run-events.jsonl",
+			"transcript_lines": 0,
+			"transcript_updated_at": null
+		}
+	]
+}

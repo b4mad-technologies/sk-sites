@@ -1,0 +1,6 @@
+Feat: <%= it.display_name %>
+
+SRD source (rules; do not quote):
+<%= it.core_traits.srd_text %>
+
+Write the icon subject line. Follow the system rules.

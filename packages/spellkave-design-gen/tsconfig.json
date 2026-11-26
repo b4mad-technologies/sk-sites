@@ -1,0 +1,16 @@
+{
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"rootDir": "src",
+		"outDir": "dist",
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"exactOptionalPropertyTypes": false,
+		"noUncheckedIndexedAccess": false,
+		"lib": ["ES2022", "DOM"],
+		"types": ["node"]
+	},
+	"include": ["src/**/*"],
+	// Needs @spellkave/behaviour (sk-sdk, not on npm yet); see vitest.config.ts.
+	"exclude": ["src/behaviour-docs.test.ts"]
+}

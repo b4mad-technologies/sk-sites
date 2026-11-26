@@ -1,0 +1,6 @@
+/dist/
+/.wrangler/
+.env
+.env.local
+/public/compendium/
+/public/srd-art/

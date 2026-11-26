@@ -1,0 +1,90 @@
+/* loom-paper — The Living Chronicle.
+ *
+ * World: a campaign journal being written while you watch. Rag paper ground,
+ * iron-gall ink, a rust stamp for the action, pressed-sage secondary, and
+ * hairline sepia rules. Controls are stamped and ruled, never hatched. Type
+ * speaks in Alegreya (calligraphic serif) with Alegreya Sans for operation;
+ * labels are small caps rather than tracked uppercase.
+ *
+ * Lineage (recorded direction card "The Living Chronicle",
+ * .impeccable/direction-website.json): campaign journals, illuminated
+ * chronicles, annotated play records.
+ *
+ * WCAG 2.2 contrast (relative luminance):
+ *   foreground #1c1a15 / background #eee4c8 = 13.9:1
+ *   primary-foreground #f7efdc / primary #a5452d = 5.7:1
+ *   muted-foreground #5f5748 / background #eee4c8 = 6.4:1
+ */
+:root[data-theme="loom-paper"] {
+	--radius: 0;
+	--background: #eee4c8;
+	--foreground: #1c1a15;
+	--card: #f5edd6;
+	--card-foreground: #1c1a15;
+	--popover: #f7f0dc;
+	--popover-foreground: #1c1a15;
+	--primary: #a5452d;
+	--primary-foreground: #f7efdc;
+	--secondary: #e2d5b2;
+	--secondary-foreground: #1c1a15;
+	--muted: #5f5748;
+	--muted-surface: #e5d9ba;
+	--muted-foreground: #5f5748;
+	--accent: #6f8d61;
+	--accent-foreground: #f7efdc;
+	--destructive: #8d2b1d;
+	--status-waiting: #22699e;
+	--status-reconnecting: #8a6d00;
+	--border: #8b7c5c;
+	--input: #8b7c5c;
+	--ring: #a5452d;
+	/* Reading surface is the page itself. */
+	--paper: #f5edd6;
+	--paper-ink: #1c1a15;
+	--ink: #1c1a15;
+	--line: #8b7c5c;
+	--gold: #a5452d;
+	--gold-bright: #c2573a;
+	--font-display: "Alegreya Variable", Alegreya, "Iowan Old Style", Georgia, serif;
+	--font-body: "Alegreya Sans", "Gill Sans", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+	--font-code: "Sometype Mono Variable", ui-monospace, "SF Mono", Menlo, monospace;
+	--display-weight: 500;
+	--display-leading: 1.02;
+	--display-tracking: -0.02em;
+	--display-transform: none;
+	--display-caps: normal;
+	--display-stretch: 100%;
+	--title-weight: 600;
+	--title-tracking: -0.01em;
+	--title-transform: none;
+	--label-tracking: 0.06em;
+	--label-transform: lowercase;
+	--label-caps: small-caps;
+	/* No weave in a journal. */
+	--weave-gold: none;
+	--weave-midnight: none;
+	/* Stamped controls: a rust block with a cream register line inside; the
+	 * outline is a ruled paper plate with a single ink line. */
+	--control-fill-image: none;
+	--control-fill-shadow:
+		inset 0 0 0 2px var(--primary),
+		inset 0 0 0 3px color-mix(in srgb, var(--primary-foreground) 70%, transparent);
+	--control-fill-border: var(--primary);
+	--control-outline-image: none;
+	--control-outline-shadow:
+		inset 0 0 0 1px var(--card),
+		inset 0 0 0 2px var(--foreground);
+	--control-outline-border: var(--foreground);
+	--control-shadow: 0 1px 0 color-mix(in srgb, var(--foreground) 22%, transparent);
+	--control-shadow-hover: 0 2px 0 color-mix(in srgb, var(--foreground) 30%, transparent);
+	--panel-active-image: none;
+	/* Rag paper: one seamless tile carries both the page ground and the sheets. */
+	--ground-image: url("../../assets/chronicle/rag-paper.webp");
+	--ground-size: 32rem;
+	--paper-image: url("../../assets/chronicle/rag-paper.webp");
+	--paper-size: 32rem;
+	--map-image: url("../../assets/chronicle/map-fragment.webp");
+	--map-size: cover;
+	--rule-style: double;
+	color-scheme: light;
+}

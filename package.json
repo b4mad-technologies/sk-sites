@@ -1,0 +1,25 @@
+{
+  "name": "sk-sites",
+  "version": "0.1.0",
+  "private": true,
+  "license": "PolyForm-Shield-1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=24.22.1 <25"
+  },
+  "packageManager": "pnpm@11.13.1",
+  "scripts": {
+    "build": "pnpm -r --if-present run build",
+    "typecheck": "pnpm -r --if-present run typecheck",
+    "test": "pnpm -r --workspace-concurrency=2 --if-present run test",
+    "test:pack": "rm -rf .local/npm && node scripts/pack-npm.mjs 0.0.0-ci .local/npm && node scripts/check-packed-npm.mjs .local/npm"
+  },
+  "devDependencies": {
+    "@sveltejs/package": "2.5.8",
+    "@types/node": "^24.12.4",
+    "svelte": "^5.59.1",
+    "tsx": "^4.19.2",
+    "typescript": "~5.9.3",
+    "vitest": "^3.2.6"
+  }
+}

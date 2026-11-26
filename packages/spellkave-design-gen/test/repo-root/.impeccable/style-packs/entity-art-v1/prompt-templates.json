@@ -1,0 +1,171 @@
+{
+	"schema": "spellkave-art-prompt-templates/v1",
+	"id": "entity-art-v1",
+	"note": "Matches origin/art/provider-pipeline placeholder shape (kinds.<id>.provider, blueprint_schema, description, defaults). Extra slots: {{descriptors}}, {{boilerplate}}. Provider is pixellab-pixen per owner pick sk-jay0.3.5.20.",
+	"boilerplate": "Theme-neutral Spellkave pixel art: mid-contrast cream, charcoal, muted gold, forest, and rust. Selective outline, basic-to-medium shading, no gloss or bloom. Transparent background, no frame, no baked scenery, no letters, words, numerals, logo, watermark, photorealism, or D&D branding. Centered, native pixel size.",
+	"kinds": {
+		"creature": {
+			"provider": "pixellab-pixen",
+			"blueprint_schema": "spellkave-pixellab-entity-art-blueprint/v1",
+			"description": "{{name}}. {{descriptors}}. Full-body south-facing creature sprite, readable silhouette, one subject. {{boilerplate}}",
+			"defaults": {
+				"no_background": true,
+				"outline": "selective outline",
+				"shading": "basic shading",
+				"detail": "medium detail",
+				"view": "low top-down",
+				"direction": "south",
+				"seed": 20260916
+			}
+		},
+		"person": {
+			"provider": "pixellab-pixen",
+			"blueprint_schema": "spellkave-pixellab-entity-art-blueprint/v1",
+			"description": "{{name}}. {{descriptors}}. Full-body south-facing person sprite, travel-worn, readable face and kit, one subject. {{boilerplate}}",
+			"defaults": {
+				"no_background": true,
+				"outline": "selective outline",
+				"shading": "basic shading",
+				"detail": "medium detail",
+				"view": "low top-down",
+				"direction": "south",
+				"seed": 20260916
+			}
+		},
+		"item": {
+			"provider": "pixellab-pixen",
+			"blueprint_schema": "spellkave-pixellab-entity-art-blueprint/v1",
+			"description": "{{name}}. {{descriptors}}. Single item icon, no wielder, no hands, object only, centered. {{boilerplate}}",
+			"defaults": {
+				"no_background": true,
+				"outline": "selective outline",
+				"shading": "basic shading",
+				"detail": "medium detail",
+				"seed": 20260916
+			}
+		},
+		"spell": {
+			"provider": "pixellab-pixen",
+			"blueprint_schema": "spellkave-pixellab-entity-art-blueprint/v1",
+			"description": "{{name}}. {{descriptors}}. Isolated spell glyph of the magical effect itself, one symbol, no caster, no creature, no scenery, no weapon, no letters, centered. {{boilerplate}}",
+			"defaults": {
+				"no_background": true,
+				"outline": "selective outline",
+				"shading": "basic shading",
+				"detail": "medium detail",
+				"seed": 20260923
+			}
+		},
+		"feat": {
+			"provider": "pixellab-pixen",
+			"blueprint_schema": "spellkave-pixellab-entity-art-blueprint/v1",
+			"description": "{{name}}. {{descriptors}}. Isolated feat icon of the named benefit, one object or mark, no person, no armor, no heraldic shield, no letters, centered. {{boilerplate}}",
+			"defaults": {
+				"no_background": true,
+				"outline": "selective outline",
+				"shading": "basic shading",
+				"detail": "medium detail",
+				"seed": 20260923
+			}
+		},
+		"overlay": {
+			"provider": "pixellab-pixen",
+			"blueprint_schema": "spellkave-pixellab-entity-art-blueprint/v1",
+			"description": "{{name}} overlay. {{descriptors}}. Transparent 64x64 magic-item effect overlay only: flames, frost, runes, or sheen. Do not draw a weapon, armor, creature, or full object. No hilt, no blade body, no breastplate. Centered sparkle or aura that can sit on top of a base sprite. {{boilerplate}}",
+			"defaults": {
+				"no_background": true,
+				"outline": "selective outline",
+				"shading": "basic shading",
+				"detail": "medium detail",
+				"seed": 20260916
+			}
+		},
+		"badge": {
+			"provider": "pixellab-pixen",
+			"blueprint_schema": "spellkave-pixellab-entity-art-blueprint/v1",
+			"description": "{{descriptors}}. Bright core, high contrast, light cream 1px outline, no dark fill, no charcoal blob. Centered, isolated on transparent background, no weapon, no object, no ground, no frame, no text.",
+			"defaults": {
+				"no_background": true,
+				"outline": "single color outline",
+				"shading": "basic shading",
+				"detail": "medium detail",
+				"seed": 20260916
+			}
+		},
+		"class_emblem": {
+			"provider": "pixellab-pixen",
+			"blueprint_schema": "spellkave-pixellab-entity-art-blueprint/v1",
+			"description": "{{name}}. {{descriptors}}. Class emblem badge, geometric heraldry only, no face, no creature, no full figure, no letters, centered. {{boilerplate}}",
+			"defaults": {
+				"no_background": true,
+				"outline": "selective outline",
+				"shading": "basic shading",
+				"detail": "medium detail",
+				"seed": 20260916
+			}
+		},
+		"character_portrait": {
+			"provider": "pixellab-pixen",
+			"blueprint_schema": "spellkave-pixellab-entity-art-blueprint/v1",
+			"description": "{{identity}}. One full-body south-facing adventurer portrait, grounded travel-ready pose, readable silhouette, and at most one iconic implement. Show identity through silhouette, clothing, and stance; do not invent heraldry. No face close-up, scene, companions, letters, logos, or watermarks. {{boilerplate}}",
+			"defaults": {
+				"no_background": true,
+				"outline": "selective outline",
+				"detail": "medium detail",
+				"view": "low top-down",
+				"direction": "south",
+				"seed": 20260920
+			}
+		},
+		"species": {
+			"provider": "pixellab-pixen",
+			"blueprint_schema": "spellkave-pixellab-entity-art-blueprint/v1",
+			"description": "{{name}} adventurer. {{descriptors}}. One full-body south-facing humanoid adventurer standing upright with ordinary adventurer proportions, plain cream tunic, brown belt and boots, forest-green travel cloak, empty hands, no weapon. Show the people through body shape, face, ears, skin, and hair; do not invent heraldry. Not a monster, no hunched pose, no face close-up, scene, companions, letters, logos, or watermarks. {{boilerplate}}",
+			"defaults": {
+				"no_background": true,
+				"outline": "selective outline",
+				"shading": "basic shading",
+				"detail": "medium detail",
+				"view": "low top-down",
+				"direction": "south",
+				"seed": 20261116
+			}
+		},
+		"background": {
+			"provider": "pixellab-pixen",
+			"blueprint_schema": "spellkave-pixellab-entity-art-blueprint/v1",
+			"description": "{{name}}. {{descriptors}}. Isolated background icon, one object or mark, no person, no armor, no heraldic shield, no letters, centered. {{boilerplate}}",
+			"defaults": {
+				"no_background": true,
+				"outline": "selective outline",
+				"shading": "basic shading",
+				"detail": "medium detail",
+				"seed": 20261116
+			}
+		},
+		"skill": {
+			"provider": "pixellab-pixen",
+			"blueprint_schema": "spellkave-pixellab-entity-art-blueprint/v1",
+			"description": "{{name}}. {{descriptors}}. Isolated skill icon, one object or mark, no person, no armor, no heraldic shield, no letters, centered. {{boilerplate}}",
+			"defaults": {
+				"no_background": true,
+				"outline": "selective outline",
+				"shading": "basic shading",
+				"detail": "medium detail",
+				"seed": 20261116
+			}
+		},
+		"divine_order": {
+			"provider": "pixellab-pixen",
+			"blueprint_schema": "spellkave-pixellab-entity-art-blueprint/v1",
+			"description": "{{name}}. {{descriptors}}. Isolated divine order icon, one object or mark, no person, no letters, centered. {{boilerplate}}",
+			"defaults": {
+				"no_background": true,
+				"outline": "selective outline",
+				"shading": "basic shading",
+				"detail": "medium detail",
+				"seed": 20261116
+			}
+		}
+	}
+}

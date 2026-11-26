@@ -1,0 +1,74 @@
+{
+	"name": "@spellkave/ui-widgets",
+	"version": "0.1.0",
+	"private": true,
+	"description": "Display-only product widgets (Play tiles, map inspect, catalogue cards) shared by Spellkave browser apps.",
+	"license": "PolyForm-Shield-1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/b4mad-technologies/sk-sites.git",
+		"directory": "packages/spellkave-ui-widgets"
+	},
+	"type": "module",
+	"svelte": "./src/index.ts",
+	"main": "./src/index.ts",
+	"types": "./src/index.ts",
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"svelte": "./src/index.ts",
+			"default": "./src/index.ts"
+		},
+		"./ci-format": {
+			"types": "./src/ci-format.ts",
+			"default": "./src/ci-format.ts"
+		},
+		"./ci-types": {
+			"types": "./src/ci-types.ts",
+			"default": "./src/ci-types.ts"
+		},
+		"./catalogue": {
+			"types": "./src/catalogue/index.ts",
+			"svelte": "./src/catalogue/index.ts",
+			"default": "./src/catalogue/index.ts"
+		},
+		"./catalogue/first-sentence": {
+			"types": "./src/catalogue/first-sentence.ts",
+			"default": "./src/catalogue/first-sentence.ts"
+		},
+		"./reference-matching": {
+			"types": "./src/reference-matching/index.ts",
+			"default": "./src/reference-matching/index.ts"
+		}
+	},
+	"files": [
+		"src",
+		"README.md"
+	],
+	"scripts": {
+		"build": "svelte-check --tsconfig ./tsconfig.json",
+		"test": "vitest run",
+		"typecheck": "svelte-check --tsconfig ./tsconfig.json"
+	},
+	"peerDependencies": {
+		"svelte": "^5.0.0",
+		"tailwindcss": "^4.0.0"
+	},
+	"dependencies": {
+		"@spellkave/ui": "workspace:*"
+	},
+	"devDependencies": {
+		"@sveltejs/vite-plugin-svelte": "^7.1.2",
+		"@testing-library/svelte": "^5.4.2",
+		"@types/node": "^24.12.4",
+		"jsdom": "^26.1.0",
+		"svelte": "^5.46.4",
+		"svelte-check": "^4.7.1",
+		"typescript": "~5.9.3",
+		"vitest": "^3.2.6"
+	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	}
+}

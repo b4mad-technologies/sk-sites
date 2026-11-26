@@ -1,0 +1,20 @@
+{
+	"useCase": "pixel-icon",
+	"source": "pixellab-generations/woven-icons-v2/enter/enter.png",
+	"generator": {
+		"provider": "PixelLab",
+		"route": "/generate-image-pixflux",
+		"sdk": {
+			"package": "@pixellab-code/pixellab",
+			"version": "1.0.2",
+			"patch": "patches/@pixellab-code__pixellab@1.0.2.patch"
+		}
+	},
+	"prompt": "A single pixel-art icon of an open doorway with a lantern and a path leading in, woven-cloth look, midnight blue and aged gold with cream stitch highlights, centered, filling the canvas, no letters, no words, no watermark, no frame.",
+	"size": [64, 64],
+	"no_background": true,
+	"style_pack": ".impeccable/style-packs/woven-v1/manifest.json",
+	"sha256": "bc34b0644aa487de37d75654aa89e5af28d91181ae19b1dc308345e584a3a339",
+	"createdAt": "2026-09-02",
+	"license": "CC-BY-4.0"
+}

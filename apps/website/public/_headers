@@ -1,0 +1,11 @@
+# Generated from apps/website/app.toml; run app-generate-cli.ts --write.
+/*
+  Content-Security-Policy-Report-Only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://login.spellkave.com https://api.workos.com https://faithful-century-17.authkit.app https://api.spellkave.com https://mcp.spellkave.com https://pub-ea8569d32ce14599a073902fa19300fb.r2.dev; img-src 'self' data: blob:; font-src 'self'; worker-src 'self' blob:
+# Public, generated documentation only; never credentials/world data.
+/compendium/docs/references.json
+  Access-Control-Allow-Origin: *
+  X-Content-Type-Options: nosniff
+
+/compendium/docs/catalogue/*
+  Access-Control-Allow-Origin: *
+  X-Content-Type-Options: nosniff

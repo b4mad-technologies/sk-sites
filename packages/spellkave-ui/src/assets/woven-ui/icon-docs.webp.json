@@ -1,0 +1,20 @@
+{
+	"useCase": "pixel-icon",
+	"source": "pixellab-generations/woven-icons-v2/docs/docs.png",
+	"generator": {
+		"provider": "PixelLab",
+		"route": "/generate-image-pixflux",
+		"sdk": {
+			"package": "@pixellab-code/pixellab",
+			"version": "1.0.2",
+			"patch": "patches/@pixellab-code__pixellab@1.0.2.patch"
+		}
+	},
+	"prompt": "A single pixel-art icon of an open book with a bookmark ribbon, woven-cloth look, midnight blue and aged gold with cream stitch highlights, centered, filling the canvas, no letters, no words, no watermark, no frame.",
+	"size": [64, 64],
+	"no_background": true,
+	"style_pack": ".impeccable/style-packs/woven-v1/manifest.json",
+	"sha256": "f05368ba7e06f94fb0e975f2113e93a98a228ec633f299a05267df0c25c98e0e",
+	"createdAt": "2026-09-02",
+	"license": "CC-BY-4.0"
+}

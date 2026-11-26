@@ -1,0 +1,266 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://spellkave.com/schemas/metadata-docs-v1.schema.json",
+	"title": "Spellkave website documentation page metadata",
+	"type": "object",
+	"additionalProperties": false,
+	"required": ["version", "page_id", "title", "intro", "nav_group", "sections"],
+	"properties": {
+		"version": { "const": 1 },
+		"page_id": { "type": "string", "minLength": 1 },
+		"title": { "type": "string", "minLength": 1 },
+		"intro": { "type": "string" },
+		"nav_group": {
+			"description": "Which sidebar navigation group this page belongs to. Authored, not derived — every documentation page must pick one.",
+			"enum": ["adventure", "reference"]
+		},
+		"source_base": { "type": "string", "pattern": "^https://" },
+		"attributions": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"required": ["body", "source"],
+				"properties": {
+					"body": { "type": "string", "minLength": 1 },
+					"source": {
+						"type": "object",
+						"additionalProperties": false,
+						"required": ["path", "anchor", "license"],
+						"properties": {
+							"path": { "type": "string", "minLength": 1 },
+							"anchor": { "type": "string", "minLength": 1 },
+							"license": { "type": "string", "minLength": 1 }
+						}
+					}
+				}
+			}
+		},
+		"links": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"required": ["label", "kind", "ref"],
+				"properties": {
+					"label": { "type": "string", "minLength": 1 },
+					"kind": { "type": "string", "minLength": 1 },
+					"ref": { "type": "string", "minLength": 1 },
+					"section_id": { "type": "string", "minLength": 1 },
+					"autolink": {
+						"const": false,
+						"description": "Lookup-only target: listed for lookup by ref, never matched in prose."
+					}
+				}
+			}
+		},
+		"sections": {
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"required": ["id", "title", "intro"],
+				"not": {
+					"required": ["catalogue", "catalogue_content"],
+					"properties": { "catalogue": {}, "catalogue_content": {} }
+				},
+				"properties": {
+					"id": { "type": "string", "minLength": 1 },
+					"title": { "type": "string", "minLength": 1 },
+					"intro": { "type": "string" },
+					"catalogue": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"additionalProperties": false,
+							"required": ["kind", "ref", "family", "slug"],
+							"properties": {
+								"kind": { "type": "string", "minLength": 1 },
+								"ref": { "type": "string", "minLength": 1 },
+								"family": {
+									"type": "string",
+									"minLength": 1,
+									"pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+								},
+								"slug": {
+									"type": "string",
+									"minLength": 1,
+									"pattern": "^[A-Za-z0-9_-]+(?:/[A-Za-z0-9_-]+)*$"
+								},
+								"title": { "type": "string", "minLength": 1 },
+								"description": { "type": "string", "minLength": 1 },
+								"facts": {
+									"type": "array",
+									"items": {
+										"type": "object",
+										"additionalProperties": false,
+										"required": ["label", "value"],
+										"properties": {
+											"label": { "type": "string", "minLength": 1 },
+											"value": { "type": "string", "minLength": 1 },
+											"tag": { "type": "string", "minLength": 1 }
+										}
+									}
+								},
+								"tags": {
+									"type": "array",
+									"uniqueItems": true,
+									"items": { "type": "string", "minLength": 1 }
+								},
+								"source": {
+									"type": "object",
+									"additionalProperties": false,
+									"required": ["path", "anchor", "license"],
+									"properties": {
+										"path": { "type": "string", "minLength": 1 },
+										"anchor": { "type": "string", "minLength": 1 },
+										"license": { "type": "string", "minLength": 1 }
+									}
+								}
+							}
+						}
+					},
+					"catalogue_content": {
+						"type": "object",
+						"additionalProperties": false,
+						"required": ["source_path", "namespace", "id"],
+						"properties": {
+							"source_path": { "type": "string", "minLength": 1 },
+							"namespace": { "type": "string", "minLength": 1 },
+							"id": { "type": "string", "minLength": 1 }
+						}
+					},
+					"documents": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"additionalProperties": false,
+							"required": ["id", "ref", "slug", "family", "title"],
+							"oneOf": [
+								{
+									"required": ["body", "source"],
+									"properties": { "body": {}, "source": {}, "content": false }
+								},
+								{
+									"required": ["content"],
+									"properties": { "content": {}, "body": false, "source": false }
+								}
+							],
+							"properties": {
+								"id": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+								"ref": { "type": "string", "minLength": 1 },
+								"slug": {
+									"type": "string",
+									"minLength": 1,
+									"pattern": "^[A-Za-z0-9_-]+$"
+								},
+								"family": {
+									"type": "string",
+									"minLength": 1,
+									"pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+								},
+								"title": { "type": "string", "minLength": 1 },
+								"body": { "type": "string" },
+								"content": {
+									"type": "object",
+									"additionalProperties": false,
+									"required": ["source_path", "namespace", "id"],
+									"properties": {
+										"source_path": { "type": "string", "minLength": 1 },
+										"namespace": { "type": "string", "minLength": 1 },
+										"id": { "type": "string", "minLength": 1 }
+									}
+								},
+								"source": {
+									"type": "object",
+									"additionalProperties": false,
+									"required": ["path", "anchor", "license"],
+									"properties": {
+										"path": { "type": "string", "minLength": 1 },
+										"anchor": { "type": "string", "minLength": 1 },
+										"license": { "type": "string", "minLength": 1 }
+									}
+								},
+								"tags": {
+									"type": "array",
+									"uniqueItems": true,
+									"items": { "type": "string", "minLength": 1 }
+								},
+								"relations": {
+									"type": "array",
+									"uniqueItems": true,
+									"items": {
+										"type": "object",
+										"additionalProperties": false,
+										"required": ["kind", "ref"],
+										"properties": {
+											"kind": { "type": "string", "minLength": 1 },
+											"ref": { "type": "string", "minLength": 1 }
+										}
+									}
+								}
+							}
+						}
+					},
+					"pages": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"additionalProperties": false,
+							"required": ["id", "title"],
+							"oneOf": [
+								{
+									"required": ["body", "source"],
+									"properties": { "body": {}, "source": {}, "content": false }
+								},
+								{
+									"required": ["content"],
+									"properties": { "content": {}, "body": false, "source": false }
+								}
+							],
+							"properties": {
+								"id": {
+									"type": "string",
+									"minLength": 1,
+									"pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+								},
+								"title": { "type": "string", "minLength": 1 },
+								"featured_reference": {
+									"type": "object",
+									"additionalProperties": false,
+									"required": ["kind", "ref"],
+									"properties": {
+										"kind": { "enum": ["entity_definition", "entity", "resource_definition"] },
+										"ref": { "type": "string", "minLength": 1 }
+									}
+								},
+								"body": { "type": "string" },
+								"content": {
+									"type": "object",
+									"additionalProperties": false,
+									"required": ["source_path", "namespace", "id"],
+									"properties": {
+										"source_path": { "type": "string", "minLength": 1 },
+										"namespace": { "type": "string", "minLength": 1 },
+										"id": { "type": "string", "minLength": 1 }
+									}
+								},
+								"source": {
+									"type": "object",
+									"additionalProperties": false,
+									"required": ["path", "anchor", "license"],
+									"properties": {
+										"path": { "type": "string", "minLength": 1 },
+										"anchor": { "type": "string", "minLength": 1 },
+										"license": { "type": "string", "minLength": 1 }
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

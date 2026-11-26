@@ -1,0 +1,33 @@
+{
+	"name": "@spellkave/account",
+	"version": "0.0.0",
+	"private": true,
+	"description": "account.spellkave.com — the signed-in person's keys and identity.",
+	"type": "module",
+	"scripts": {
+		"dev": "vite --host 127.0.0.1 --port 5183",
+		"build": "vite build",
+		"preview": "vite preview --host 127.0.0.1 --port 5183",
+		"deploy": "pnpm run typecheck && pnpm run build && wrangler deploy",
+		"test": "vitest run",
+		"typecheck": "svelte-check --tsconfig ./tsconfig.json"
+	},
+	"dependencies": {
+		"@spellkave/authkit": "workspace:*",
+		"@spellkave/ui": "workspace:*",
+		"svelte": "^5.46.4"
+	},
+	"devDependencies": {
+		"@sveltejs/vite-plugin-svelte": "^7.1.2",
+		"@tailwindcss/vite": "^4.3.2",
+		"@testing-library/svelte": "^5.4.2",
+		"@types/node": "^24.12.4",
+		"jsdom": "^26.1.0",
+		"svelte-check": "^4.7.1",
+		"tailwindcss": "^4.3.2",
+		"typescript": "~5.9.3",
+		"vite": "~8.2.4",
+		"vitest": "^3.2.6",
+		"wrangler": "^4.73.0"
+	}
+}

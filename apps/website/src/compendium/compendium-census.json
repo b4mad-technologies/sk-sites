@@ -1,0 +1,30 @@
+{
+	"manifest_rows": {
+		"srd": 32666,
+		"elven_mini": 37186
+	},
+	"modifier_target_definitions": {
+		"srd_total": 54,
+		"attack_roll_occurrences": 9
+	},
+	"table_occurrences": {
+		"consequence_frame_writes": 3300,
+		"roll_table_entries": 23,
+		"place_edge_affordance": 9,
+		"place_node_traces": 1,
+		"entity_containment": 3
+	},
+	"docs_coverage": {
+		"rich_entries": 8158,
+		"technical_rows": 1,
+		"technical_metadata_envelopes": 21
+	},
+	"capability_grants": {
+		"backward": 128
+	},
+	"bundle_info": {
+		"srd_movement_defaults": 1,
+		"srd_metadata_namespaces": 18,
+		"elven_mini_movement_defaults": 1
+	}
+}

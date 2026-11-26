@@ -1,0 +1,7 @@
+Kind: <%= it.core_traits.kind %>
+Name: <%= it.display_name %>
+
+Notes (rules; do not quote file names, ids, or tickets):
+<%= it.core_traits.srd_text %>
+
+Write the glossary card. Follow the system rules.

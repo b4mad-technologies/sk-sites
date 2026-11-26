@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.svelte-kit/
+.wrangler/
+.vite/
+coverage/
+*.tsbuildinfo
+.DS_Store
+.vscode/
+.idea/
+*.swp
+.local/
