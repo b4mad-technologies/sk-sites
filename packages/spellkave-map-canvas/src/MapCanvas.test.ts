@@ -125,7 +125,7 @@ describe("MapCanvas — mode gates the surrounding chrome", () => {
 	it("medium: map container only, no search/floor/place-panel chrome", () => {
 		const { getByTestId, queryByTestId } = render(MapCanvas, {
 			gatewayOrigin: "https://gw.example",
-			slug: "elven-mini",
+			slug: "kavemouth",
 			token: "tok",
 			mode: "medium",
 		});
@@ -142,7 +142,7 @@ describe("MapCanvas — mode gates the surrounding chrome", () => {
 	it("full: search, floor picker, and the place aside are present", () => {
 		const { getByTestId } = render(MapCanvas, {
 			gatewayOrigin: "https://gw.example",
-			slug: "elven-mini",
+			slug: "kavemouth",
 			token: "tok",
 			mode: "full",
 		});

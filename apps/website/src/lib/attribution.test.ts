@@ -19,7 +19,7 @@ describe("attribution constants", () => {
 
 	it("lists only NOTICE shippable rows and omits research/private material", () => {
 		const ids = SHIPPABLE_CREDITS.map((row) => row.id);
-		expect(ids).toEqual(["srd-5-2-1", "elven-tower-maps", "noto-sans-glyphs"]);
+		expect(ids).toEqual(["srd-5-2-1", "kavemouth-maps", "noto-sans-glyphs"]);
 		const joined = SHIPPABLE_CREDITS.map((row) => `${row.title}\n${row.credit}`).join("\n");
 		expect(joined).not.toMatch(/Cairn/i);
 		expect(joined).not.toMatch(/Erde\s*&\s*Wasser/i);

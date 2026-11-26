@@ -8,17 +8,17 @@ describe("createTransformRequest", () => {
 
 	it("adds Bearer only for the gateway origin", () => {
 		const tr = createTransformRequest(origin, token);
-		expect(tr(`${origin}/w/elven-mini/style.json`, "Style")).toEqual({
-			url: `${origin}/w/elven-mini/style.json`,
+		expect(tr(`${origin}/w/kavemouth/style.json`, "Style")).toEqual({
+			url: `${origin}/w/kavemouth/style.json`,
 			headers: { Authorization: "Bearer tok-abc" },
 		});
-		expect(tr(`${origin}/w/elven-mini/tiles/14/1/2.pbf`, "Tile").headers).toEqual({
+		expect(tr(`${origin}/w/kavemouth/tiles/14/1/2.pbf`, "Tile").headers).toEqual({
 			Authorization: "Bearer tok-abc",
 		});
-		expect(tr(`${origin}/w/elven-mini/assets/ccc3-maps/maps/x.jpg`, "Image").headers).toEqual({
+		expect(tr(`${origin}/w/kavemouth/assets/kavemouth-maps/maps/x.png`, "Image").headers).toEqual({
 			Authorization: "Bearer tok-abc",
 		});
-		expect(tr(`${origin}/w/elven-mini/fonts/Noto%20Sans/0-255.pbf`, "Glyphs").headers).toEqual({
+		expect(tr(`${origin}/w/kavemouth/fonts/Noto%20Sans/0-255.pbf`, "Glyphs").headers).toEqual({
 			Authorization: "Bearer tok-abc",
 		});
 		// External / non-gateway URLs stay unauthenticated.
@@ -38,6 +38,6 @@ describe("createTransformRequest", () => {
 	it("isGatewayUrl and styleUrl helpers", () => {
 		expect(isGatewayUrl("https://mcp.spellkave.com/w/a/style.json", origin)).toBe(true);
 		expect(isGatewayUrl("https://evil.example/w/a", origin)).toBe(false);
-		expect(styleUrl(origin, "elven-mini")).toBe(`${origin}/w/elven-mini/style.json`);
+		expect(styleUrl(origin, "kavemouth")).toBe(`${origin}/w/kavemouth/style.json`);
 	});
 });

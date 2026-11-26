@@ -48,7 +48,7 @@
 			/>
 			<figcaption>
 				<span class="sk-display">The Guarded Bridge</span>
-				<span>Market road · river crossing · eastern shrine</span>
+				<span>Market road · stonebridge · eastern shrine</span>
 			</figcaption>
 		</figure>
 

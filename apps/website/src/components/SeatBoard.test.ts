@@ -7,7 +7,7 @@ import SeatBoard from "./SeatBoard.svelte";
 const demo1 = {
 	slug: "demo1",
 	name: "Demo world 1",
-	adventure: "elven-mini",
+	adventure: "kavemouth",
 	db: "spellkave-demo1",
 	position: 1,
 	transcript_url: "worlds/demo1/agent-run-events.jsonl",

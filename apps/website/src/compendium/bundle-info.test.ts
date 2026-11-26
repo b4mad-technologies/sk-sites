@@ -65,22 +65,22 @@ describe("about this bundle", () => {
 		);
 	});
 
-	it("shows Elven Mini's own bundle row and its own movement defaults and namespaces, not SRD's or DM's", () => {
-		const bundle = page("elven-mini").bundle;
-		if (!bundle) throw new Error("elven-mini page has no bundle block");
-		expect(bundle.ref).toBe("elven_mini");
+	it("shows Kavemouth's own bundle row and its own movement defaults and namespaces, not SRD's or DM's", () => {
+		const bundle = page("kavemouth").bundle;
+		if (!bundle) throw new Error("kavemouth page has no bundle block");
+		expect(bundle.ref).toBe("kavemouth");
 		expect(bundle.depends_on).toEqual(["srd", "dm"]);
 		expect(facet(bundle, "Movement defaults").rows, DRIFT).toHaveLength(
-			census.bundle_info.elven_mini_movement_defaults,
+			census.bundle_info.kavemouth_movement_defaults,
 		);
 		expect(facet(bundle, "Metadata namespaces").rows.map((row) => row.namespace)).toEqual([
 			"place.note",
-			"elven_mini.art.image",
-			"elven_mini.maps.poi",
+			"kavemouth.art.image",
+			"kavemouth.maps.poi",
 		]);
-		// Elven Mini's own movement default also names `srd/long_running_move`
+		// Kavemouth's own movement default also names `srd/long_running_move`
 		// inside its `bindings_json`, but that session is SRD's own authored
-		// row, not Elven Mini's — the dependency-closure trap this block exists
+		// row, not Kavemouth's — the dependency-closure trap this block exists
 		// to avoid, so no "Session definitions" facet is hosted here.
 		expect(bundle.facets.some((candidate) => candidate.label === "Session definitions")).toBe(
 			false,

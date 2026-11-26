@@ -21,10 +21,10 @@ describe("ItemRow", () => {
 
 	it("renders a link row with href and test id", () => {
 		render(ItemRow, {
-			props: { id: "9", name: "Javelin", quantity: 8, href: "/w/elven-mini/thing/9" },
+			props: { id: "9", name: "Javelin", quantity: 8, href: "/w/kavemouth/thing/9" },
 		});
 		const link = screen.getByRole("link", { name: /Javelin/ });
-		expect(link.getAttribute("href")).toBe("/w/elven-mini/thing/9");
+		expect(link.getAttribute("href")).toBe("/w/kavemouth/thing/9");
 		expect(link.getAttribute("data-testid")).toBeNull();
 	});
 
@@ -34,7 +34,7 @@ describe("ItemRow", () => {
 			props: {
 				id: "9",
 				name: "Javelin",
-				href: "/w/elven-mini/thing/9",
+				href: "/w/kavemouth/thing/9",
 				onSelect,
 				testId: "inspect-carried-item",
 			},

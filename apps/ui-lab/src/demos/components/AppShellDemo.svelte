@@ -21,7 +21,7 @@
 			</SidebarSection>
 			<SidebarSection title="Worlds">
 				<SidebarItem label="alpha" detail="playtest-mini" mark="ok" trailing="node" onclick={() => (world = "alpha")} />
-				<SidebarItem label="elves" detail="elven-mini-npc" mark="failed" trailing="npc off" onclick={() => (world = "elves")} />
+				<SidebarItem label="elves" detail="kavemouth-npc" mark="failed" trailing="npc off" onclick={() => (world = "elves")} />
 			</SidebarSection>
 		{/snippet}
 		{#snippet topbar()}<span class="text-sm font-medium">World setup</span>{/snippet}

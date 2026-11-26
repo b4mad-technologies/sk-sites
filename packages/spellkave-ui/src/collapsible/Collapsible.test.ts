@@ -9,9 +9,9 @@ const snippetButton = createRawSnippet(() => ({
 
 describe("Collapsible", () => {
 	it("starts closed by default and reveals string content on trigger click", async () => {
-		render(Collapsible, { title: "Adventures", content: "Elven Mini lives here." });
+		render(Collapsible, { title: "Adventures", content: "Kavemouth lives here." });
 
-		const content = screen.getByText("Elven Mini lives here.");
+		const content = screen.getByText("Kavemouth lives here.");
 		expect(content.closest("[hidden]")).not.toBeNull();
 		const trigger = screen.getByRole("button", { name: /Adventures/ });
 		expect(trigger.getAttribute("aria-expanded")).toBe("false");

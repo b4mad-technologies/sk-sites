@@ -227,9 +227,9 @@ describe("reader delivery", () => {
 		// These three starter-kit definitions now have their own authored pages,
 		// so each must remain readable there and must not also be hosted.
 		const starterKitPages = [
-			"elven_mini/item/field_kit",
-			"elven_mini/item/rations",
-			"elven_mini/item/torch",
+			"kavemouth/item/field_kit",
+			"kavemouth/item/rations",
+			"kavemouth/item/torch",
 		];
 		for (const id of starterKitPages) {
 			expect(pagedDefinitions.has(id), `${id} has its own starter-kit page`).toBe(true);

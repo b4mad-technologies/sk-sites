@@ -20,7 +20,7 @@ function pointerLikeEvent(
 describe("PlaceMap", () => {
 	const frame = {
 		mode: "peek" as const,
-		placeName: "The Mountain View Inn · Common Room",
+		placeName: "The Lamp and Ladle · Common Room",
 		caption: "Current place peek.",
 		svg: '<svg viewBox="0 0 100 80"><circle cx="50" cy="40" r="5" /></svg>',
 	};
@@ -49,7 +49,7 @@ describe("PlaceMap", () => {
 		render(PlaceMap, { frame });
 		expect(document.querySelector('[data-slot="play-map"]')).not.toBeNull();
 		expect(screen.getByRole("heading", { name: "Map peek" })).toBeTruthy();
-		expect(screen.getByRole("img", { name: /Mountain View Inn/ })).toBeTruthy();
+		expect(screen.getByRole("img", { name: /Lamp and Ladle/ })).toBeTruthy();
 	});
 
 	it("renders strip density as a glyph, label, and place-name datum", () => {
@@ -127,7 +127,7 @@ describe("PlaceMap", () => {
 		expect(el?.tagName).toBe("DIV");
 		expect(el?.hasAttribute("data-play-frame")).toBe(false);
 		expect(screen.queryByRole("heading", { name: "Map peek" })).toBeNull();
-		expect(screen.getByRole("img", { name: /Mountain View Inn/ })).toBeTruthy();
+		expect(screen.getByRole("img", { name: /Lamp and Ladle/ })).toBeTruthy();
 		expect(screen.queryByText(frame.placeName)).toBeNull();
 	});
 

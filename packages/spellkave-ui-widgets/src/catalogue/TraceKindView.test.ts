@@ -23,15 +23,15 @@ const SPEECH_TRACE: Record<string, unknown> = {
 
 /**
  * The slime trail row, copied from
- * `packages/spellkave-adventure-elven-mini/fixtures/adventure/story/traces.toml`.
+ * `packages/spellkave-adventure-kavemouth/fixtures/adventure/story/traces.toml`.
  * `perceptible_for_ticks` is omitted here — a standing mark, the opposite
  * case from the speech row above.
  */
 const SLIME_TRAIL_TRACE: Record<string, unknown> = {
-	bundle_id: "elven_mini",
+	bundle_id: "kavemouth",
 	description:
 		"A glistening trail of translucent slime, still faintly wet — something crawled through here.",
-	kind_id: "elven_mini/adventure/trace/slime_trail",
+	kind_id: "kavemouth/adventure/trace/slime_trail",
 	location_kinds: "place_node",
 	schema_json: "{}",
 	title: "Slime Trail",

@@ -25,7 +25,7 @@ describe("ReferenceCard", () => {
 				{
 					label: "Place",
 					value: "Deep tomb · Steward court",
-					href: "/w/elven-mini/place/elven_mini/deep_tomb/steward_court",
+					href: "/w/kavemouth/place/kavemouth/deep_tomb/steward_court",
 					onClick,
 				},
 			],

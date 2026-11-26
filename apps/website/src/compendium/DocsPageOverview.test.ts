@@ -208,7 +208,7 @@ describe("DocsPageOverview catalogue grouping (sk-jay0.3.5.64)", () => {
 			id: "cast",
 			title: "Cast",
 			intro: "",
-			href: "/docs/adventures/elven-mini/cast",
+			href: "/docs/adventures/kavemouth/cast",
 		};
 		const catalogue = [
 			entry("dm_npc", "eldrin"),

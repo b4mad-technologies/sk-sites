@@ -335,7 +335,7 @@ export function collectWitnesses(
 	// module exists to avoid — it would file the row out of the basin while no
 	// reader ever sees more than a thumbnail (sk-jay0.3.5.76).
 	// Only the attachments are credited, not the rest of the subject: a full
-	// embed exists to show art Elven Mini attaches to an SRD entity, not to
+	// embed exists to show art Kavemouth attaches to an SRD entity, not to
 	// duplicate that entity's own page.
 	for (const article of articles) {
 		for (const block of article.blocks ?? []) {

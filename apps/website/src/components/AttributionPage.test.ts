@@ -29,12 +29,12 @@ describe("AttributionPage", () => {
 		expect(srd).toBe(SRD_5_2_1_CREDIT);
 		expect(srd).toBe(extractSrdCreditFromNotice(notice));
 
-		expect(screen.getByTestId("credit-elven-tower-maps").textContent).toMatch(
-			/Map art © Elven Tower Maps, used under CC BY 4\.0\./,
+		expect(screen.getByTestId("credit-kavemouth-maps").textContent).toMatch(
+			/Kavemouth place maps: Spellkave art, CC BY 4\.0\./,
 		);
 		expect(
 			screen.getByRole("link", {
-				name: "https://www.patreon.com/elventower/posts/creative-commons-153067169",
+				name: "https://creativecommons.org/licenses/by/4.0/",
 			}),
 		).toBeTruthy();
 		expect(screen.getByTestId("credit-noto-sans-glyphs").textContent).toMatch(

@@ -47,11 +47,11 @@ export const SHIPPABLE_CREDITS: readonly ShippableCredit[] = [
 		url: "https://www.dndbeyond.com/srd",
 	},
 	{
-		id: "elven-tower-maps",
-		title: "Elven Tower Maps",
+		id: "kavemouth-maps",
+		title: "Kavemouth place maps",
 		license: "CC BY 4.0",
-		credit: "Map art © Elven Tower Maps, used under CC BY 4.0.",
-		url: "https://www.patreon.com/elventower/posts/creative-commons-153067169",
+		credit: "Kavemouth place maps: Spellkave art, CC BY 4.0. The images were generated with PixelLab.",
+		url: "https://creativecommons.org/licenses/by/4.0/",
 	},
 	{
 		id: "noto-sans-glyphs",

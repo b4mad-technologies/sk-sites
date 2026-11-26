@@ -57,17 +57,17 @@ const index: DocsIndexV1 = {
 			],
 		},
 		{
-			page_id: "elven-mini",
-			title: "Elven Mini",
+			page_id: "kavemouth",
+			title: "Kavemouth",
 			nav_group: "adventure",
 			intro: "",
-			href: "/docs/adventures/elven-mini",
+			href: "/docs/adventures/kavemouth",
 			sections: [
 				{
 					id: "cast",
 					title: "Cast",
 					intro: "",
-					href: "/docs/adventures/elven-mini/cast",
+					href: "/docs/adventures/kavemouth/cast",
 					catalogue_href: "/compendium/docs/catalogue.json",
 					catalogue_slugs: ["mira"],
 				},
@@ -95,8 +95,8 @@ describe("generic docs paths", () => {
 			pathname: "/docs/srd/monsters",
 		});
 		expect(parseCompendiumPath("/srd/monsters")).toBeNull();
-		expect(parseCompendiumPath("/adventures/elven-mini")).toBeNull();
-		expect(isCompendiumPath("/docs/adventures/elven-mini")).toBe(true);
+		expect(parseCompendiumPath("/adventures/kavemouth")).toBeNull();
+		expect(isCompendiumPath("/docs/adventures/kavemouth")).toBe(true);
 	});
 
 	it("redirects the retired authoring-patterns SRD route to its own docs root (sk-jay0.3.5.80)", () => {
@@ -131,13 +131,13 @@ describe("generic docs paths", () => {
 			sectionId: "monsters",
 			slug: "goblin",
 		});
-		expect(resolveCompendiumRoute("/docs/adventures/elven-mini", index)).toEqual({
+		expect(resolveCompendiumRoute("/docs/adventures/kavemouth", index)).toEqual({
 			page: "overview",
-			pageId: "elven-mini",
+			pageId: "kavemouth",
 		});
-		expect(resolveCompendiumRoute("/docs/adventures/elven-mini/cast/mira", index)).toEqual({
+		expect(resolveCompendiumRoute("/docs/adventures/kavemouth/cast/mira", index)).toEqual({
 			page: "entry",
-			pageId: "elven-mini",
+			pageId: "kavemouth",
 			sectionId: "cast",
 			slug: "mira",
 		});

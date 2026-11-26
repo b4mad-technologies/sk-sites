@@ -6,7 +6,7 @@ import { realDocsProjection } from "./real-docs-projection";
 
 /**
  * A catalogue entry with no `DocsSubject`/`DocsResource` carrier used to have
- * nowhere to show the attachments that target it, so Elven Mini's place notes
+ * nowhere to show the attachments that target it, so Kavemouth's place notes
  * and the SRD's affordance groups reached no reader (sk-jay0.3.5.76). They now
  * ride on the entry itself, and a non-public one says so.
  */
@@ -24,7 +24,7 @@ beforeAll(async () => {
 describe("attachments on a carrier-less catalogue entry", () => {
 	it("shows a place graph's author note on its page, labelled with its audience", () => {
 		const region = entries.find(
-			(entry) => entry.kind === "place_graph" && entry.ref === "elven_mini/region",
+			(entry) => entry.kind === "place_graph" && entry.ref === "kavemouth/region",
 		);
 		expect(region?.attachments).toEqual([
 			expect.objectContaining({ namespace: "place.note", audience: "frontier.apply_manifest" }),
@@ -38,7 +38,7 @@ describe("attachments on a carrier-less catalogue entry", () => {
 
 	it("shows metadata targeting a place node on that node's graph page", () => {
 		const region = entries.find(
-			(entry) => entry.kind === "place_graph" && entry.ref === "elven_mini/region",
+			(entry) => entry.kind === "place_graph" && entry.ref === "kavemouth/region",
 		);
 		const metadata = region?.facets?.find((facet) => facet.label === "Place node metadata");
 		expect(metadata?.table).toBe("metadata_attachments");
@@ -46,14 +46,14 @@ describe("attachments on a carrier-less catalogue entry", () => {
 			expect.arrayContaining([
 				expect.objectContaining({
 					target_kind: "place_node",
-					target_ref: "elven_mini/region/crossroads",
-					namespace: "elven_mini.maps.poi",
+					target_ref: "kavemouth/region/waymeet",
+					namespace: "kavemouth.maps.poi",
 				}),
 			]),
 		);
 		expect(metadata?.rows).not.toEqual(
 			expect.arrayContaining([
-				expect.objectContaining({ target_ref: "elven_mini/hamlet/inn_front" }),
+				expect.objectContaining({ target_ref: "kavemouth/hamlet/inn_front" }),
 			]),
 		);
 	});

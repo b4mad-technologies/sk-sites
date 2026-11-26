@@ -167,7 +167,7 @@ const PUBLIC_SLUG = /^[A-Za-z0-9_-]+(?:\/[A-Za-z0-9_-]+)*$/;
  * (`entity_routes[].section` + the one authored `tags_section`, since
  * sk-jay0.3.5.66 retired the former per-namespace `[[tag_sections]]`
  * table), derived rather than hand-listed. A non-SRD bundle section
- * (elven-mini, dm, ...) never matches an id here (sk-jay0.3.5.64).
+ * (kavemouth, dm, ...) never matches an id here (sk-jay0.3.5.64).
  */
 const SRD_DOC_SECTION_IDS: ReadonlySet<string> = new Set([
 	...ENTITY_ROUTES.map((route) => route.section),

@@ -1,7 +1,7 @@
 {
 	"manifest_rows": {
 		"srd": 32666,
-		"elven_mini": 37186
+		"kavemouth": 37186
 	},
 	"modifier_target_definitions": {
 		"srd_total": 54,
@@ -25,6 +25,6 @@
 	"bundle_info": {
 		"srd_movement_defaults": 1,
 		"srd_metadata_namespaces": 18,
-		"elven_mini_movement_defaults": 1
+		"kavemouth_movement_defaults": 1
 	}
 }

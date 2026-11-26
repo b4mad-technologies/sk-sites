@@ -59,10 +59,10 @@ describe("heroesFromWorld", () => {
 
 	it("aggregates my heroes with the empty-name fallback", () => {
 		const seats = playSeatsFromBoard([{ actor_id: "10", name: "", claimed: true, mine: true }]);
-		expect(heroesFromWorld("elven-mini-3", "Elven Mini 3", seats)).toEqual([
+		expect(heroesFromWorld("kavemouth-3", "Kavemouth 3", seats)).toEqual([
 			{
-				worldSlug: "elven-mini-3",
-				worldName: "Elven Mini 3",
+				worldSlug: "kavemouth-3",
+				worldName: "Kavemouth 3",
 				actor_id: "10",
 				name: "Unnamed hero #10",
 			},

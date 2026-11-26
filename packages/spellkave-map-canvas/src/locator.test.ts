@@ -12,32 +12,32 @@ describe("maps locator", () => {
 		expect(
 			buildMapsLocator(
 				"http://192.0.2.10:5174/?world=stale",
-				"elven-mini",
+				"kavemouth",
 				"place",
-				"elven_mini/cursed_crypt/entrance",
+				"kavemouth/bramble_crypt/entrance",
 			),
-		).toBe("http://192.0.2.10:5174/w/elven-mini/place/elven_mini/cursed_crypt/entrance");
-		expect(buildWorldLocator("http://localhost:5174/auth/callback", "elven-mini")).toBe(
-			"http://localhost:5174/w/elven-mini",
+		).toBe("http://192.0.2.10:5174/w/kavemouth/place/kavemouth/bramble_crypt/entrance");
+		expect(buildWorldLocator("http://localhost:5174/auth/callback", "kavemouth")).toBe(
+			"http://localhost:5174/w/kavemouth",
 		);
 	});
 
 	it("parses world and resource paths only", () => {
-		expect(parseMapsLocator("http://localhost:5174/w/elven-mini")).toEqual({
-			world: "elven-mini",
+		expect(parseMapsLocator("http://localhost:5174/w/kavemouth")).toEqual({
+			world: "kavemouth",
 			place: null,
 			person: null,
 			thing: null,
 		});
 		expect(
-			parseMapsLocator("http://localhost:5174/w/elven-mini/place/elven_mini/cursed_crypt/entrance"),
+			parseMapsLocator("http://localhost:5174/w/kavemouth/place/kavemouth/bramble_crypt/entrance"),
 		).toEqual({
-			world: "elven-mini",
-			place: "elven_mini/cursed_crypt/entrance",
+			world: "kavemouth",
+			place: "kavemouth/bramble_crypt/entrance",
 			person: null,
 			thing: null,
 		});
-		expect(parseMapsLocator("http://localhost:5174/?world=elven-mini&place=x")).toEqual({
+		expect(parseMapsLocator("http://localhost:5174/?world=kavemouth&place=x")).toEqual({
 			world: null,
 			place: null,
 			person: null,
@@ -46,23 +46,23 @@ describe("maps locator", () => {
 	});
 
 	it("publishMapsLocator dispatches event on change or fly, but suppresses duplicate events", () => {
-		window.history.replaceState({}, "", "/w/elven-mini");
+		window.history.replaceState({}, "", "/w/kavemouth");
 		const events: unknown[] = [];
 		const listener = (e: Event) => events.push((e as CustomEvent).detail);
 		window.addEventListener(MAPS_LOCATOR_EVENT, listener);
 
 		try {
-			// First publish: URL changes from /w/elven-mini to /w/elven-mini/place/room1
-			publishMapsLocator("elven-mini", "place", "room1", false);
+			// First publish: URL changes from /w/kavemouth to /w/kavemouth/place/room1
+			publishMapsLocator("kavemouth", "place", "room1", false);
 			expect(events.length).toBe(1);
-			expect(window.location.pathname).toBe("/w/elven-mini/place/room1");
+			expect(window.location.pathname).toBe("/w/kavemouth/place/room1");
 
 			// Second publish with same resource and fly = false: should not dispatch event
-			publishMapsLocator("elven-mini", "place", "room1", false);
+			publishMapsLocator("kavemouth", "place", "room1", false);
 			expect(events.length).toBe(1);
 
 			// Third publish with same resource but fly = true: should dispatch event with fly: true
-			publishMapsLocator("elven-mini", "place", "room1", true);
+			publishMapsLocator("kavemouth", "place", "room1", true);
 			expect(events.length).toBe(2);
 			expect(events[1]).toEqual({ fly: true });
 		} finally {

@@ -37,13 +37,13 @@ describe("Inspect", () => {
 						id: "12",
 						name: "Javelin",
 						quantity: 8,
-						href: "/w/elven-mini/thing/12",
+						href: "/w/kavemouth/thing/12",
 					},
 					{
 						id: "3",
 						name: "Chain Mail",
 						equipped: "main hand",
-						href: "/w/elven-mini/thing/3",
+						href: "/w/kavemouth/thing/3",
 					},
 				],
 				onSelectCarried,
@@ -52,7 +52,7 @@ describe("Inspect", () => {
 		const javelin = screen.getAllByTestId("inspect-carried-item")[0];
 		expect(javelin).toBeTruthy();
 		if (javelin === undefined) return;
-		expect(javelin.getAttribute("href")).toBe("/w/elven-mini/thing/12");
+		expect(javelin.getAttribute("href")).toBe("/w/kavemouth/thing/12");
 		expect(javelin.textContent).toContain("Javelin");
 		expect(javelin.textContent).toContain("×8");
 		expect(screen.getByText("main hand")).toBeTruthy();

@@ -23,33 +23,33 @@ describe("seat → node_id → fly-to", () => {
 		expect(
 			placeNodeForEntities(
 				[
-					{ entityId: "10", placeNodeId: "elven_mini/hamlet/inn_front" },
+					{ entityId: "10", placeNodeId: "kavemouth/hamlet/inn_front" },
 					{ entityId: "99", placeNodeId: "other" },
 				],
 				["10"],
 			),
-		).toBe("elven_mini/hamlet/inn_front");
+		).toBe("kavemouth/hamlet/inn_front");
 		expect(placeNodeForEntities([{ entityId: "1", placeNodeId: "x" }], ["2"])).toBeNull();
 	});
 
 	it("builds Overpass node id query", () => {
-		expect(buildNodeIdQuery("elven_mini/inn/foyer")).toBe(
-			`[out:json][timeout:25];nwr["spellkave:node_id"="elven_mini/inn/foyer"];out center;`,
+		expect(buildNodeIdQuery("kavemouth/inn/foyer")).toBe(
+			`[out:json][timeout:25];nwr["spellkave:node_id"="kavemouth/inn/foyer"];out center;`,
 		);
 	});
 
 	it("maps Overpass hits to a fly target", () => {
-		const target = flyTargetFromHits("elven_mini/inn/foyer", [
+		const target = flyTargetFromHits("kavemouth/inn/foyer", [
 			{
 				id: "1",
 				osmType: "node",
 				name: "Foyer",
 				kind: "place",
-				graph: "elven_mini/inn",
+				graph: "kavemouth/inn",
 				lon: -122.3,
 				lat: 47.5,
 				tags: {
-					"spellkave:node_id": "elven_mini/inn/foyer",
+					"spellkave:node_id": "kavemouth/inn/foyer",
 					name: "Foyer",
 					level: "0",
 					indoor: "room",
@@ -57,11 +57,11 @@ describe("seat → node_id → fly-to", () => {
 			},
 		]);
 		expect(target).toEqual({
-			placeNodeId: "elven_mini/inn/foyer",
+			placeNodeId: "kavemouth/inn/foyer",
 			lon: -122.3,
 			lat: 47.5,
 			name: "Foyer",
-			graph: "elven_mini/inn",
+			graph: "kavemouth/inn",
 			level: "0",
 			indoor: true,
 		});

@@ -39,7 +39,7 @@ describe("search query builder", () => {
 					type: "way",
 					id: 1,
 					center: { lon: -122.3, lat: 47.5 },
-					tags: { name: "Foyer", "spellkave:graph": "elven_mini/inn" },
+					tags: { name: "Foyer", "spellkave:graph": "kavemouth/inn" },
 				},
 				{ type: "node", id: 2, lon: -122.31, lat: 47.51, tags: { name: "Crossroads" } },
 			],
@@ -47,13 +47,13 @@ describe("search query builder", () => {
 		expect(hits).toHaveLength(2);
 		expect(hits[0]).toMatchObject({
 			name: "Foyer",
-			graph: "elven_mini/inn",
+			graph: "kavemouth/inn",
 			lon: -122.3,
 			lat: 47.5,
 		});
 		expect(hits[1]?.name).toBe("Crossroads");
 		expect(hits[0]?.kind).toBe("place");
-		expect(hits[0] && searchHitMeta(hits[0])).toBe("Place · elven_mini/inn");
+		expect(hits[0] && searchHitMeta(hits[0])).toBe("Place · kavemouth/inn");
 		expect(hits[1] && searchHitMeta(hits[1])).toBe("Place");
 	});
 });
@@ -171,7 +171,7 @@ describe("mergeOsmPlaceHits", () => {
 				id: "1",
 				osmType: "way",
 				name: "Crypt Entrance",
-				graph: "elven_mini/cursed_crypt",
+				graph: "kavemouth/bramble_crypt",
 				lon: 1,
 				lat: 2,
 				tags: {
@@ -186,13 +186,13 @@ describe("mergeOsmPlaceHits", () => {
 				id: "2",
 				osmType: "node",
 				name: "Crypt Entrance",
-				graph: "elven_mini/cursed_crypt",
+				graph: "kavemouth/bramble_crypt",
 				lon: 1,
 				lat: 2,
 				tags: {
 					name: "Crypt Entrance",
 					description: "A low stone lintel.",
-					"spellkave:graph": "elven_mini/cursed_crypt",
+					"spellkave:graph": "kavemouth/bramble_crypt",
 				},
 				kind: "place",
 			},
@@ -213,7 +213,7 @@ describe("placeExitsFromHits", () => {
 					graph: "c",
 					lon: 0,
 					lat: 0,
-					tags: { "spellkave:node_id": "elven_mini/cursed_crypt/entrance" },
+					tags: { "spellkave:node_id": "kavemouth/bramble_crypt/entrance" },
 					kind: "place",
 				},
 				{
@@ -224,7 +224,7 @@ describe("placeExitsFromHits", () => {
 					lon: 0,
 					lat: 0,
 					tags: {
-						"spellkave:node_id": "elven_mini/cursed_crypt/vestibule",
+						"spellkave:node_id": "kavemouth/bramble_crypt/vestibule",
 						"spellkave:substrate": "indoor",
 					},
 					kind: "place",
@@ -232,12 +232,12 @@ describe("placeExitsFromHits", () => {
 				{
 					id: "3",
 					osmType: "node",
-					name: "Path to Cursed Crypt",
+					name: "Path to the Bramble Crypt",
 					graph: "h",
 					lon: 0,
 					lat: 0,
 					tags: {
-						"spellkave:node_id": "elven_mini/hamlet/crypt_path",
+						"spellkave:node_id": "kavemouth/hamlet/crypt_path",
 						"spellkave:substrate": "outdoor",
 					},
 					kind: "place",
@@ -250,7 +250,7 @@ describe("placeExitsFromHits", () => {
 					lon: 0,
 					lat: 0,
 					tags: {
-						"spellkave:node_id": "elven_mini/hamlet/unconnected",
+						"spellkave:node_id": "kavemouth/hamlet/unconnected",
 						"spellkave:substrate": "outdoor",
 					},
 					kind: "place",
@@ -263,8 +263,8 @@ describe("placeExitsFromHits", () => {
 					lon: 0,
 					lat: 0,
 					tags: {
-						"spellkave:from_node": "elven_mini/cursed_crypt/entrance",
-						"spellkave:to_node": "elven_mini/cursed_crypt/vestibule",
+						"spellkave:from_node": "kavemouth/bramble_crypt/entrance",
+						"spellkave:to_node": "kavemouth/bramble_crypt/vestibule",
 					},
 					kind: "place",
 				},
@@ -276,16 +276,16 @@ describe("placeExitsFromHits", () => {
 					lon: 0,
 					lat: 0,
 					tags: {
-						"spellkave:from_node": "elven_mini/hamlet/crypt_path",
-						"spellkave:to_node": "elven_mini/cursed_crypt/entrance",
+						"spellkave:from_node": "kavemouth/hamlet/crypt_path",
+						"spellkave:to_node": "kavemouth/bramble_crypt/entrance",
 					},
 					kind: "place",
 				},
 			],
-			"elven_mini/cursed_crypt/entrance",
+			"kavemouth/bramble_crypt/entrance",
 		);
-		expect(exits.map((e) => e.name)).toEqual(["Path to Cursed Crypt", "Vestibule"]);
-		expect(exits.find((e) => e.name === "Path to Cursed Crypt")?.outdoor).toBe(true);
+		expect(exits.map((e) => e.name)).toEqual(["Path to the Bramble Crypt", "Vestibule"]);
+		expect(exits.find((e) => e.name === "Path to the Bramble Crypt")?.outdoor).toBe(true);
 	});
 
 	it("populates traversalMode, seal, and locked from connecting way tags", () => {

@@ -15,8 +15,8 @@ import type { DocsProjectionRoot } from "./project-metadata-docs";
 export interface CompendiumCensus {
 	/** Non-`include` row totals per registered closure, in
 	 * `MANIFEST_COVERAGE_PROJECTION_ROOTS` order (SRD alone, then the merged
-	 * SRD+DM+Elven Mini closure). */
-	manifest_rows: { srd: number; elven_mini: number };
+	 * SRD+DM+Kavemouth closure). */
+	manifest_rows: { srd: number; kavemouth: number };
 	modifier_target_definitions: { srd_total: number; attack_roll_occurrences: number };
 	table_occurrences: {
 		consequence_frame_writes: number;
@@ -34,7 +34,7 @@ export interface CompendiumCensus {
 	bundle_info: {
 		srd_movement_defaults: number;
 		srd_metadata_namespaces: number;
-		elven_mini_movement_defaults: number;
+		kavemouth_movement_defaults: number;
 	};
 }
 
@@ -47,7 +47,7 @@ const DM_ROOT = resolve(REPO_ROOT, "packages/spellkave-srd-cc/fixtures/dm/manife
  * capture script) load directly, bypassing the `dm` bundle's own separately
  * mounted root in `scripts/metadata-docs-registry.mts` — see that test's own
  * header for why: the point here is the two intended dependency closures
- * (SRD alone, and the merged SRD+DM+Elven Mini closure), not every publicly
+ * (SRD alone, and the merged SRD+DM+Kavemouth closure), not every publicly
  * mounted page.
  */
 export const MANIFEST_COVERAGE_PROJECTION_ROOTS: readonly DocsProjectionRoot[] = [
@@ -55,12 +55,12 @@ export const MANIFEST_COVERAGE_PROJECTION_ROOTS: readonly DocsProjectionRoot[] =
 	{
 		rootManifestPath: resolve(
 			REPO_ROOT,
-			"packages/spellkave-adventure-elven-mini/fixtures/adventure.manifest.toml",
+			"packages/spellkave-adventure-kavemouth/fixtures/adventure.manifest.toml",
 		),
 		dependencyPaths: { srd: SRD_ROOT, dm: DM_ROOT },
 		assetMounts: {
 			"srd-art": "/srd-art",
-			"elven-mini-art": "/compendium/adventures/elven-mini/art",
+			"kavemouth-art": "/compendium/adventures/kavemouth/art",
 		},
 	},
 ];

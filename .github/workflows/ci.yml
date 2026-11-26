@@ -42,7 +42,7 @@ jobs:
         run: pnpm test:pack
 
   # Allowed to fail until its inputs are on npm: the website imports
-  # @spellkave/srd-cc and reads @spellkave/adventure-elven-mini (sk-content)
+  # @spellkave/srd-cc and reads @spellkave/adventure-kavemouth (sk-content)
   # and world-author docs/ (sk-sdk) by monorepo path. PROVENANCE.md lists what
   # each package must publish. Drop continue-on-error once they exist.
   website:
