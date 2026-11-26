@@ -3,12 +3,11 @@
 Static Svelte + Vite app built on the shared `@spellkave/ui` design system and
 Bits UI primitives; no observer/runtime package.
 
-The live hostname is the Spellkave Worker `spellkave` (personal Cloudflare
-account, custom domains `spellkave.com` / `www`). This package owns the
-HTML. Worker + domains live in [`infra/cloudflare`](../../infra/cloudflare)
-(Pulumi project `spellkave-cloudflare`, sk-4jxi.4). The zone object stays in
-orrery. Do not add custom-domain routes here — two writers on one Worker is
-a bug.
+The live hostname is the Spellkave Worker `spellkave` (custom domains
+`spellkave.com` / `www`). This package owns the HTML. The Worker, its domains
+and the DNS zone are managed by the Spellkave infrastructure code, which is
+not part of this repository. Do not add custom-domain routes here — two
+writers on one Worker is a bug.
 
 ## Data
 
@@ -23,13 +22,13 @@ static example to explain how a place, its inhabitants, and its chronicle fit
 together. After sign-in, the current world section lists catalog worlds and a
 near-live tool transcript per world. The feed is `index.json` plus
 `worlds/<slug>/agent-run-events.jsonl` on the Spellkave-owned R2 bucket
-`spellkave-public-site` (personal Cloudflare account, r2.dev public URL — not
-orrery DNS). It does **not** publish login cards or OAuth secrets. Signed-in
+`spellkave-public-site` (r2.dev public URL, no custom domain). It does
+**not** publish login cards or OAuth secrets. Signed-in
 worlds may include `db` (SpacetimeDB database name on the shared play host).
 Set `VITE_SPELLKAVE_PUBLIC_SITE_URL` at build time (CI: repo variable
 `SPELLKAVE_PUBLIC_SITE_URL`). Unset ⇒ `public/demo-data` sample with a banner
 after sign-in.
-Operator: [`docs/mcp.md`](../../docs/mcp.md#public-demo-worlds-and-spectator-site).
+The operator guide for the demo worlds is not part of this repository.
 
 ## Account API (one call, then hand off)
 
@@ -100,12 +99,11 @@ just website-preview      # wrangler dev against dist/
 
 A merge to `main` that touches `apps/website/**` builds `dist/` and
 `wrangler deploy`s it onto the existing Worker. Repository secrets:
-`CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`
-(personal account `9f8d10b397a50cbce66cea20148fa14f`).
+`CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`.
 
 Wrangler owns the Worker assets; the `spellkave.com` and `www.spellkave.com`
 custom-domain bindings are owned by the `spellkave-cloudflare` Pulumi stack.
 The ownership map, credential permissions and token rotation procedure live
-with that stack (`infra/cloudflare` in the private Spellkave repository).
+with that stack, outside this repository.
 
 Manual: `just website-deploy` (same Worker name, no DNS changes).

@@ -350,7 +350,7 @@ already fallen into twice. A row in *both* makes the basin meaningless: it grows
 back into a copy of everything and its size stops measuring anything.
 
 Basin membership is **measured, never derived from the classification**.
-[`row-kind-coverage.toml`](../../../packages/spellkave-srd-cc/src/docs/row-kind-coverage.toml)
+[`row-kind-coverage.toml`](https://github.com/b4mad-technologies/sk-content/blob/main/packages/spellkave-srd-cc/src/docs/row-kind-coverage.toml)
 says where a kind *belongs*, and much of that is still a promise; a row whose
 kind is classified as belonging on a page it never reached stays visibly in the
 basin instead of falling between the two. `collectWitnesses` in
@@ -438,8 +438,7 @@ JSON files instead, and the resolution is "run the recipe again", never
 arithmetic. The "+N because" history that used to live as test comments now
 belongs to the commit message that moved the number.
 
-The `docs-census-pairing` skgate gate
-([`packages/spellkave-gates/src/gates/docs-census-pairing.ts`](../../../packages/spellkave-gates/src/gates/docs-census-pairing.ts))
+The `docs-census-pairing` skgate gate (not part of this repository)
 enforces the pairing at `pre-push`/`ci`: any change under
 `packages/spellkave-srd-cc/fixtures/`, an adventure package's own `fixtures/`
 tree, or `packages/spellkave-srd-cc/authored/flavor/` must land in the same
