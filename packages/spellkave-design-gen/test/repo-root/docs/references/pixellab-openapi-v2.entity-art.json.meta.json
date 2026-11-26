@@ -1,8 +1,8 @@
 {
 	"schema": "spellkave-external-reference/v1",
 	"source": "https://api.pixellab.ai/v2/openapi.json",
-	"fetched_at": "2026-09-07T12:36:54.460Z",
-	"sha256": "f8f691dd189b3e81a3cd142020983a854778980461b269e56b64c28a09152288",
+	"note": "Hand-written test stub, not a copy of the upstream document.",
+	"sha256": "776f5f10f071095bed6e9f45a84b54a5231a23704cb8d229b9d941a54ca80511",
 	"routes": [
 		"/create-image-pixflux",
 		"/create-image-pixen",

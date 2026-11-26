@@ -10,6 +10,10 @@ License 1.0.0 (LICENSE). First-party images are licensed under CC BY 4.0
 - vendor/impeccable/design-parser.mjs: DESIGN.md parser from the impeccable
   skill (pbakaus/impeccable) under the Apache License 2.0. See
   vendor/impeccable/LICENSE.
+- patches/@pixellab-code__pixellab@1.0.2.patch: a patch for the PixelLab
+  JavaScript SDK (@pixellab-code/pixellab 1.0.2 by Pixel Lab, MIT License
+  according to its package manifest). The patch quotes a few lines of that
+  SDK; those lines stay under the SDK's licence.
 - Fonts are installed from npm (@fontsource packages) under their own
   licences and are not vendored here.
 

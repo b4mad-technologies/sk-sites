@@ -1,12 +1,11 @@
 {
   "schema": "spellkave-external-reference/v1",
   "source": "https://api.pixellab.ai/v2/llms.txt",
-  "fetched_at": "2026-09-07T12:36:54.328Z",
-  "sha256": "b73d83d592e86ae84a6efa679129f611669ced1df7cb6ca8aa04230cc1952736",
+  "note": "Hand-written test stub, not a copy of the upstream document.",
+  "sha256": "e539bee5b66d48f1e3d21bd25fce565efe44eb3040e448c5286f9a3e6543b611",
   "sdk": {
     "package": "@pixellab-code/pixellab",
     "version": "1.0.2",
-    "api_base_url": "https://api.pixellab.ai/v1",
-    "compatibility": "The SDK currently targets its documented v1 contract; this v2 snapshot is the extension and drift reference."
+    "api_base_url": "https://api.pixellab.ai/v1"
   }
 }
