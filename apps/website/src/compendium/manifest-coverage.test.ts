@@ -67,9 +67,9 @@ describe("registered manifest corpus", () => {
 	it("loads the two intended dependency closures in stable dependency-first order", () => {
 		expect(loaded.map((root) => root.sources.flatMap((source) => source.bundleIds))).toEqual([
 			["srd"],
-			["srd", "dm", "elven_mini"],
+			["srd", "dm", "kavemouth"],
 		]);
-		// The Elven Mini map contract adds one metadata namespace, fifteen
+		// The Kavemouth map contract adds one metadata namespace, fifteen
 		// node-targeted POI attachments, and one observer actor identity.
 		// +19 rows: the telepathy-stone companion lane (sk-jay0.3.4.18 — stone
 		// entity def + tag, command capabilities, markers, gift action, grants).
@@ -78,24 +78,24 @@ describe("registered manifest corpus", () => {
 		// shared trace kind).
 		// +58 / +58 rows: the current SRD corpus adds the missing consequence
 		// writes and grants to both registered closures.
-		// +245 on the Elven Mini closure: DM creation's stable identity/input
+		// +245 on the Kavemouth closure: DM creation's stable identity/input
 		// affordance cluster (picks, typed forms, adopt handles, metadata).
 		// +387 / +387 rows: magic weapon and armor variants now publish their
 		// composed effect-badge art attachments in both registered closures.
-		// +106 on the DM/Elven Mini closure: ADR-0142 D-5/D-6 — the four
+		// +106 on the DM/Kavemouth closure: ADR-0142 D-5/D-6 — the four
 		// `dm/prompt/creation/*` prompt_definitions rows, the `core`-audience
 		// `audience_kind_definitions` reference, the `dm/dialog/prompt`
 		// resource and its `dm/dialog/prompt/set/*` action family, and the
 		// `dialogue.prompt` metadata namespace/attachments carrying their
 		// presentation copy.
-		// +25 on the Elven Mini closure: the twelve `elven_mini/prompt/quest/*`
+		// +25 on the Kavemouth closure: the twelve `kavemouth/prompt/quest/*`
 		// prompt_definitions rows wired by sk-jay0.2.33.15.7 and their
 		// `dialogue.prompt` label attachments.
 		// +6 on both closures (sk-jay0.3.17): srd/item/chest — entity_definitions,
 		// two entity_definition_initial_state rows (cost/weight), two
 		// entity_definition_tag rows (srd.item.gear/srd.item.container), and its
 		// srd.text metadata_attachments row.
-		// +5 on the Elven Mini closure only (sk-jay0.1.23.36.22.2): the loft
+		// +5 on the Kavemouth closure only (sk-jay0.1.23.36.22.2): the loft
 		// chest — 1 chest entity + 2 potion entities + 2 entity_containment
 		// rows (loose carriage, no local entity_definition — both instantiate
 		// the already-counted SRD blueprints above).
@@ -114,22 +114,22 @@ describe("registered manifest corpus", () => {
 		expect(
 			loaded.map((root) => manifestRowCount(root.manifest)),
 			DRIFT,
-		).toEqual([census.manifest_rows.srd, census.manifest_rows.elven_mini]);
+		).toEqual([census.manifest_rows.srd, census.manifest_rows.kavemouth]);
 	});
 
 	it("projects every non-include occurrence once when no basin filter is applied", () => {
-		// The Elven Mini closure is the union of the three unique registered
-		// sources: SRD, DM, and Elven Mini. The separately registered SRD root is
+		// The Kavemouth closure is the union of the three unique registered
+		// sources: SRD, DM, and Kavemouth. The separately registered SRD root is
 		// intentionally not projected a second time.
 		const expected = manifestRowCount(loaded[1]?.manifest ?? {});
 		const actual = projectedRows(projection.tables);
 
 		expect(projection.sources.map((source) => source.source_id)).toEqual([
 			"dm",
-			"elven_mini",
+			"kavemouth",
 			"srd",
 		]);
-		expect(expected, DRIFT).toBe(census.manifest_rows.elven_mini);
+		expect(expected, DRIFT).toBe(census.manifest_rows.kavemouth);
 		expect(actual).toHaveLength(expected);
 		expect(projection.sources.reduce((sum, source) => sum + source.row_count, 0)).toBe(expected);
 	});

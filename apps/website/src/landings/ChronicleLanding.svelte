@@ -17,7 +17,7 @@
 		{
 			glyph: "before",
 			title: "Before",
-			body: "A merchant's cart waited at the river crossing. The guard would not lower his spear for strangers.",
+			body: "A merchant's cart waited at the stonebridge. The guard would not lower his spear for strangers.",
 			note: "The road east was closed.",
 		},
 		{
@@ -62,7 +62,7 @@
 				/>
 				<figcaption>
 					<span class="sk-label">The guarded bridge</span>
-					<span>Market road · river crossing · shrine path</span>
+					<span>Market road · stonebridge · shrine path</span>
 				</figcaption>
 			</figure>
 			<p class="chronicle__now">

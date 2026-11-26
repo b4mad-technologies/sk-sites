@@ -1,5 +1,5 @@
 // Dummy copy for the Play widget catalog. Strings are taken from the recorded
-// Elven Mini story fixture — packages/spellkave-srd-cc/fixtures/elven-mini/
+// Kavemouth story fixture — packages/spellkave-srd-cc/fixtures/kavemouth/
 // story/level-1/{01-wake-in-inn,02-common-room,03-cellar-rats}.md — so the lab
 // shows what the world actually reports, not an invented inn. No live SDK here.
 // Widget *shapes* live in @spellkave/ui-widgets; this file keeps the data.
@@ -45,7 +45,7 @@ export const places = {
 		id: "stairs",
 		name: "Stairs",
 		description:
-			"The stairwell of the Mountain View Inn — three creaking floors of timber and lantern-light, tucked just off the hamlet square.",
+			"The stairwell of the Lamp and Ladle — three creaking floors of timber and lantern-light, tucked just off the hamlet square.",
 		exits: [
 			{ id: "stairs-nw-common", label: "Common Room", direction: "northwest" },
 			{ id: "stairs-nw-foyer", label: "Foyer", direction: "northwest" },
@@ -183,7 +183,7 @@ export const packs = {
 export const maps = {
 	peek: {
 		mode: "peek",
-		placeName: "The Mountain View Inn · Common Room",
+		placeName: "The Lamp and Ladle · Common Room",
 		caption: "Current place peek. Loft and cellar sit off the z=0 slice and stay unnamed.",
 	},
 	full: {

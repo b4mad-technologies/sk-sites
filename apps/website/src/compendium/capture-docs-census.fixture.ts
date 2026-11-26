@@ -1,6 +1,6 @@
 /**
  * Gives a capture-docs-census test file its own copy of the committed census
- * snapshots and of the Elven Mini fixture, so it can edit both freely.
+ * snapshots and of the Kavemouth fixture, so it can edit both freely.
  *
  * The capture tests are split across three files because each one projects
  * the whole real corpus; vitest runs files in parallel and the tests of one
@@ -43,7 +43,7 @@ export function useCaptureFixture(): CaptureFixture {
 				path.endsWith("compendium") || snapshotNames.some((name) => path.endsWith(name)),
 		});
 		const fixtureRoot = join(tempRoot, "fixtures");
-		cpSync(join(repoRoot, "packages/spellkave-adventure-elven-mini/fixtures"), fixtureRoot, {
+		cpSync(join(repoRoot, "packages/spellkave-adventure-kavemouth/fixtures"), fixtureRoot, {
 			recursive: true,
 			filter: (path) => !path.includes("/fixtures/story"),
 		});
@@ -54,7 +54,7 @@ export function useCaptureFixture(): CaptureFixture {
 		);
 		fixture.docsRoots = (registry.DOCS_PROJECTION_ROOTS as readonly DocsProjectionRoot[]).map(
 			(root) =>
-				root.rootManifestPath.includes("spellkave-adventure-elven-mini")
+				root.rootManifestPath.includes("spellkave-adventure-kavemouth")
 					? { ...root, rootManifestPath: fixture.fixturePath }
 					: root,
 		);

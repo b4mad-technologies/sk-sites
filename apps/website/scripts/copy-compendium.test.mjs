@@ -74,11 +74,11 @@ test("fails a referenced SRD asset that is missing or has the wrong hash", (t) =
 		() => copyReferencedArt({
 			...missing,
 			pathPrefix: "srd-art",
-			label: "Elven Mini",
+			label: "Kavemouth",
 			onMissing: "skip",
 			additionalArt: [{ path: "srd-art/item/rations.webp", hash: "a".repeat(64) }],
 		}),
-		/Elven Mini art file missing/,
+		/Kavemouth art file missing/,
 	);
 
 	const mismatch = fixture({ path: "srd-art/item/rations.webp", hash: "0".repeat(64) });
@@ -120,7 +120,7 @@ test("collects docs-only art from lazy article and catalogue artifacts", (t) => 
 		{ artifact_href: "/compendium/docs/catalogue/guide/people/shield.json" },
 	]));
 	writeFileSync(join(articles, "mira.json"), JSON.stringify({
-		subjects: [{ attachments: [{ asset_href: "/assets/mira.webp", payload: { path: "elven-mini-art/mira.webp", hash: "a".repeat(64) } }] }],
+		subjects: [{ attachments: [{ asset_href: "/assets/mira.webp", payload: { path: "kavemouth-art/mira.webp", hash: "a".repeat(64) } }] }],
 	}));
 	const catalogue = join(root, "catalogue/guide/people");
 	mkdirSync(catalogue, { recursive: true });
@@ -129,7 +129,7 @@ test("collects docs-only art from lazy article and catalogue artifacts", (t) => 
 		facets: [{ label: "Map layers", rows: [{ place_graph_id: "guide/inn", asset_module: "maps", asset_path: "maps/inn.jpg" }] }],
 	}));
 	assert.deepEqual(projectedArt(join(root, "index.json")), [
-		{ path: "elven-mini-art/mira.webp", hash: "a".repeat(64) },
+		{ path: "kavemouth-art/mira.webp", hash: "a".repeat(64) },
 		{ path: "srd-art/shield.webp", hash: "b".repeat(64) },
 	]);
 	assert.deepEqual(projectedMapLayers(join(root, "index.json")), [

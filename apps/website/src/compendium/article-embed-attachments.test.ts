@@ -45,10 +45,10 @@ beforeAll(async () => {
 
 describe("full-view embedded subjects", () => {
 	it("credits an attachment authored only for the embed, not reachable from the subject's own page", () => {
-		// Elven Mini's `adventure-subjects/srd-subjects` article embeds
+		// Kavemouth's `adventure-subjects/srd-subjects` article embeds
 		// `srd/armor/shield` at `view="full"` to show the art it attaches to the
-		// SRD entity. That attachment (`elven_mini.art.image`) exists only in
-		// Elven Mini's own flattened manifest — the SRD entity's own catalogue
+		// SRD entity. That attachment (`kavemouth.art.image`) exists only in
+		// Kavemouth's own flattened manifest — the SRD entity's own catalogue
 		// page is built from the SRD-only manifest and never carries it.
 		const withoutArticles = collectWitnesses(entries, [], keys, identities).keys;
 		const withArticles = collectWitnesses(entries, articles, keys, identities).keys;
@@ -56,7 +56,7 @@ describe("full-view embedded subjects", () => {
 			"metadata_attachments",
 			"entity_definition",
 			"srd/armor/shield",
-			"elven_mini.art.image",
+			"kavemouth.art.image",
 		);
 		expect(withoutArticles.has(key)).toBe(false);
 		expect(withArticles.has(key)).toBe(true);
@@ -108,17 +108,17 @@ describe("compact-view embedded subjects (isolated)", () => {
 	it('credits nothing for a subject embedded at view="compact"', () => {
 		const subject: DocsSubject = {
 			kind: "entity",
-			ref: "elven_mini/adventure/compact-only",
-			bundle_id: "elven_mini",
+			ref: "kavemouth/adventure/compact-only",
+			bundle_id: "kavemouth",
 			display_name: "Compact-only NPC",
 			description: "",
-			href: "/docs/adventures/elven-mini/cast/subject/entity/compact-only",
+			href: "/docs/adventures/kavemouth/cast/subject/entity/compact-only",
 			tags: [],
 			attachments: [
 				{
-					bundle_id: "elven_mini",
-					namespace: "elven_mini.art.image",
-					payload: { path: "elven-mini-art/characters/compact-only.webp" },
+					bundle_id: "kavemouth",
+					namespace: "kavemouth.art.image",
+					payload: { path: "kavemouth-art/characters/compact-only.webp" },
 				},
 			],
 			facets: [],
@@ -126,8 +126,8 @@ describe("compact-view embedded subjects (isolated)", () => {
 		const article: DocsArticle = {
 			id: "compact-only-article",
 			title: "Compact-only article",
-			href: "/docs/adventures/elven-mini/cast/compact-only-article",
-			artifact_href: "/compendium/docs/articles/elven-mini/cast/compact-only-article.json",
+			href: "/docs/adventures/kavemouth/cast/compact-only-article",
+			artifact_href: "/compendium/docs/articles/kavemouth/cast/compact-only-article.json",
 			body: "",
 			source: { path: "test", anchor: "test", license: "LicenseRef-Spellkave-Proprietary" },
 			blocks: [{ kind: "subject", subjectKind: "entity", ref: subject.ref, view: "compact" }],
@@ -136,7 +136,7 @@ describe("compact-view embedded subjects (isolated)", () => {
 		const witnessed = collectWitnesses([], [article], keys, identities).keys;
 		expect(
 			witnessed.has(
-				compositeKey("metadata_attachments", subject.kind, subject.ref, "elven_mini.art.image"),
+				compositeKey("metadata_attachments", subject.kind, subject.ref, "kavemouth.art.image"),
 			),
 		).toBe(false);
 		expect(witnessed.size).toBe(0);

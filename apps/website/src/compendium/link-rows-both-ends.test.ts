@@ -39,35 +39,35 @@ function facet(candidate: DocsCatalogueEntry, label: string): DocsFacet {
 
 describe("link rows rendered on both ends", () => {
 	it("shows entity_containment on the container's page and the contained item's page", () => {
-		const container = entry("entity", "elven_mini/adventure/encounter/sister_maelis_1");
-		const item = entry("entity", "elven_mini/adventure/loot/q4_fanatic_longsword_plus_1");
+		const container = entry("entity", "kavemouth/adventure/encounter/sister_maelis_1");
+		const item = entry("entity", "kavemouth/adventure/loot/q4_fanatic_longsword_plus_1");
 		expect(facet(container, "Contains").rows.map((row) => row.entity_key)).toContain(
-			"elven_mini/adventure/loot/q4_fanatic_longsword_plus_1",
+			"kavemouth/adventure/loot/q4_fanatic_longsword_plus_1",
 		);
 		expect(facet(item, "Contained in").rows.map((row) => row.container_entity_key)).toContain(
-			"elven_mini/adventure/encounter/sister_maelis_1",
+			"kavemouth/adventure/encounter/sister_maelis_1",
 		);
 	});
 
 	it("shows place_node_traces on the node's place graph page and the trace kind's own page", () => {
-		const graph = entry("place_graph", "elven_mini/tomb");
-		const traceKind = entry("trace_kind_definition", "elven_mini/adventure/trace/slime_trail");
+		const graph = entry("place_graph", "kavemouth/tomb");
+		const traceKind = entry("trace_kind_definition", "kavemouth/adventure/trace/slime_trail");
 		expect(facet(graph, "Place node traces").rows.map((row) => row.node_id)).toContain(
-			"elven_mini/tomb/entrance",
+			"kavemouth/tomb/entrance",
 		);
 		expect(facet(traceKind, "Marks these places").rows.map((row) => row.node_id)).toContain(
-			"elven_mini/tomb/entrance",
+			"kavemouth/tomb/entrance",
 		);
 	});
 
 	it("shows spatial_niche_attachments on the node's place graph page and the niche's own page", () => {
-		const graph = entry("place_graph", "elven_mini/tomb");
-		const niche = entry("niche_definition", "elven_mini/niche/hazard_pool");
+		const graph = entry("place_graph", "kavemouth/tomb");
+		const niche = entry("niche_definition", "kavemouth/niche/hazard_pool");
 		expect(facet(graph, "Niche attachments").rows.map((row) => row.niche_id)).toContain(
-			"elven_mini/niche/hazard_pool",
+			"kavemouth/niche/hazard_pool",
 		);
 		expect(facet(niche, "Attached places").rows.map((row) => row.place_node_id)).toContain(
-			"elven_mini/tomb/pool",
+			"kavemouth/tomb/pool",
 		);
 	});
 
@@ -90,9 +90,9 @@ describe("link rows rendered on both ends", () => {
 	});
 
 	it("hosts turn_scheduler on the session definition that names it via turn_scheduler_id, not by id similarity", () => {
-		const session = entry("session_definition", "elven_mini/adventure/session/crypt-fight");
+		const session = entry("session_definition", "kavemouth/adventure/session/crypt-fight");
 		const scheduler = facet(session, "Turn scheduler").rows;
 		expect(scheduler).toHaveLength(1);
-		expect(scheduler[0]?.id).toBe("elven_mini/adventure/turn/crypt-fight");
+		expect(scheduler[0]?.id).toBe("kavemouth/adventure/turn/crypt-fight");
 	});
 });

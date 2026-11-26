@@ -33,7 +33,7 @@ describe("isBackdropAssetError", () => {
 	it("recognises a 404 on a backdrop image and nothing else", () => {
 		expect(
 			isBackdropAssetError(
-				"AJAXError:  (404): https://mcp.spellkave.com/w/elven-mini-1/assets/ccc3-maps/maps/306 Fortified Hamlet.jpg",
+				"AJAXError:  (404): https://mcp.spellkave.com/w/kavemouth-1/assets/kavemouth-maps/maps/hamlet.png",
 			),
 		).toBe(true);
 		expect(isBackdropAssetError("style.json HTTP 503")).toBe(false);

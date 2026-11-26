@@ -3,7 +3,7 @@
 
 	const source = `World **alpha** is up on \`127.0.0.1:10279\`.
 
-- adventure: elven-mini-npc
+- adventure: kavemouth-npc
 - saves: save-two, save-three
 
 \`\`\`sh

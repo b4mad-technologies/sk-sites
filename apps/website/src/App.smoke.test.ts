@@ -163,26 +163,26 @@ const docsIndex = {
 			],
 		},
 		{
-			page_id: "elven-mini",
-			title: "Elven Mini",
+			page_id: "kavemouth",
+			title: "Kavemouth",
 			intro: "A manifest-backed adventure.",
 			nav_group: "adventure",
-			href: "/docs/adventures/elven-mini",
+			href: "/docs/adventures/kavemouth",
 			sections: [
 				{
 					id: "adventure-subjects",
 					title: "Adventure subjects",
 					intro: "Manifest-backed subjects.",
-					href: "/docs/adventures/elven-mini/adventure-subjects",
+					href: "/docs/adventures/kavemouth/adventure-subjects",
 					pages: [
 						{
 							id: "installed-subjects",
 							title: "Installed subjects",
 							body: "Installed subject body.",
 							blocks: [{ kind: "html", html: "<p>Installed subject body.</p>" }],
-							href: "/docs/adventures/elven-mini/adventure-subjects/installed-subjects",
+							href: "/docs/adventures/kavemouth/adventure-subjects/installed-subjects",
 							artifact_href:
-								"/compendium/docs/articles/elven-mini/adventure-subjects/installed-subjects.json",
+								"/compendium/docs/articles/kavemouth/adventure-subjects/installed-subjects.json",
 							source: { path: "guide.md", anchor: "Installed subjects", license: "Proprietary" },
 							resources: [],
 							subjects: [
@@ -191,25 +191,25 @@ const docsIndex = {
 									kind: "entity_definition" as const,
 									ref: "srd/armor/shield",
 									display_name: "Shield",
-									href: "/docs/adventures/elven-mini/adventure-subjects/subject/entity_definition/srd%2Farmor%2Fshield",
+									href: "/docs/adventures/kavemouth/adventure-subjects/subject/entity_definition/srd%2Farmor%2Fshield",
 								},
 								{
 									...projectedSubject,
-									ref: "elven_mini/adventure/innkeeper_1",
+									ref: "kavemouth/adventure/innkeeper_1",
 									display_name: "Mira",
-									href: "/docs/adventures/elven-mini/adventure-subjects/subject/entity/elven_mini%2Fadventure%2Finnkeeper_1",
+									href: "/docs/adventures/kavemouth/adventure-subjects/subject/entity/kavemouth%2Fadventure%2Finnkeeper_1",
 								},
 							],
 							subject_routes: [
 								{
 									kind: "entity_definition",
 									ref: "srd/armor/shield",
-									href: "/docs/adventures/elven-mini/adventure-subjects/subject/entity_definition/srd%2Farmor%2Fshield",
+									href: "/docs/adventures/kavemouth/adventure-subjects/subject/entity_definition/srd%2Farmor%2Fshield",
 								},
 								{
 									kind: "entity",
-									ref: "elven_mini/adventure/innkeeper_1",
-									href: "/docs/adventures/elven-mini/adventure-subjects/subject/entity/elven_mini%2Fadventure%2Finnkeeper_1",
+									ref: "kavemouth/adventure/innkeeper_1",
+									href: "/docs/adventures/kavemouth/adventure-subjects/subject/entity/kavemouth%2Fadventure%2Finnkeeper_1",
 								},
 							],
 						},
@@ -396,12 +396,12 @@ describe("website App (smoke)", () => {
 					return new Response(JSON.stringify(docsIndex));
 				const article = docsArticleResponse(url);
 				if (article) return article;
-				if (url.endsWith("/compendium/adventures/elven-mini/index.json")) {
+				if (url.endsWith("/compendium/adventures/kavemouth/index.json")) {
 					return new Response(
 						JSON.stringify({
 							generated_at: "deterministic",
 							entry_count: 1,
-							corpus: "elven_mini",
+							corpus: "kavemouth",
 							chapters: [{ id: "cast", name: "Cast", count: 1 }],
 						}),
 					);
@@ -430,12 +430,12 @@ describe("website App (smoke)", () => {
 				const url = String(input);
 				if (url.endsWith("/compendium/docs/index.json"))
 					return new Response(JSON.stringify(docsIndex));
-				if (url.endsWith("/compendium/adventures/elven-mini/index.json")) {
+				if (url.endsWith("/compendium/adventures/kavemouth/index.json")) {
 					return new Response(
 						JSON.stringify({
 							generated_at: "deterministic",
 							entry_count: 0,
-							corpus: "elven_mini",
+							corpus: "kavemouth",
 							chapters: [],
 						}),
 					);
@@ -723,18 +723,18 @@ describe("website App (smoke)", () => {
 		await waitFor(() => expect(screen.getByTestId("compendium-404")).toBeTruthy());
 	});
 
-	it("opens /adventures and Elven Mini from the adventure export", async () => {
+	it("opens /adventures and Kavemouth from the adventure export", async () => {
 		window.history.replaceState({}, "", "/docs/adventures");
 		const fetchSpy = vi.fn(async (input: RequestInfo | URL) => {
 			const url = String(input);
 			if (url.endsWith("/compendium/docs/index.json"))
 				return new Response(JSON.stringify(docsIndex));
-			if (url.endsWith("/compendium/adventures/elven-mini/index.json")) {
+			if (url.endsWith("/compendium/adventures/kavemouth/index.json")) {
 				return new Response(
 					JSON.stringify({
 						generated_at: "deterministic",
 						entry_count: 102,
-						corpus: "elven_mini",
+						corpus: "kavemouth",
 						chapters: [
 							{ id: "cast", name: "Cast", count: 10 },
 							{ id: "places", name: "Places", count: 4 },
@@ -752,20 +752,20 @@ describe("website App (smoke)", () => {
 		await waitFor(() =>
 			expect(screen.getByRole("heading", { level: 1, name: "Adventures" })).toBeTruthy(),
 		);
-		expect(screen.getAllByRole("heading", { name: "Elven Mini" }).length).toBeGreaterThan(0);
+		expect(screen.getAllByRole("heading", { name: "Kavemouth" }).length).toBeGreaterThan(0);
 		expect(screen.queryByTestId("srd-credit")).toBeNull();
 	});
 
 	it("routes emitted adventure sections, articles, and typed subjects through the docs app", async () => {
 		for (const [path, heading] of [
-			["/docs/adventures/elven-mini/adventure-subjects", "Adventure subjects"],
-			["/docs/adventures/elven-mini/adventure-subjects/installed-subjects", "Installed subjects"],
+			["/docs/adventures/kavemouth/adventure-subjects", "Adventure subjects"],
+			["/docs/adventures/kavemouth/adventure-subjects/installed-subjects", "Installed subjects"],
 			[
-				"/docs/adventures/elven-mini/adventure-subjects/subject/entity_definition/srd%2Farmor%2Fshield",
+				"/docs/adventures/kavemouth/adventure-subjects/subject/entity_definition/srd%2Farmor%2Fshield",
 				"Shield",
 			],
 			[
-				"/docs/adventures/elven-mini/adventure-subjects/subject/entity/elven_mini%2Fadventure%2Finnkeeper_1",
+				"/docs/adventures/kavemouth/adventure-subjects/subject/entity/kavemouth%2Fadventure%2Finnkeeper_1",
 				"Mira",
 			],
 		] as const) {
@@ -787,7 +787,7 @@ describe("website App (smoke)", () => {
 			rendered.unmount();
 		}
 
-		window.history.replaceState({}, "", "/docs/adventures/elven-mini/not-authored");
+		window.history.replaceState({}, "", "/docs/adventures/kavemouth/not-authored");
 		vi.stubGlobal(
 			"fetch",
 			vi.fn(async (input: RequestInfo | URL) =>

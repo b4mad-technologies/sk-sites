@@ -29,8 +29,8 @@ export const DOCS_PROJECTION_ROOTS: readonly DocsProjectionRoot[] = [
 		assetMounts: ART_MOUNTS,
 	},
 	{
-		rootManifestPath: join(REPO_ROOT, "packages/spellkave-adventure-elven-mini/fixtures/adventure.manifest.toml"),
-		mount: "/docs/adventures/elven-mini",
+		rootManifestPath: join(REPO_ROOT, "packages/spellkave-adventure-kavemouth/fixtures/adventure.manifest.toml"),
+		mount: "/docs/adventures/kavemouth",
 		dependencyPaths: {
 			srd: join(REPO_ROOT, "packages/spellkave-srd-cc/fixtures/manifest.toml"),
 			dm: join(REPO_ROOT, "packages/spellkave-srd-cc/fixtures/dm/manifest.toml"),

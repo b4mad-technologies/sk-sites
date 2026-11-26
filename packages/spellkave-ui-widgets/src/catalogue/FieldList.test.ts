@@ -59,17 +59,17 @@ describe("FieldList", () => {
 	it("routes a field link through a caller's navigate instead of the docs catalogue", async () => {
 		const seen: string[] = [];
 		render(FieldList, {
-			fields: [{ label: "Holder", value: "Torvald", href: "/w/elven-mini/person/1" }],
+			fields: [{ label: "Holder", value: "Torvald", href: "/w/kavemouth/person/1" }],
 			navigate: (href: string) => seen.push(href),
 		});
 		await fireEvent.click(screen.getByRole("link", { name: "Torvald" }));
-		expect(seen).toEqual(["/w/elven-mini/person/1"]);
+		expect(seen).toEqual(["/w/kavemouth/person/1"]);
 	});
 
 	it("leaves a modifier-click to the browser", async () => {
 		const seen: string[] = [];
 		render(FieldList, {
-			fields: [{ label: "Holder", value: "Torvald", href: "/w/elven-mini/person/1" }],
+			fields: [{ label: "Holder", value: "Torvald", href: "/w/kavemouth/person/1" }],
 			navigate: (href: string) => seen.push(href),
 		});
 		await fireEvent.click(screen.getByRole("link", { name: "Torvald" }), { metaKey: true });

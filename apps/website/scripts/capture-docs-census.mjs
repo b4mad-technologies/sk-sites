@@ -121,7 +121,7 @@ export function captureDocsCensus({
 		const compendiumCensus = {
 			manifest_rows: {
 				srd: manifestRowCount(loaded[0]?.manifest ?? {}),
-				elven_mini: manifestRowCount(loaded[1]?.manifest ?? {}),
+				kavemouth: manifestRowCount(loaded[1]?.manifest ?? {}),
 			},
 			modifier_target_definitions: {
 				srd_total: modifierTargets.length,
@@ -145,7 +145,7 @@ export function captureDocsCensus({
 			bundle_info: {
 				srd_movement_defaults: facetRows("srd", "Movement defaults").length,
 				srd_metadata_namespaces: facetRows("srd", "Metadata namespaces").length,
-				elven_mini_movement_defaults: facetRows("elven-mini", "Movement defaults").length,
+				kavemouth_movement_defaults: facetRows("kavemouth", "Movement defaults").length,
 			},
 		};
 		const compendiumCensusPath = join(snapshotRoot, "compendium-census.json");
@@ -189,7 +189,7 @@ export function captureDocsCensus({
 			`[website] captured docs census: ${census.total_entry_count} entries across ${census.pages.length} page(s) -> ${censusPath}`,
 		);
 		console.log(
-			`[website] captured compendium census: ${compendiumCensus.manifest_rows.elven_mini} manifest rows, ${compendiumCensus.docs_coverage.rich_entries} rich entries, ${compendiumCensus.capability_grants.backward} capability grants -> ${compendiumCensusPath}`,
+			`[website] captured compendium census: ${compendiumCensus.manifest_rows.kavemouth} manifest rows, ${compendiumCensus.docs_coverage.rich_entries} rich entries, ${compendiumCensus.capability_grants.backward} capability grants -> ${compendiumCensusPath}`,
 		);
 	} finally {
 		rmSync(outputRoot, { recursive: true, force: true });

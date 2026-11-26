@@ -26,8 +26,8 @@ describe("map notices", () => {
 		const sentences = [
 			blocked().text,
 			loading().text,
-			ready("elven-mini-1", "CC-BY Elven Tower").text,
-			noArt("elven-mini-1").text,
+			ready("kavemouth-1", "CC BY Spellkave").text,
+			noArt("kavemouth-1").text,
 			...MACHINE_STRINGS.map((s) => failed(new Error(s)).text),
 		];
 		for (const text of sentences) {
@@ -44,19 +44,19 @@ describe("map notices", () => {
 	});
 
 	it("distinguishes an empty world from a genuine failure", () => {
-		expect(noArt("elven-mini-1").kind).toBe("no-art");
+		expect(noArt("kavemouth-1").kind).toBe("no-art");
 		expect(failed(new Error("boom")).kind).toBe("failed");
 		// The bead's second acceptance clause: these must not read alike.
-		expect(noArt("elven-mini-1").text).not.toEqual(failed(new Error("boom")).text);
+		expect(noArt("kavemouth-1").text).not.toEqual(failed(new Error("boom")).text);
 		expect(failed(new Error("boom")).text).toMatch(/fault, not an empty world/);
 	});
 
 	it("names the world in the empty-world sentence", () => {
-		expect(noArt("elven-mini-3").text).toContain("elven-mini-3");
+		expect(noArt("kavemouth-3").text).toContain("kavemouth-3");
 	});
 
 	it("still credits attribution when the world is ready", () => {
-		expect(ready("w", "CC-BY Elven Tower").text).toBe("w · CC-BY Elven Tower");
+		expect(ready("w", "CC BY Spellkave").text).toBe("w · CC BY Spellkave");
 		expect(ready("w", "").text).toBe("w");
 	});
 

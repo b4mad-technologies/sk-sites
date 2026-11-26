@@ -15,12 +15,12 @@ import type { DocsCatalogueEntry } from "./docs-types";
 import { realDocsProjection } from "./real-docs-projection";
 
 /**
- * Elven Mini's quest-item definitions (`elven_mini/adventure/item/cult_relic`,
+ * Kavemouth's quest-item definitions (`kavemouth/adventure/item/cult_relic`,
  * `.../moonpetal`, `.../tomb_key`) each have an instance with its own
  * catalogue page (`..._1`) and no page of their own — the instance's page
  * already inlines the definition record as a hosted facet
  * (`project-metadata-docs.ts`'s `definitionsById` pass). Their
- * `elven_mini.art.image` attachment used to reach no reader: it targets the
+ * `kavemouth.art.image` attachment used to reach no reader: it targets the
  * page-less definition, not the instance, so nothing carried it (sk-jay0.3.5.76).
  * It now rides the same hosted-facet join, keyed by the attachment's own
  * `target_kind`/`target_ref` so the witness credits the AUTHORED row rather
@@ -52,16 +52,16 @@ beforeAll(async () => {
 describe("a quest-item definition's art, hosted on its instance's page", () => {
 	const cases = [
 		{
-			instanceRef: "elven_mini/adventure/item/cult_relic_1",
-			definitionRef: "elven_mini/adventure/item/cult_relic",
+			instanceRef: "kavemouth/adventure/item/cult_relic_1",
+			definitionRef: "kavemouth/adventure/item/cult_relic",
 		},
 		{
-			instanceRef: "elven_mini/adventure/item/moonpetal_1",
-			definitionRef: "elven_mini/adventure/item/moonpetal",
+			instanceRef: "kavemouth/adventure/item/moonpetal_1",
+			definitionRef: "kavemouth/adventure/item/moonpetal",
 		},
 		{
-			instanceRef: "elven_mini/adventure/item/tomb_key_1",
-			definitionRef: "elven_mini/adventure/item/tomb_key",
+			instanceRef: "kavemouth/adventure/item/tomb_key_1",
+			definitionRef: "kavemouth/adventure/item/tomb_key",
 		},
 	];
 
@@ -89,7 +89,7 @@ describe("a quest-item definition's art, hosted on its instance's page", () => {
 			expect(row).toBeDefined();
 			expect(typeof row?.asset_href).toBe("string");
 			expect(row?.asset_href).not.toBe("");
-			expect(row?.namespace).toBe("elven_mini.art.image");
+			expect(row?.namespace).toBe("kavemouth.art.image");
 
 			expect(
 				witnessed.has(
@@ -97,7 +97,7 @@ describe("a quest-item definition's art, hosted on its instance's page", () => {
 						"metadata_attachments",
 						"entity_definition",
 						definitionRef,
-						"elven_mini.art.image",
+						"kavemouth.art.image",
 					),
 				),
 			).toBe(true);

@@ -182,7 +182,7 @@ export function ensureCompendiumExport() {
 	validateProjectedArtSources(docsArt, DOCS_ART_ASSETS);
 	const staleSrd = join(websiteRoot, "public/compendium/srd");
 	rmSync(staleSrd, { recursive: true, force: true });
-	const miniDest = join(websiteRoot, "public/compendium/adventures/elven-mini");
+	const miniDest = join(websiteRoot, "public/compendium/adventures/kavemouth");
 	for (const name of ["index.json", "search.json", "maps.json", "chapters", "entries"])
 		rmSync(join(miniDest, name), { recursive: true, force: true });
 	const art = DOCS_ART_ASSETS.map((config) => copyReferencedArt({

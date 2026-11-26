@@ -15,12 +15,12 @@ function fakeMap() {
 describe("applyPlaceSelection", () => {
 	it("sets selected on node and room for a new id", () => {
 		const map = fakeMap();
-		applyPlaceSelection(map, null, "elven_mini/cursed_crypt/entrance");
+		applyPlaceSelection(map, null, "kavemouth/bramble_crypt/entrance");
 		expect(map.removeFeatureState).not.toHaveBeenCalled();
 		expect(map.setFeatureState).toHaveBeenCalledTimes(SELECT_SOURCE_LAYERS.length);
 		for (const sourceLayer of SELECT_SOURCE_LAYERS) {
 			expect(map.setFeatureState).toHaveBeenCalledWith(
-				{ source: SPELLKAVE_VECTOR_SOURCE, sourceLayer, id: "elven_mini/cursed_crypt/entrance" },
+				{ source: SPELLKAVE_VECTOR_SOURCE, sourceLayer, id: "kavemouth/bramble_crypt/entrance" },
 				{ selected: true },
 			);
 		}

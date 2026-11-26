@@ -7,12 +7,12 @@ describe("CopyLocator", () => {
 		const copy = vi.fn(async () => true);
 		render(CopyLocator, {
 			props: {
-				url: "http://localhost:5174/w/elven-mini/place/elven_mini/cursed_crypt/entrance",
+				url: "http://localhost:5174/w/kavemouth/place/kavemouth/bramble_crypt/entrance",
 				copy,
 			},
 		});
 		screen.getByRole("button", { name: "Copy link" }).click();
 		await vi.waitFor(() => expect(copy).toHaveBeenCalled());
-		expect(screen.getByText(/cursed_crypt/)).toBeTruthy();
+		expect(screen.getByText(/bramble_crypt/)).toBeTruthy();
 	});
 });

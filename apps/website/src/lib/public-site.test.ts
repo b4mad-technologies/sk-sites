@@ -38,7 +38,7 @@ describe("public site index", () => {
 		expect(index.mcp.url).toMatch(/\/mcp$/);
 		expect(index.worlds.map((w) => w.slug)).toEqual(["demo1", "demo2", "demo3", "demo4"]);
 		expect(index.worlds[0]?.db).toBe("spellkave-demo1");
-		expect(index.worlds[0]?.adventure).toBe("elven-mini");
+		expect(index.worlds[0]?.adventure).toBe("kavemouth");
 		expect(index.worlds[1]?.db).toBeUndefined();
 		expect(index.transcripts?.status).toBe("sample");
 		expect(index.transcripts?.until).toBeUndefined();
@@ -153,14 +153,14 @@ describe("gateway transcript fetch", () => {
 			);
 		const steps = await fetchGatewayTranscript(
 			"https://mcp.spellkave.com/mcp",
-			"elven-mini-1",
+			"kavemouth-1",
 			"tok",
 			ok,
 		);
 		expect(steps.length).toBe(1);
 		const denied = async () => new Response("nope", { status: 401 });
 		await expect(
-			fetchGatewayTranscript("https://mcp.spellkave.com", "elven-mini-1", "tok", denied),
+			fetchGatewayTranscript("https://mcp.spellkave.com", "kavemouth-1", "tok", denied),
 		).rejects.toThrow(/login required/);
 		expect(mcpOriginFromIndexUrl("https://mcp.spellkave.com/mcp")).toBe(
 			"https://mcp.spellkave.com",

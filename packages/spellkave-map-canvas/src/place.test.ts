@@ -23,12 +23,12 @@ import {
 describe("place rows", () => {
 	it("orders name/description/level then spellkave:* tags", () => {
 		const rows = placeRowsFromProperties({
-			"spellkave:node_id": "elven_mini/inn/foyer",
+			"spellkave:node_id": "kavemouth/inn/foyer",
 			name: "Foyer",
 			description: "Warm entry",
 			level: "0",
 			highway: "path",
-			"spellkave:graph": "elven_mini/inn",
+			"spellkave:graph": "kavemouth/inn",
 		});
 		expect(rows.map((r) => r.key)).toEqual([
 			"name",
@@ -54,15 +54,15 @@ describe("place selection", () => {
 		const place = placeFromHit({
 			id: "1",
 			osmType: "node",
-			name: "Crossroads",
+			name: "Waymeet",
 			kind: "place",
-			graph: "elven_mini/region",
+			graph: "kavemouth/region",
 			lon: -122.3,
 			lat: 47.5,
-			tags: { name: "Crossroads", "spellkave:node_id": "elven_mini/region/crossroads" },
+			tags: { name: "Waymeet", "spellkave:node_id": "kavemouth/region/waymeet" },
 		});
-		expect(place.name).toBe("Crossroads");
-		expect(place.nodeId).toBe("elven_mini/region/crossroads");
+		expect(place.name).toBe("Waymeet");
+		expect(place.nodeId).toBe("kavemouth/region/waymeet");
 		expect(place.rows.map((r) => r.key)).toEqual(["name", "spellkave:node_id"]);
 	});
 });
@@ -70,12 +70,12 @@ describe("place selection", () => {
 describe("splitPlaceRows", () => {
 	it("keeps description and identity visible, tucks grid cells and positions away, drops the name", () => {
 		const { primary, extra } = splitPlaceRows([
-			{ key: "name", value: "Crossroads" },
+			{ key: "name", value: "Waymeet" },
 			{ key: "description", value: "A rutted crossroads" },
 			{ key: "spellkave:cell_res10", value: "622215095455350783" },
-			{ key: "spellkave:graph", value: "elven_mini/region" },
+			{ key: "spellkave:graph", value: "kavemouth/region" },
 			{ key: "spellkave:pos_x", value: "13" },
-			{ key: "spellkave:node_id", value: "elven_mini/region/crossroads" },
+			{ key: "spellkave:node_id", value: "kavemouth/region/waymeet" },
 		]);
 		expect(primary.map((r) => r.key)).toEqual([
 			"description",
@@ -207,37 +207,37 @@ describe("indoorGraphFromPlace", () => {
 		expect(
 			indoorGraphFromPlace({
 				name: "Crypt Entrance",
-				nodeId: "elven_mini/cursed_crypt/entrance",
+				nodeId: "kavemouth/bramble_crypt/entrance",
 				lon: 0,
 				lat: 0,
 				rows: [
 					{ key: "indoor", value: "room" },
-					{ key: "spellkave:graph", value: "elven_mini/cursed_crypt" },
+					{ key: "spellkave:graph", value: "kavemouth/bramble_crypt" },
 				],
 			}),
-		).toBe("elven_mini/cursed_crypt");
+		).toBe("kavemouth/bramble_crypt");
 		expect(
 			indoorGraphFromPlace({
 				name: "Crypt Entrance",
-				nodeId: "elven_mini/cursed_crypt/entrance",
+				nodeId: "kavemouth/bramble_crypt/entrance",
 				lon: 0,
 				lat: 0,
 				rows: [
 					{ key: "entrance", value: "yes" },
-					{ key: "spellkave:graph", value: "elven_mini/cursed_crypt" },
+					{ key: "spellkave:graph", value: "kavemouth/bramble_crypt" },
 				],
 			}),
-		).toBe("elven_mini/cursed_crypt");
+		).toBe("kavemouth/bramble_crypt");
 	});
 
 	it("is outdoor for a hamlet path", () => {
 		expect(
 			indoorGraphFromPlace({
-				name: "Path to Cursed Crypt",
-				nodeId: "elven_mini/hamlet/crypt_path",
+				name: "Path to the Bramble Crypt",
+				nodeId: "kavemouth/hamlet/crypt_path",
 				lon: 0,
 				lat: 0,
-				rows: [{ key: "spellkave:graph", value: "elven_mini/hamlet" }],
+				rows: [{ key: "spellkave:graph", value: "kavemouth/hamlet" }],
 			}),
 		).toBeNull();
 	});
@@ -249,20 +249,20 @@ describe("place rows include indoor tags", () => {
 			name: "Crypt Entrance",
 			indoor: "room",
 			entrance: "yes",
-			"spellkave:graph": "elven_mini/cursed_crypt",
-			"spellkave:node_id": "elven_mini/cursed_crypt/entrance",
+			"spellkave:graph": "kavemouth/bramble_crypt",
+			"spellkave:node_id": "kavemouth/bramble_crypt/entrance",
 		});
 		expect(rows.map((r) => r.key)).toContain("indoor");
 		expect(rows.map((r) => r.key)).toContain("entrance");
 		expect(
 			indoorGraphFromPlace({
 				name: "Crypt Entrance",
-				nodeId: "elven_mini/cursed_crypt/entrance",
+				nodeId: "kavemouth/bramble_crypt/entrance",
 				lon: 0,
 				lat: 0,
 				rows,
 			}),
-		).toBe("elven_mini/cursed_crypt");
+		).toBe("kavemouth/bramble_crypt");
 	});
 });
 
@@ -284,8 +284,8 @@ describe("framePaddingPx", () => {
 });
 
 describe("backdropVisible", () => {
-	const hamlet = { layer: "raster-hamlet", graph: "elven_mini/hamlet", indoor: false };
-	const crypt = { layer: "raster-crypt", graph: "elven_mini/cursed_crypt", indoor: true };
+	const hamlet = { layer: "raster-hamlet", graph: "kavemouth/hamlet", indoor: false };
+	const crypt = { layer: "raster-crypt", graph: "kavemouth/bramble_crypt", indoor: true };
 
 	it("shows outdoor sheets when nothing is selected", () => {
 		expect(backdropVisible(hamlet, null)).toBe(true);
@@ -293,9 +293,9 @@ describe("backdropVisible", () => {
 	});
 
 	it("shows only the selected graph sheet", () => {
-		expect(backdropVisible(hamlet, "elven_mini/cursed_crypt")).toBe(false);
-		expect(backdropVisible(crypt, "elven_mini/cursed_crypt")).toBe(true);
-		expect(backdropVisible(hamlet, "elven_mini/hamlet")).toBe(true);
-		expect(backdropVisible(crypt, "elven_mini/hamlet")).toBe(false);
+		expect(backdropVisible(hamlet, "kavemouth/bramble_crypt")).toBe(false);
+		expect(backdropVisible(crypt, "kavemouth/bramble_crypt")).toBe(true);
+		expect(backdropVisible(hamlet, "kavemouth/hamlet")).toBe(true);
+		expect(backdropVisible(crypt, "kavemouth/hamlet")).toBe(false);
 	});
 });

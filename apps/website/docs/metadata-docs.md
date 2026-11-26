@@ -61,7 +61,7 @@ source = { path = "base/spells.toml", anchor = "srd/spell/fireball", license = "
 
 [[metadata.docs.sections.documents]]
 id = "quest-q1"
-ref = "elven_mini/quest/Q1"
+ref = "kavemouth/quest/Q1"
 family = "quest"
 slug = "Q1"
 title = "Rats in the Cellar"
@@ -119,7 +119,7 @@ leaves:
 ```markdown
 ::resource{ref="srd/heroic_inspiration" view="compact"}
 ::subject{kind="entity_definition" ref="srd/armor/shield" view="compact"}
-::subject{kind="entity" ref="elven_mini/adventure/innkeeper_1" view="full"}
+::subject{kind="entity" ref="kavemouth/adventure/innkeeper_1" view="full"}
 ```
 
 Subject `kind` is limited to `entity_definition|entity`; the exact manifest row
@@ -183,7 +183,7 @@ including rows without a `bundle_id`. The
 navigation index contains authored page and section metadata, article summaries,
 catalogue artifact links and counts, routes, and technical source summaries. All
 public pages live below `/docs`; the website build registry may assign a normalized
-`mount` such as `/docs/srd` or `/docs/adventures/elven-mini`.
+`mount` such as `/docs/srd` or `/docs/adventures/kavemouth`.
 The registry contains no titles, introductions, ordering, or other presentation
 copy. The projector does not read or rewrite a compendium converter index, and
 version 1 does not derive presentation counts from converter output.
@@ -367,7 +367,7 @@ and is expected to FALL as owner rows and relation edges are delivered
 either direction needs a deliberate edit to that number.
 
 The publication boundary is exactly the closure loaded from the two registered
-main manifests: the SRD `manifest.toml` and Elven Mini
+main manifests: the SRD `manifest.toml` and Kavemouth
 `adventure.manifest.toml`, including their declared dependencies and includes.
 Other TOMLs merely located beside those files are outside the publication
 input, so the checker neither discovers nor diagnoses them. Adding content to

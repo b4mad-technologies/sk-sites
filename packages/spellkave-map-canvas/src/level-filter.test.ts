@@ -204,12 +204,12 @@ describe("buildPlaceViewFilter", () => {
 		expect(
 			buildPlaceViewFilter("room-fill", {
 				level: "all",
-				indoorGraph: "elven_mini/cursed_crypt",
+				indoorGraph: "kavemouth/bramble_crypt",
 			}),
 		).toEqual([
 			"any",
 			["==", ["get", "spellkave:extent"], "yes"],
-			["==", ["get", "spellkave:graph"], "elven_mini/cursed_crypt"],
+			["==", ["get", "spellkave:graph"], "kavemouth/bramble_crypt"],
 		]);
 	});
 
@@ -217,7 +217,7 @@ describe("buildPlaceViewFilter", () => {
 		expect(
 			buildPlaceViewFilter("node-circle", {
 				level: "all",
-				indoorGraph: "elven_mini/cursed_crypt",
+				indoorGraph: "kavemouth/bramble_crypt",
 			}),
 		).toEqual([
 			"all",
@@ -225,16 +225,16 @@ describe("buildPlaceViewFilter", () => {
 			[
 				"any",
 				["!", ["has", "indoor"]],
-				["==", ["get", "spellkave:graph"], "elven_mini/cursed_crypt"],
+				["==", ["get", "spellkave:graph"], "kavemouth/bramble_crypt"],
 			],
 		]);
 	});
 });
 
 describe("shouldShowFloorItem", () => {
-	const wererat = { level: "-1", graph: "elven_mini/well", indoor: true };
-	const villager = { level: undefined, graph: "elven_mini/hamlet", indoor: false };
-	const wellGuard = { level: "0", graph: "elven_mini/well", indoor: true };
+	const wererat = { level: "-1", graph: "kavemouth/well", indoor: true };
+	const villager = { level: undefined, graph: "kavemouth/hamlet", indoor: false };
+	const wellGuard = { level: "0", graph: "kavemouth/well", indoor: true };
 
 	it("shows all pins on level all", () => {
 		expect(shouldShowFloorItem(wererat, "all", null)).toBe(true);

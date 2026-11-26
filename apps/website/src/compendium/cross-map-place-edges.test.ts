@@ -5,7 +5,7 @@ import { realDocsProjection } from "./real-docs-projection";
 
 /**
  * A `place_edges` row with `place_graph_id = ""` connects a node of one place
- * graph to a node of another — Elven Mini's region<->hamlet road, tomb<->
+ * graph to a node of another — Kavemouth's region<->hamlet road, tomb<->
  * deep_tomb stair, and 14 more (sk-jay0.3.5.76). Owner
  * decision: such an edge renders on BOTH endpoint graphs' pages, derived from
  * each end's own node rather than authored twice. `place_edge_affordance`/
@@ -39,11 +39,11 @@ function facet(entry: DocsCatalogueEntry, label: string): DocsFacet {
 
 describe("cross-map place edges", () => {
 	it("shows both directions of a cross-map edge on both endpoint graphs' pages", () => {
-		const region = facet(placeGraph("elven_mini/region"), "Connections to other maps");
-		const hamlet = facet(placeGraph("elven_mini/hamlet"), "Connections to other maps");
+		const region = facet(placeGraph("kavemouth/region"), "Connections to other maps");
+		const hamlet = facet(placeGraph("kavemouth/hamlet"), "Connections to other maps");
 		for (const key of [
-			"elven_mini/region/road_south->elven_mini/hamlet/gate",
-			"elven_mini/hamlet/gate->elven_mini/region/road_south",
+			"kavemouth/region/road_south->kavemouth/hamlet/gate",
+			"kavemouth/hamlet/gate->kavemouth/region/road_south",
 		]) {
 			expect(region.rows.map((row) => row.edge_key)).toContain(key);
 			expect(hamlet.rows.map((row) => row.edge_key)).toContain(key);
@@ -51,9 +51,9 @@ describe("cross-map place edges", () => {
 	});
 
 	it("never shows an in-graph edge as a cross-map connection", () => {
-		const region = facet(placeGraph("elven_mini/region"), "Connections to other maps");
+		const region = facet(placeGraph("kavemouth/region"), "Connections to other maps");
 		expect(region.rows.map((row) => row.edge_key)).not.toContain(
-			"elven_mini/region/crossroads->elven_mini/region/road_north",
+			"kavemouth/region/waymeet->kavemouth/region/road_north",
 		);
 	});
 
@@ -62,18 +62,18 @@ describe("cross-map place edges", () => {
 		// the tomb's own hall<->sealed_vault door carries an in-graph one. Both
 		// used to be in the basin — `place_edge_affordance` has no page of its
 		// own to render on.
-		const offers = facet(placeGraph("elven_mini/tomb"), "Edge offers");
+		const offers = facet(placeGraph("kavemouth/tomb"), "Edge offers");
 		expect(offers.rows.map((row) => row.edge_key)).toEqual(
 			expect.arrayContaining([
-				"elven_mini/tomb/hall->elven_mini/tomb/sealed_vault",
-				"elven_mini/tomb/sealed_vault->elven_mini/tomb/hall",
+				"kavemouth/tomb/hall->kavemouth/tomb/sealed_vault",
+				"kavemouth/tomb/sealed_vault->kavemouth/tomb/hall",
 			]),
 		);
 	});
 
 	it("credits a cross-map edge offer, and its state, on both endpoint graphs", () => {
-		const edgeKey = "elven_mini/tomb/crypt->elven_mini/deep_tomb/stair_from_tomb";
-		for (const ref of ["elven_mini/tomb", "elven_mini/deep_tomb"]) {
+		const edgeKey = "kavemouth/tomb/crypt->kavemouth/deep_tomb/stair_from_tomb";
+		for (const ref of ["kavemouth/tomb", "kavemouth/deep_tomb"]) {
 			const entry = placeGraph(ref);
 			expect(facet(entry, "Edge offers").rows.map((row) => row.edge_key)).toContain(edgeKey);
 			expect(facet(entry, "Edge state").rows.map((row) => row.place_edge_key)).toContain(edgeKey);
